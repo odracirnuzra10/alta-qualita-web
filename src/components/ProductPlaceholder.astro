@@ -1,0 +1,51 @@
+---
+/**
+ * Esquema técnico placeholder — no representa ningún modelo real.
+ * Trazo geométrico original mientras no hay fotografía del cliente.
+ */
+interface Props {
+  fig?: string;
+  class?: string;
+  name?: string;
+}
+
+const { fig = 'FIG. 01', class: className = '', name = 'equipo' } = Astro.props;
+const alt = `Esquema técnico genérico de placeholder para ${name}. No representa un modelo real.`;
+---
+
+<figure class:list={['relative border border-linea bg-papel p-4 sm:p-6', className]}>
+  <figcaption class="absolute left-3 top-3 font-mono text-[10px] uppercase tracking-[0.04em] text-acero">
+    {fig}
+  </figcaption>
+  <svg
+    viewBox="0 0 320 400"
+    width="320"
+    height="400"
+    class="mx-auto h-auto w-full max-w-[280px]"
+    role="img"
+    aria-label={alt}
+  >
+    <title>{alt}</title>
+    <!-- Cuerpo -->
+    <rect x="70" y="40" width="180" height="260" rx="8" ry="8" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+    <!-- Pantalla -->
+    <rect x="90" y="60" width="140" height="70" rx="4" ry="4" fill="#14171A" stroke="#D9DDE0" stroke-width="1.5" />
+    <line x1="100" y1="85" x2="220" y2="85" stroke="#1B4DFF" stroke-width="1.5" />
+    <line x1="100" y1="100" x2="180" y2="100" stroke="#667080" stroke-width="1" />
+    <!-- Dial -->
+    <circle cx="160" cy="190" r="28" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+    <circle cx="160" cy="190" r="4" fill="#1B4DFF" />
+    <line x1="160" y1="190" x2="175" y2="175" stroke="#667080" stroke-width="1.5" />
+    <!-- Soporte cabezal -->
+    <rect x="145" y="240" width="30" height="40" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+    <!-- Cable -->
+    <path d="M175 260 C 230 270, 260 300, 250 330" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+    <!-- Pieza de mano -->
+    <rect x="235" y="320" width="36" height="14" rx="3" fill="#1B4DFF" />
+    <rect x="248" y="334" width="10" height="28" rx="2" fill="none" stroke="#1B4DFF" stroke-width="1.5" />
+    <!-- Base con ruedas -->
+    <rect x="90" y="300" width="140" height="18" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+    <circle cx="110" cy="330" r="10" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+    <circle cx="210" cy="330" r="10" fill="none" stroke="#D9DDE0" stroke-width="1.5" />
+  </svg>
+</figure>

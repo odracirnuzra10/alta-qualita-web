@@ -1,0 +1,303 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SpecRow from '../../components/SpecRow.astro';
+import PriceDisplay from '../../components/PriceDisplay.astro';
+import ProductPlaceholder from '../../components/ProductPlaceholder.astro';
+import Pending from '../../components/Pending.astro';
+import FAQ from '../../components/FAQ.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { getEquipos, getEquipo, formatCLP, priceParts } from '../../lib/equipos';
+import { SPEC_LABELS, SITE } from '../../lib/site';
+
+export function getStaticPaths() {
+  return getEquipos().map((e) => ({ params: { slug: e.slug } }));
+}
+
+const { slug } = Astro.params;
+const equipo = getEquipo(slug!);
+if (!equipo) throw new Error(`Equipo no encontrado: ${slug}`);
+
+const p = priceParts(equipo.priceNeto);
+const related = equipo.related
+  .map((s) => getEquipo(s))
+  .filter(Boolean);
+
+const specRows = Object.entries(equipo.specs).map(([key, value]) => ({
+  label: SPEC_LABELS[key] || key,
+  value: value as string | null,
+}));
+
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: equipo.name,
+  description:
+    equipo.intro ||
+    `${equipo.name}: equipo de estética profesional de origen coreano. Precio neto $${formatCLP(equipo.priceNeto)} + IVA.`,
+  brand: { '@type': 'Brand', name: 'Alta Qualità' },
+  category: equipo.category,
+  countryOfOrigin: 'KR',
+  offers: {
+    '@type': 'Offer',
+    price: equipo.priceNeto,
+    priceCurrency: 'CLP',
+    availability: 'https://schema.org/InStock',
+    url: `https://alta-qualita.cl/equipos/${equipo.slug}`,
+    seller: { '@type': 'Organization', name: 'Alta Qualità' },
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: equipo.priceNeto,
+      priceCurrency: 'CLP',
+      valueAddedTaxIncluded: false,
+    },
+  },
+};
+---
+
+<Layout
+  title={`${equipo.name} — Precio, ficha técnica y garantía en Chile`}
+  description={`Precio $${formatCLP(equipo.priceNeto)} neto + IVA. Origen Corea del Sur. Ficha técnica descargable. ${equipo.name} en Alta Qualità Chile.`}
+>
+  <JsonLd data={productLd} slot="head" />
+
+  <Breadcrumbs
+    items={[
+      { name: 'Inicio', href: '/' },
+      { name: 'Equipos', href: '/equipos' },
+      { name: equipo.name },
+    ]}
+  />
+
+  <article class="container-aq pb-16 pt-4">
+    <div class="grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow mb-2">{equipo.category} · Origen: Corea del Sur</p>
+        <h1 class="mb-4">{equipo.name}</h1>
+
+        {
+          equipo.intro ? (
+            <p class="prose-aq mb-6 text-sm">{equipo.intro}</p>
+          ) : (
+            <div class="mb-6 border border-linea bg-papel p-4">
+              <p class="label-mono mb-2">Descripción técnica</p>
+              <Pending label="Descripción por confirmar — ficha del fabricante pendiente" />
+              <p class="mt-2 text-xs text-acero">
+                Bloque vacío de forma deliberada hasta recibir la ficha técnica del cliente.
+              </p>
+            </div>
+          )
+        }
+
+        <SpecRow specs={equipo.specsHighlight} class="mb-8" />
+
+        <PriceDisplay neto={equipo.priceNeto} class="mb-6" />
+
+        <div class="flex flex-wrap gap-3">
+          <a href={`/contacto?equipo=${equipo.slug}`} class="btn-primary">Agendar demo</a>
+          <a
+            href={`/fichas/${equipo.slug}.pdf`}
+            class="btn-secondary"
+            data-ficha={equipo.name}
+            download
+          >
+            Descargar ficha técnica (PDF)
+          </a>
+        </div>
+        <p class="mt-3 text-xs text-acero">
+          La ficha PDF se descarga sin formulario. El lead se captura en demo y cotización.
+        </p>
+      </div>
+
+      <ProductPlaceholder name={equipo.name} fig="FIG. 01" />
+    </div>
+
+    <!-- Specs table -->
+    <section class="mt-16" aria-labelledby="specs-title">
+      <h2 id="specs-title" class="mb-6">¿Cuáles son las especificaciones técnicas del {equipo.name}?</h2>
+      <p class="prose-aq mb-6 text-sm">
+        Tabla completa. Celdas vacías = dato no confirmado. No se rellenan con valores plausibles.
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Especificación</th>
+              <th scope="col">Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              specRows.map((row) => (
+                <tr>
+                  <th scope="row" class="!normal-case !tracking-normal !text-sm !font-sans font-medium text-grafito !bg-blanco">
+                    {row.label}
+                  </th>
+                  <td>
+                    {row.value ? (
+                      <span class="font-mono text-sm">{row.value}</span>
+                    ) : (
+                      <Pending />
+                    )}
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Certificaciones -->
+    <section class="mt-16" aria-labelledby="cert-title">
+      <h2 id="cert-title" class="mb-6">¿Qué certificaciones tiene el {equipo.name}?</h2>
+      <p class="prose-aq mb-6 text-sm">
+        Se muestran con número, no con logo. Vacío si no está confirmado.
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Certificación</th>
+              <th scope="col">Número / estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['MFDS (Corea)', equipo.certifications.mfds],
+              ['CE', equipo.certifications.ce],
+              ['ISO 13485', equipo.certifications.iso13485],
+              ['Registro ISP Chile', equipo.certifications.ispChile],
+            ].map(([label, value]) => (
+              <tr>
+                <th scope="row" class="!normal-case !tracking-normal !text-sm !font-sans font-medium !bg-blanco text-grafito">
+                  {label}
+                </th>
+                <td>{value ? <span class="font-mono text-sm">{value}</span> : <Pending />}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Qué incluye -->
+    <section class="mt-16" aria-labelledby="incluye-title">
+      <h2 id="incluye-title" class="mb-6">¿Qué incluye la compra del {equipo.name}?</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Ítem</th>
+              <th scope="col">Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Instalación', equipo.includes.instalacion],
+              ['Capacitación (horas)', equipo.includes.capacitacionHoras],
+              ['Protocolos de tratamiento', equipo.includes.protocolos],
+              ['Garantía', equipo.includes.garantia],
+              ['Repuestos', equipo.includes.repuestos],
+            ].map(([label, value]) => (
+              <tr>
+                <th scope="row" class="!normal-case !tracking-normal !text-sm !font-sans font-medium !bg-blanco text-grafito">
+                  {label}
+                </th>
+                <td>{value ? <span>{value}</span> : <Pending />}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="mt-16" aria-labelledby="roi-eq-title">
+      <h2 id="roi-eq-title" class="mb-4">¿En cuántos meses se recupera la inversión del {equipo.name}?</h2>
+      <p class="prose-aq mb-6 text-sm">
+        Fórmula: meses ≈ ${formatCLP(equipo.priceNeto)} neto ÷ (precio sesión × sesiones/mes).
+        Supuestos editables en la calculadora.
+      </p>
+      <div class="card-line grid gap-4 p-5 sm:grid-cols-3" data-roi-inline data-neto={equipo.priceNeto}>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Precio sesión (CLP)</span>
+          <input type="number" name="sesion" class="w-full border border-linea px-3 py-2 font-mono text-sm" placeholder="Por confirmar" min="0" />
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Sesiones / mes</span>
+          <input type="number" name="volumen" class="w-full border border-linea px-3 py-2 font-mono text-sm" placeholder="Por confirmar" min="0" />
+        </label>
+        <div>
+          <p class="label-mono mb-1">Meses estimados</p>
+          <p class="font-mono text-2xl font-medium text-cobalto" data-roi-result>—</p>
+        </div>
+      </div>
+      <a href={`/retorno?equipo=${equipo.slug}`} class="link-text mt-4 inline-block text-sm">Abrir calculadora completa →</a>
+    </section>
+
+    <!-- Clinera -->
+    <section class="mt-16 border border-linea bg-papel p-6" aria-labelledby="clinera-eq">
+      <h2 id="clinera-eq" class="!text-2xl mb-3">Un mes de Clinera.io gratis con esta compra</h2>
+      <p class="prose-aq text-sm">
+        Al comprar el {equipo.name}, la clínica recibe un mes gratis de Clinera.io
+        (AURA, CAMILA, LIA), implementado por el mismo equipo de ingenieros.
+      </p>
+      <a href="/clinera" class="btn-secondary mt-4 inline-flex">Ver detalle Clinera</a>
+    </section>
+
+    <FAQ items={equipo.faq} title={`Preguntas frecuentes sobre ${equipo.name}`} />
+
+    <!-- Relacionados -->
+    <section class="mt-8" aria-labelledby="rel-title">
+      <h2 id="rel-title" class="mb-6">Equipos relacionados</h2>
+      <div class="grid gap-4 sm:grid-cols-3">
+        {
+          related.map((r) =>
+            r && (
+              <a href={`/equipos/${r.slug}`} class="card-line block p-4 no-underline hover:border-grafito">
+                <p class="label-mono mb-1">{r.category}</p>
+                <h3 class="!text-xl mb-2">{r.name}</h3>
+                <p class="font-mono text-sm text-cobalto">${formatCLP(r.priceNeto)} neto</p>
+              </a>
+            )
+          )
+        }
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<script>
+  document.querySelectorAll('[data-ficha]').forEach((el) => {
+    el.addEventListener('click', () => {
+      // @ts-expect-error
+      if (typeof window.gtag === 'function') {
+        // @ts-expect-error
+        window.gtag('event', 'descarga_ficha_tecnica', {
+          equipo: (el as HTMLElement).dataset.ficha,
+          page_path: location.pathname,
+        });
+      }
+    });
+  });
+
+  const box = document.querySelector('[data-roi-inline]') as HTMLElement | null;
+  if (box) {
+    const neto = Number(box.dataset.neto);
+    const sesion = box.querySelector('[name=sesion]') as HTMLInputElement;
+    const volumen = box.querySelector('[name=volumen]') as HTMLInputElement;
+    const out = box.querySelector('[data-roi-result]') as HTMLElement;
+    const calc = () => {
+      const s = Number(sesion.value);
+      const v = Number(volumen.value);
+      if (s > 0 && v > 0) {
+        out.textContent = String(Math.ceil(neto / (s * v)));
+        // @ts-expect-error
+        if (typeof window.gtag === 'function') window.gtag('event', 'calculo_retorno', { equipo: location.pathname, page_path: location.pathname });
+      } else out.textContent = '—';
+    };
+    sesion?.addEventListener('input', calc);
+    volumen?.addEventListener('input', calc);
+  }
+</script>

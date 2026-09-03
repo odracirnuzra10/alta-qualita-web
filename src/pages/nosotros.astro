@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pending from '../components/Pending.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faq = [
+  {
+    q: '¿Qué es Alta Qualità?',
+    a: 'Alta Qualità es una importadora chilena de equipos de estética profesional de origen coreano. Vende a clínicas estéticas, centros médico-estéticos y profesionales independientes en Chile.',
+  },
+  {
+    q: '¿Por qué el nombre es italiano si los equipos son coreanos?',
+    a: 'El nombre comercial es italiano; el origen de los equipos es Corea del Sur. No sugerimos fabricación italiana. El origen coreano se declara en cada ficha como argumento de venta.',
+  },
+  {
+    q: '¿Dónde están ubicados?',
+    a: 'Operan en Chile. Dirección exacta, teléfono y correo se publican cuando el cliente los confirma; mientras tanto aparecen como «por confirmar».',
+  },
+  {
+    q: '¿Alta Qualità está relacionada con Método Hebe o Protocolo Lumina?',
+    a: 'Las clínicas del grupo (Método Hebe y Protocolo Lumina) usan tecnologías de la misma familia en sus operaciones clínicas. Alta Qualità es la importadora/comercializadora de equipos para el mercado B2B.',
+  },
+  {
+    q: '¿Cómo contacto a Alta Qualità?',
+    a: 'Desde /contacto: formulario de demo, o WhatsApp cuando el número esté confirmado.',
+  },
+];
+---
+
+<Layout
+  title="Nosotros — por qué equipos coreanos"
+  description="Alta Qualità: importadora chilena de equipos de estética profesional de origen coreano. Quiénes somos y por qué Corea."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Nosotros' }]} />
+
+  <section class="container-aq pb-10 pt-6">
+    <p class="eyebrow mb-2">Empresa</p>
+    <h1 class="mb-5">Quiénes somos y por qué Corea</h1>
+    <p class="prose-aq text-sm mb-6">
+      Alta Qualità importa a Chile equipos de estética profesional fabricados en Corea del Sur.
+      El comprador B2B — clínicas, centros médico-estéticos y profesionales independientes —
+      necesita datos técnicos, precio neto + IVA y soporte local. Ese es el trabajo del sitio.
+    </p>
+    <p class="prose-aq text-sm">
+      El nombre evoca calidad (“qualità”); el origen es coreano. No usamos banderas italianas
+      ni claims de “made in Italy”. Fabricar en Corea es el argumento: madurez regulatoria
+      (MFDS), protocolos y ecosistema de dispositivos estéticos.
+    </p>
+  </section>
+
+  <section class="border-y border-linea bg-papel py-14">
+    <div class="container-aq">
+      <h2 class="mb-6">Datos de la empresa</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr><th scope="col">Campo</th><th scope="col">Valor</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Nombre comercial</td><td>Alta Qualità</td></tr>
+            <tr><td>Razón social</td><td><Pending /></td></tr>
+            <tr><td>RUT</td><td><Pending /></td></tr>
+            <tr><td>Dirección</td><td><Pending /></td></tr>
+            <tr><td>Ciudad</td><td><Pending /></td></tr>
+            <tr><td>Correo</td><td><Pending /></td></tr>
+            <tr><td>Teléfono</td><td><Pending /></td></tr>
+            <tr><td>País de operación</td><td>Chile</td></tr>
+            <tr><td>Origen de equipos</td><td>Corea del Sur</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-aq py-14">
+    <h2 class="mb-4">¿Por qué equipos coreanos?</h2>
+    <p class="prose-aq text-sm mb-4">
+      Corea del Sur concentra fabricantes de dispositivos estéticos con trazabilidad MFDS,
+      presencia exportadora y protocolos clínicos maduros. Eso no hace automático a un modelo
+      “mejor”: obliga a leer ficha, certificación y soporte local. Por eso este sitio deja
+      huecos visibles en lugar de rellenar con marketing.
+    </p>
+    <a href="/recursos/equipos-coreanos-vs-chinos-estetica" class="link-text text-sm">
+      Leer: equipos coreanos vs. chinos →
+    </a>
+  </section>
+
+  <FAQ items={faq} />
+</Layout>

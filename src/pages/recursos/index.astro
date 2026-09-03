@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { guias } from '../../lib/recursos';
+
+function formatDate(iso: string) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<Layout
+  title="Recursos y guías para comprar equipos estéticos en Chile"
+  description="Guías SEO/AEO: precios de criolipólisis, certificaciones ISP, ROI, leasing, coreanos vs chinos y más. Actualizadas 2026."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Recursos' }]} />
+
+  <section class="container-aq pb-16 pt-6">
+    <p class="eyebrow mb-2">Recursos</p>
+    <h1 class="mb-4">Guías para decidir con datos</h1>
+    <p class="prose-aq mb-10 text-sm">
+      Respuestas directas primero. Cifras con unidad. Tablas HTML. Sin relleno.
+      Cada guía enlaza a fichas de equipo relacionadas.
+    </p>
+
+    <ul class="divide-y divide-linea border-y border-linea">
+      {
+        guias.map((g) => (
+          <li class="py-5">
+            <a href={`/recursos/${g.slug}`} class="group block no-underline">
+              <h2 class="!text-2xl !normal-case !tracking-normal !font-sans font-semibold group-hover:text-cobalto">
+                {g.title}
+              </h2>
+              <p class="mt-2 text-sm text-texto">{g.description}</p>
+              <p class="mt-2 font-mono text-[10px] uppercase tracking-[0.04em] text-acero">
+                Actualizado: {formatDate(g.updated)}
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --color-grafito: #14171a;
+  --color-acero: #667080;
+  --color-papel: #f2f4f5;
+  --color-blanco: #ffffff;
+  --color-cobalto: #1b4dff;
+  --color-linea: #d9dde0;
+  --color-texto: #41474d;
+
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-sans: "Barlow", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --max-width-content: 1180px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-blanco text-texto font-sans antialiased;
+    line-height: 1.6;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-cobalto);
+    outline-offset: 2px;
+  }
+
+  h1,
+  h2,
+  .heading-display {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 0.98;
+    letter-spacing: -0.005em;
+    color: var(--color-grafito);
+  }
+
+  h1 {
+    font-size: clamp(2.125rem, 4vw, 4rem); /* 34–64px */
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 2.625rem); /* ~28–42px */
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 1.05;
+    font-size: clamp(1.5rem, 2vw, 1.75rem);
+    color: var(--color-grafito);
+  }
+
+  a {
+    @apply transition-colors duration-150;
+  }
+
+  table {
+    @apply w-full border-collapse text-left;
+  }
+
+  th,
+  td {
+    @apply border border-linea px-3 py-2 align-top;
+  }
+
+  th {
+    @apply bg-papel font-mono text-[10px] uppercase tracking-[0.04em] text-acero font-medium;
+  }
+}
+
+@layer components {
+  .container-aq {
+    @apply mx-auto w-full max-w-[1180px] px-4 sm:px-6;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.04em] text-cobalto;
+  }
+
+  .label-mono {
+    @apply font-mono text-[9px] uppercase tracking-[0.04em] text-acero;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-cobalto,
+  .btn-secondary,
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 font-sans text-sm font-medium transition-colors duration-150 no-underline;
+    border-radius: 2px;
+  }
+
+  .btn-primary {
+    @apply bg-grafito text-blanco hover:bg-black;
+  }
+
+  .btn-cobalto {
+    @apply bg-cobalto text-blanco hover:brightness-110;
+  }
+
+  .btn-secondary {
+    @apply border border-grafito bg-transparent text-grafito hover:bg-papel;
+  }
+
+  .btn-ghost {
+    @apply border border-linea bg-blanco text-grafito hover:border-grafito;
+  }
+
+  .card-line {
+    @apply border border-linea bg-blanco;
+  }
+
+  .prose-aq {
+    @apply max-w-[65ch] text-texto;
+  }
+
+  .prose-aq p {
+    @apply mb-4;
+  }
+
+  .prose-aq a {
+    @apply text-cobalto underline-offset-2 hover:underline;
+  }
+
+  .prose-aq ul {
+    @apply mb-4 list-disc pl-5;
+  }
+
+  .prose-aq ol {
+    @apply mb-4 list-decimal pl-5;
+  }
+
+  .link-text {
+    @apply text-cobalto underline-offset-2 hover:underline;
+  }
+}

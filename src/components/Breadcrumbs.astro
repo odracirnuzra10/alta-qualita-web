@@ -1,0 +1,46 @@
+---
+interface Crumb {
+  name: string;
+  href?: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    ...(item.href ? { item: new URL(item.href, Astro.site).href } : {}),
+  })),
+};
+---
+
+<nav aria-label="Migas de pan" class="container-aq py-3">
+  <ol class="flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.04em] text-acero">
+    {
+      items.map((item, i) => (
+        <li class="inline-flex items-center gap-2">
+          {i > 0 && <span aria-hidden="true">/</span>}
+          {item.href && i < items.length - 1 ? (
+            <a href={item.href} class="text-acero no-underline hover:text-cobalto">
+              {item.name}
+            </a>
+          ) : (
+            <span class="text-grafito" aria-current={i === items.length - 1 ? 'page' : undefined}>
+              {item.name}
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

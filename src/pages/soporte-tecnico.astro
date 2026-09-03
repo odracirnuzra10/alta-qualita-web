@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pending from '../components/Pending.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faq = [
+  {
+    q: '¿Cuántos meses de garantía tienen los equipos Alta Qualità?',
+    a: 'El plazo en meses se publica cuando el proveedor lo confirma. Hasta entonces el campo aparece como «por confirmar» en la barra de confianza y en cada ficha.',
+  },
+  {
+    q: '¿Hay repuestos en Chile?',
+    a: 'Alta Qualità declara repuestos en stock como compromiso comercial. El listado de partes críticas y tiempos de despacho se detalla al cotizar.',
+  },
+  {
+    q: '¿Cuál es el tiempo de primera respuesta del soporte?',
+    a: 'El SLA en horas está pendiente de confirmación del cliente. No se publica un número inventado.',
+  },
+  {
+    q: '¿La capacitación está incluida?',
+    a: 'Sí, la capacitación está incluida en el paquete comercial. Las horas exactas por equipo se confirman en la cotización.',
+  },
+  {
+    q: '¿Qué pasa si el equipo falla en los primeros 90 días?',
+    a: 'El protocolo de falla temprana (reparación, reemplazo temporal, exclusiones) se documenta por escrito en la orden de compra. Solicítalo antes de firmar.',
+  },
+];
+---
+
+<Layout
+  title="Soporte técnico, garantía y repuestos"
+  description="Garantía, repuestos en Chile, SLA de soporte y capacitación incluida para equipos Alta Qualità. Datos confirmados o campos vacíos — sin humo."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Soporte técnico' }]} />
+
+  <section class="container-aq pb-8 pt-6">
+    <p class="eyebrow mb-2">Soporte técnico</p>
+    <h1 class="mb-4">Garantía, repuestos, SLA y capacitación</h1>
+    <p class="prose-aq text-sm">
+      En una compra B2B de alto ticket, el soporte pesa tanto como la tecnología.
+      Publicamos lo verificable. Lo demás queda visible como pendiente.
+    </p>
+  </section>
+
+  <section class="container-aq pb-16">
+    <div class="overflow-x-auto">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Compromiso</th>
+            <th scope="col">Detalle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Garantía (meses)</td>
+            <td><Pending label="Meses de garantía por confirmar" /></td>
+          </tr>
+          <tr>
+            <td>Repuestos</td>
+            <td>En stock en Chile (listado crítico por confirmar)</td>
+          </tr>
+          <tr>
+            <td>Soporte — primera respuesta</td>
+            <td class="inline-flex items-center gap-1">En <Pending label="Horas SLA por confirmar" /> horas</td>
+          </tr>
+          <tr>
+            <td>Capacitación</td>
+            <td>Incluida — horas por equipo por confirmar</td>
+          </tr>
+          <tr>
+            <td>Canales de soporte</td>
+            <td><Pending label="Canales (correo, WhatsApp, teléfono) por confirmar" /></td>
+          </tr>
+          <tr>
+            <td>Horario de atención</td>
+            <td><Pending label="Horario por confirmar" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2">
+      <div class="card-line p-5">
+        <h2 class="!text-2xl mb-3">¿Qué preguntar al proveedor?</h2>
+        <p class="text-sm">
+          Antes de firmar, exige por escrito: qué cubre la garantía, exclusiones,
+          tiempo de respuesta, stock de aplicadores y si hay equipo de respaldo.
+        </p>
+        <a href="/recursos/doce-preguntas-antes-de-comprar-equipo-estetico" class="link-text mt-3 inline-block text-sm">
+          Ver las 12 preguntas →
+        </a>
+      </div>
+      <div class="card-line p-5">
+        <h2 class="!text-2xl mb-3">¿Qué pasa si falla?</h2>
+        <p class="text-sm">
+          Guía sobre garantía, repuestos y tiempos reales — sin promesas inventadas.
+        </p>
+        <a href="/recursos/que-pasa-cuando-equipo-falla-garantia-repuestos" class="link-text mt-3 inline-block text-sm">
+          Leer guía →
+        </a>
+      </div>
+    </div>
+
+    <a href="/contacto" class="btn-primary mt-10 inline-flex">Hablar con soporte / agendar demo</a>
+  </section>
+
+  <FAQ items={faq} />
+</Layout>

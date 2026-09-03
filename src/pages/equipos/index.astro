@@ -1,0 +1,73 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PriceDisplay from '../../components/PriceDisplay.astro';
+import { getEquipos, formatCLP, priceParts } from '../../lib/equipos';
+
+const equipos = getEquipos();
+---
+
+<Layout
+  title="Catálogo de equipos de estética coreanos en Chile"
+  description="Catálogo completo Alta Qualità: 8 equipos de estética profesional de origen coreano. Precios netos desde $4.500.000 + IVA. Fichas técnicas descargables."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Equipos' }]} />
+
+  <section class="container-aq pb-16 pt-6">
+    <p class="eyebrow mb-2">Catálogo completo</p>
+    <h1 class="mb-4">Equipos de estética profesional</h1>
+    <p class="prose-aq mb-10 text-sm">
+      Ocho equipos importados desde Corea del Sur. Precio neto, IVA 19% y total visibles
+      en cada ficha. Specs vacías = «por confirmar», nunca inventadas.
+    </p>
+
+    <div class="overflow-x-auto mb-12">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Equipo</th>
+            <th scope="col">Categoría</th>
+            <th scope="col">Neto</th>
+            <th scope="col">IVA</th>
+            <th scope="col">Total</th>
+            <th scope="col">Origen</th>
+            <th scope="col">Ficha</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            equipos.map((e) => {
+              const p = priceParts(e.priceNeto);
+              return (
+                <tr>
+                  <th scope="row" class="!bg-blanco !normal-case !tracking-normal !text-sm !font-sans font-semibold text-grafito">
+                    {e.name}
+                  </th>
+                  <td>{e.category}</td>
+                  <td class="font-mono text-cobalto font-medium">${formatCLP(e.priceNeto)}</td>
+                  <td class="font-mono">${formatCLP(p.iva)}</td>
+                  <td class="font-mono">${formatCLP(p.total)}</td>
+                  <td>{e.origin}</td>
+                  <td><a href={`/equipos/${e.slug}`} class="link-text">Ver</a></td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        equipos.map((e) => (
+          <a href={`/equipos/${e.slug}`} class="card-line block p-5 no-underline hover:border-grafito">
+            <p class="label-mono mb-2">{e.category}</p>
+            <h2 class="!text-2xl mb-3">{e.name}</h2>
+            <PriceDisplay neto={e.priceNeto} />
+            <p class="mt-4 text-sm text-cobalto">Abrir ficha técnica →</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

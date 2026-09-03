@@ -1,0 +1,64 @@
+---
+import Logo from './Logo.astro';
+import Pending from './Pending.astro';
+import { SITE } from '../lib/site';
+---
+
+<footer class="mt-20 border-t border-linea bg-papel">
+  <div class="container-aq grid gap-10 py-12 md:grid-cols-4">
+    <div class="md:col-span-1">
+      <Logo />
+      <p class="prose-aq mt-4 text-sm text-acero">
+        Importadora chilena de equipos de estética profesional de origen coreano.
+      </p>
+    </div>
+
+    <div>
+      <p class="label-mono mb-3">Catálogo</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/equipos" class="text-texto no-underline hover:text-cobalto">Todos los equipos</a></li>
+        <li><a href="/comparador" class="text-texto no-underline hover:text-cobalto">Comparador</a></li>
+        <li><a href="/retorno" class="text-texto no-underline hover:text-cobalto">Calculadora de retorno</a></li>
+        <li><a href="/financiamiento" class="text-texto no-underline hover:text-cobalto">Financiamiento</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="label-mono mb-3">Empresa</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="/nosotros" class="text-texto no-underline hover:text-cobalto">Nosotros</a></li>
+        <li><a href="/soporte-tecnico" class="text-texto no-underline hover:text-cobalto">Soporte técnico</a></li>
+        <li><a href="/clinera" class="text-texto no-underline hover:text-cobalto">Partner Clinera.io</a></li>
+        <li><a href="/clinera-reclamos" class="text-texto no-underline hover:text-cobalto">Clinera: reclamos</a></li>
+        <li><a href="/recursos" class="text-texto no-underline hover:text-cobalto">Recursos</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="label-mono mb-3">Contacto</p>
+      <ul class="space-y-2 text-sm text-texto">
+        <li class="flex items-center gap-2">
+          Correo:
+          {SITE.email ? <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a> : <Pending />}
+        </li>
+        <li class="flex items-center gap-2">
+          Teléfono:
+          {SITE.phone ? <a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a> : <Pending />}
+        </li>
+        <li class="flex items-center gap-2">
+          Ciudad:
+          {SITE.address.city ? <span>{SITE.address.city}, Chile</span> : <Pending />}
+        </li>
+        <li><a href="/contacto" class="link-text">Formulario y agendar demo</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-linea">
+    <div class="container-aq flex flex-col gap-2 py-4 font-mono text-[10px] uppercase tracking-[0.04em] text-acero sm:flex-row sm:justify-between">
+      <span>© {new Date().getFullYear()} Alta Qualità · Chile</span>
+      <span>Última actualización: {SITE.lastUpdated}</span>
+      <span>Equipos de origen: Corea del Sur</span>
+    </div>
+  </div>
+</footer>

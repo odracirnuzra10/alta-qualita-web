@@ -1,0 +1,562 @@
+[
+  {
+    "slug": "sculpt-dd",
+    "name": "Sculpt-DD",
+    "category": "Contorno corporal",
+    "priceNeto": 4500000,
+    "origin": "Corea del Sur",
+    "intro": null,
+    "specsHighlight": [
+      { "label": "Tecnología", "value": null },
+      { "label": "Aplicadores", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["sculpt-dd-max", "criock", "ized"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el Sculpt-DD en Chile?",
+        "a": "El Sculpt-DD tiene un precio neto de $4.500.000 + IVA 19% ($855.000). El total con IVA es $5.355.000. El precio no incluye instalación ni capacitación hasta que Alta Qualità confirme el paquete de compra."
+      },
+      {
+        "q": "¿De dónde es el Sculpt-DD?",
+        "a": "El Sculpt-DD es un equipo de estética profesional de origen coreano, importado a Chile por Alta Qualità. El origen coreano se declara en la ficha y en la documentación comercial."
+      },
+      {
+        "q": "¿Puedo descargar la ficha técnica del Sculpt-DD sin dejar mis datos?",
+        "a": "Sí. La ficha técnica en PDF se descarga sin formulario. Alta Qualità captura el lead en agendar demo y cotizar, no bloqueando el dato técnico."
+      },
+      {
+        "q": "¿Qué incluye la compra del Sculpt-DD?",
+        "a": "El paquete de compra (instalación, horas de capacitación, protocolos, garantía y repuestos) se confirma al cotizar. Los campos pendientes aparecen como «por confirmar» hasta que el cliente entregue los datos definitivos."
+      },
+      {
+        "q": "¿El Sculpt-DD incluye un mes de Clinera.io?",
+        "a": "Sí. Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis de Clinera.io, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
+      }
+    ]
+  },
+  {
+    "slug": "sculpt-dd-max",
+    "name": "Sculpt-DD Max",
+    "category": "Contorno corporal",
+    "priceNeto": 6500000,
+    "origin": "Corea del Sur",
+    "intro": null,
+    "specsHighlight": [
+      { "label": "Tecnología", "value": null },
+      { "label": "Aplicadores", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["sculpt-dd", "criock", "ized-pro"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el Sculpt-DD Max en Chile?",
+        "a": "El Sculpt-DD Max tiene un precio neto de $6.500.000 + IVA 19% ($1.235.000). El total con IVA es $7.735.000."
+      },
+      {
+        "q": "¿En qué se diferencia el Sculpt-DD Max del Sculpt-DD?",
+        "a": "Las diferencias técnicas (potencia, aplicadores, protocolos) se publicarán cuando el fabricante entregue las fichas confirmadas. Hasta entonces, esos campos aparecen como «por confirmar»."
+      },
+      {
+        "q": "¿El Sculpt-DD Max es de origen coreano?",
+        "a": "Sí. Es un equipo de estética profesional fabricado en Corea del Sur e importado a Chile por Alta Qualità."
+      },
+      {
+        "q": "¿Puedo agendar una demo del Sculpt-DD Max?",
+        "a": "Sí. Puedes agendar una demostración desde la ficha del equipo o desde la página de contacto. También puedes escribir por WhatsApp indicando el equipo de interés."
+      },
+      {
+        "q": "¿La ficha PDF del Sculpt-DD Max requiere formulario?",
+        "a": "No. La ficha técnica se descarga sin formulario. El lead se captura al agendar demo o cotizar."
+      }
+    ]
+  },
+  {
+    "slug": "ized",
+    "name": "iZed",
+    "category": "Electroestimulación / corporal",
+    "priceNeto": 7500000,
+    "origin": "Corea del Sur",
+    "intro": "El iZed es un equipo de electroestimulación muscular usado en clínicas estéticas para inducir contracciones profundas equivalentes a horas de entrenamiento. Se comercializa en Chile para centros médico-estéticos y profesionales independientes. Las especificaciones técnicas definitivas (incluyendo cualquier protocolo de frío) se confirman con la ficha del fabricante antes de publicar cifras.",
+    "specsHighlight": [
+      { "label": "Tecnología", "value": "Electroestimulación muscular" },
+      { "label": "Aplicadores", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": "Electroestimulación muscular",
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["ized-pro", "sculpt-dd", "criock"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el iZed en Chile?",
+        "a": "El iZed tiene un precio neto de $7.500.000 + IVA 19% ($1.425.000). El total con IVA es $8.925.000."
+      },
+      {
+        "q": "¿Qué es la electroestimulación muscular en estética?",
+        "a": "La electroestimulación muscular es una tecnología que induce contracciones musculares profundas mediante impulsos eléctricos controlados, usada en clínicas estéticas para tonificación y contorno corporal sin cirugía."
+      },
+      {
+        "q": "¿El iZed también hace criolipólisis?",
+        "a": "Existe una mención en fuentes clínicas asociadas a frío controlado, pero esa ambigüedad no está resuelta con la ficha oficial del fabricante. Hasta confirmarlo, Alta Qualità no publica temperaturas ni protocolos de frío para el iZed."
+      },
+      {
+        "q": "¿De dónde es el iZed?",
+        "a": "Origen: Corea del Sur. Importado y comercializado en Chile por Alta Qualità."
+      },
+      {
+        "q": "¿Cómo calculo el retorno del iZed?",
+        "a": "Usa la calculadora de retorno en alta-qualita.cl/retorno: precio de sesión × sesiones al mes ÷ inversión neta. Los supuestos quedan visibles y editables."
+      }
+    ]
+  },
+  {
+    "slug": "ized-pro",
+    "name": "iZed Pro",
+    "category": "Electroestimulación / corporal",
+    "priceNeto": 14500000,
+    "origin": "Corea del Sur",
+    "intro": "El iZed Pro es la versión de mayor ticket de la línea iZed de electroestimulación muscular de origen coreano. Está orientado a clínicas estéticas y centros médico-estéticos en Chile que buscan capacidad de alto volumen. Las especificaciones técnicas completas se publican cuando el fabricante las confirma.",
+    "specsHighlight": [
+      { "label": "Tecnología", "value": "Electroestimulación muscular" },
+      { "label": "Aplicadores", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": "Electroestimulación muscular",
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["ized", "criock", "sculpt-dd-max"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el iZed Pro en Chile?",
+        "a": "El iZed Pro tiene un precio neto de $14.500.000 + IVA 19% ($2.755.000). El total con IVA es $17.255.000."
+      },
+      {
+        "q": "¿En qué se diferencia el iZed Pro del iZed?",
+        "a": "Las diferencias de potencia, aplicadores y protocolos se publicarán con la ficha técnica confirmada. Mientras tanto, esos campos aparecen como «por confirmar»."
+      },
+      {
+        "q": "¿El iZed Pro incluye Clinera.io?",
+        "a": "Sí. Cada compra de equipo en Alta Qualità incluye un mes gratis de Clinera.io implementado por el equipo de ingenieros."
+      },
+      {
+        "q": "¿Puedo financiar el iZed Pro?",
+        "a": "Alta Qualità publica opciones de leasing, cuotas y pago contado en la página de financiamiento. Condiciones específicas se confirman al cotizar."
+      },
+      {
+        "q": "¿Dónde veo la garantía del iZed Pro?",
+        "a": "El plazo de garantía en meses se publica cuando el proveedor lo confirma. Mientras tanto el campo aparece como «por confirmar» en la ficha."
+      }
+    ]
+  },
+  {
+    "slug": "criock",
+    "name": "CrioCK",
+    "category": "Criolipólisis",
+    "priceNeto": 8500000,
+    "origin": "Corea del Sur",
+    "intro": null,
+    "specsHighlight": [
+      { "label": "Tecnología", "value": null },
+      { "label": "Aplicadores", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["sculpt-dd", "ized", "carboxck"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta una máquina de criolipólisis CrioCK en Chile?",
+        "a": "El CrioCK tiene un precio neto de $8.500.000 + IVA 19% ($1.615.000). El total con IVA es $10.115.000. Es un equipo de origen coreano importado por Alta Qualità."
+      },
+      {
+        "q": "¿Qué es la criolipólisis?",
+        "a": "La criolipólisis es un procedimiento no quirúrgico que usa frío controlado para reducir adipocitos en zonas localizadas del cuerpo. Se aplica en clínicas estéticas y centros médico-estéticos."
+      },
+      {
+        "q": "¿El CrioCK tiene registro ISP en Chile?",
+        "a": "El número de registro ISP se publica cuando esté confirmado. Hasta entonces el campo aparece como «por confirmar» en la ficha."
+      },
+      {
+        "q": "¿Puedo comparar el CrioCK con otros equipos?",
+        "a": "Sí. Usa el comparador en alta-qualita.cl/comparador para ver precios netos y campos técnicos lado a lado."
+      },
+      {
+        "q": "¿La ficha técnica del CrioCK se descarga gratis?",
+        "a": "Sí. La descarga del PDF no exige formulario. El lead se captura al agendar demo o cotizar."
+      }
+    ]
+  },
+  {
+    "slug": "kimiface",
+    "name": "KimiFace",
+    "category": "Facial",
+    "priceNeto": 7200000,
+    "origin": "Corea del Sur",
+    "intro": null,
+    "specsHighlight": [
+      { "label": "Tecnología", "value": null },
+      { "label": "Aplicadores", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["endojiwoo", "carboxck", "sculpt-dd"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el KimiFace en Chile?",
+        "a": "El KimiFace tiene un precio neto de $7.200.000 + IVA 19% ($1.368.000). El total con IVA es $8.568.000."
+      },
+      {
+        "q": "¿Para qué sirve el KimiFace?",
+        "a": "La descripción clínica confirmada se publicará cuando el cliente entregue la ficha técnica. Mientras tanto el bloque introductorio permanece vacío de forma deliberada."
+      },
+      {
+        "q": "¿El KimiFace es coreano?",
+        "a": "Sí. Origen: Corea del Sur. Importado a Chile por Alta Qualità."
+      },
+      {
+        "q": "¿Qué certificaciones tiene el KimiFace?",
+        "a": "Los números de MFDS, CE, ISO 13485 y registro ISP Chile se publican con número cuando estén confirmados. No se muestran logos sin dato verificable."
+      },
+      {
+        "q": "¿Cómo agendo una demo del KimiFace?",
+        "a": "Desde el botón «Agendar demo» de la ficha, la página de contacto o WhatsApp indicando KimiFace como equipo de interés."
+      }
+    ]
+  },
+  {
+    "slug": "endojiwoo",
+    "name": "EndoJiwoo",
+    "category": "Endoláser facial",
+    "priceNeto": 7200000,
+    "origin": "Corea del Sur",
+    "intro": "El EndoJiwoo es un equipo de microfibra láser bajo la piel, orientado a óvalo facial y papada. Pertenece a la familia de lifting estructural profundo usada en clínicas de estética facial. Se importa desde Corea del Sur y se comercializa en Chile para centros médico-estéticos y profesionales independientes.",
+    "specsHighlight": [
+      { "label": "Tecnología", "value": "Microfibra láser (endoláser)" },
+      { "label": "Aplicación", "value": "Óvalo facial y papada" },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": "Microfibra láser (endoláser)",
+      "aplicacion": "Óvalo facial y papada",
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["kimiface", "carboxck", "ized"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el EndoJiwoo en Chile?",
+        "a": "El EndoJiwoo tiene un precio neto de $7.200.000 + IVA 19% ($1.368.000). El total con IVA es $8.568.000."
+      },
+      {
+        "q": "¿Qué es el endoláser facial?",
+        "a": "El endoláser (o endolaser) es una técnica de microfibra láser que se introduce bajo la piel para tratar flacidez, óvalo facial y papada sin cirugía abierta. EndoJiwoo pertenece a esa familia tecnológica."
+      },
+      {
+        "q": "¿El EndoJiwoo reemplaza un lifting quirúrgico?",
+        "a": "No es un reemplazo quirúrgico. Es un equipo de lifting estructural profundo no quirúrgico; la indicación clínica la define el profesional tratante según evaluación."
+      },
+      {
+        "q": "¿De dónde es el EndoJiwoo?",
+        "a": "Origen: Corea del Sur. Importado y comercializado en Chile por Alta Qualità."
+      },
+      {
+        "q": "¿Incluye capacitación el EndoJiwoo?",
+        "a": "La capacitación en horas se confirma en la cotización. El campo aparece como «por confirmar» hasta que el cliente entregue el dato definitivo."
+      }
+    ]
+  },
+  {
+    "slug": "carboxck",
+    "name": "CarboxCk",
+    "category": "Carboxiterapia",
+    "priceNeto": 7500000,
+    "origin": "Corea del Sur",
+    "intro": "El CarboxCk es un equipo de carboxiterapia: aplica CO₂ medicinal para oxigenar el tejido y mejorar la microcirculación. Se usa en clínicas estéticas para protocolos corporales y faciales según indicación profesional. Origen: Corea del Sur.",
+    "specsHighlight": [
+      { "label": "Tecnología", "value": "Carboxiterapia (CO₂ medicinal)" },
+      { "label": "Aplicación", "value": null },
+      { "label": "Sesión", "value": null },
+      { "label": "Garantía", "value": null }
+    ],
+    "specs": {
+      "tecnologia": "Carboxiterapia (CO₂ medicinal)",
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": null
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": null,
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": ["endojiwoo", "kimiface", "criock"],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta una máquina de carboxiterapia CarboxCk en Chile?",
+        "a": "El CarboxCk tiene un precio neto de $7.500.000 + IVA 19% ($1.425.000). El total con IVA es $8.925.000."
+      },
+      {
+        "q": "¿Qué es la carboxiterapia?",
+        "a": "La carboxiterapia es un procedimiento que infiltra o aplica dióxido de carbono (CO₂) medicinal para mejorar oxigenación tisular y microcirculación. Se usa en estética corporal y facial según protocolo clínico."
+      },
+      {
+        "q": "¿El CarboxCk es de origen coreano?",
+        "a": "Sí. Fabricado en Corea del Sur e importado a Chile por Alta Qualità."
+      },
+      {
+        "q": "¿Qué certificaciones tiene el CarboxCk?",
+        "a": "MFDS, CE, ISO 13485 y registro ISP Chile se muestran con número cuando estén confirmados. Sin número, el campo queda «por confirmar»."
+      },
+      {
+        "q": "¿Puedo calcular el retorno del CarboxCk?",
+        "a": "Sí. En alta-qualita.cl/retorno puedes simular meses para recuperar la inversión con precio de sesión y volumen mensual editables."
+      }
+    ]
+  }
+]

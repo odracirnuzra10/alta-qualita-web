@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import FAQ from '../components/FAQ.astro';
+import { getEquipos, formatCLP } from '../lib/equipos';
+
+const equipos = getEquipos();
+const faq = [
+  {
+    q: '¿Cómo se calcula el retorno de un equipo estético?',
+    a: 'Meses ≈ inversión neta ÷ (precio de sesión × sesiones netas al mes). Resta insumos y tiempo improductivo. Declara si usas neto o total con IVA.',
+  },
+  {
+    q: '¿Debo usar el precio neto o con IVA?',
+    a: 'Para caja usa el desembolso real. Para margen operativo muchos usan neto. Sé consistente. En Alta Qualità el neto es el titular y el IVA se muestra aparte.',
+  },
+  {
+    q: '¿La calculadora inventa ocupación?',
+    a: 'No. Tú ingresas precio de sesión y sesiones al mes. Si dejas campos vacíos, el resultado permanece en «—».',
+  },
+  {
+    q: '¿Dónde veo la metodología completa?',
+    a: 'En la guía /recursos/en-cuantos-meses-se-paga-maquina-estetica.',
+  },
+  {
+    q: '¿El ROI incluye el mes gratis de Clinera.io?',
+    a: 'Clinera.io puede mejorar ocupación vía agenda, pero no se inventa un uplift porcentual aquí. Si quieres modelarlo, súmalo tú como sesiones adicionales.',
+  },
+];
+---
+
+<Layout
+  title="Calculadora de retorno de equipos estéticos"
+  description="Calcula en cuántos meses se paga un equipo de estética: precio de sesión × volumen ÷ inversión neta. Supuestos editables."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Retorno' }]} />
+
+  <section class="container-aq pb-16 pt-6">
+    <p class="eyebrow mb-2">Retorno de inversión</p>
+    <h1 class="mb-4">¿En cuántos meses se paga el equipo?</h1>
+    <p class="prose-aq mb-10 text-sm">
+      Fórmula: <strong class="font-semibold text-grafito">meses = neto ÷ (precio sesión × sesiones/mes)</strong>.
+      Sin ocupación inventada. Sin testimonios de “se paga solo”.
+    </p>
+
+    <div class="card-line grid gap-6 p-6 lg:grid-cols-2" id="roi-calc">
+      <div class="grid gap-4">
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Equipo</span>
+          <select id="roi-equipo" class="w-full border border-linea px-3 py-2 text-sm">
+            {equipos.map((e) => (
+              <option value={e.priceNeto} data-slug={e.slug}>
+                {e.name} — ${formatCLP(e.priceNeto)} neto
+              </option>
+            ))}
+          </select>
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Inversión neta (CLP)</span>
+          <input id="roi-neto" type="number" class="w-full border border-linea px-3 py-2 font-mono text-sm" />
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Precio por sesión (CLP)</span>
+          <input id="roi-sesion" type="number" min="0" placeholder="Ej: 89000" class="w-full border border-linea px-3 py-2 font-mono text-sm" />
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Sesiones al mes</span>
+          <input id="roi-vol" type="number" min="0" placeholder="Ej: 40" class="w-full border border-linea px-3 py-2 font-mono text-sm" />
+        </label>
+      </div>
+      <div class="border border-linea bg-papel p-6">
+        <p class="label-mono mb-2">Meses para cubrir la inversión</p>
+        <p id="roi-out" class="font-mono text-5xl font-medium text-cobalto">—</p>
+        <p id="roi-detail" class="mt-4 text-sm text-acero">Ingresa precio de sesión y volumen para calcular.</p>
+        <p class="mt-6 text-xs text-acero">
+          Última actualización de metodología: septiembre 2026. IVA no incluido en el numerador por defecto (neto).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faq} />
+</Layout>
+
+<script>
+  const sel = document.getElementById('roi-equipo') as HTMLSelectElement;
+  const neto = document.getElementById('roi-neto') as HTMLInputElement;
+  const sesion = document.getElementById('roi-sesion') as HTMLInputElement;
+  const vol = document.getElementById('roi-vol') as HTMLInputElement;
+  const out = document.getElementById('roi-out')!;
+  const detail = document.getElementById('roi-detail')!;
+
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('equipo');
+  if (slug) {
+    const opt = [...sel.options].find((o) => o.dataset.slug === slug);
+    if (opt) sel.value = opt.value;
+  }
+  neto.value = sel.value;
+
+  function calc() {
+    const n = Number(neto.value);
+    const s = Number(sesion.value);
+    const v = Number(vol.value);
+    if (n > 0 && s > 0 && v > 0) {
+      const months = Math.ceil(n / (s * v));
+      out.textContent = String(months);
+      detail.textContent = `${n.toLocaleString('es-CL')} ÷ (${s.toLocaleString('es-CL')} × ${v}) = ${months} meses`;
+      // @ts-expect-error
+      if (typeof window.gtag === 'function') {
+        // @ts-expect-error
+        window.gtag('event', 'calculo_retorno', {
+          equipo: sel.selectedOptions[0]?.dataset.slug || '',
+          page_path: '/retorno',
+        });
+      }
+    } else {
+      out.textContent = '—';
+      detail.textContent = 'Ingresa precio de sesión y volumen para calcular.';
+    }
+  }
+
+  sel.addEventListener('change', () => {
+    neto.value = sel.value;
+    calc();
+  });
+  [neto, sesion, vol].forEach((el) => el.addEventListener('input', calc));
+  calc();
+</script>

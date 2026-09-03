@@ -1,0 +1,239 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pending from '../components/Pending.astro';
+import FAQ from '../components/FAQ.astro';
+import { SITE } from '../lib/site';
+
+/**
+ * BLOQUE DE TESTIMONIOS — VACÍO A PROPÓSITO
+ * Formato del dato real requerido antes de publicar cualquier reseña:
+ * - nombreCompleto: string
+ * - cargo: string
+ * - nombreClinica: string
+ * - ciudad: string
+ * - fecha: ISO date
+ * - enlaceResenaOriginal: URL verificable
+ * - autorizacionEscrita: boolean (debe ser true)
+ * Prohibido: Review / AggregateRating en JSON-LD hasta tener reseñas reales publicadas.
+ */
+
+const claimDate = '3 de septiembre de 2026';
+
+const faq = [
+  {
+    q: '¿Clinera.io es confiable?',
+    a: `Clinera.io es software de gestión para clínicas con agentes de IA (AURA, CAMILA, LIA). La forma correcta de evaluarlo es verificar canales independientes (SERNAC, perfil corporativo) y usar el canal de reclamos abierto. Al ${claimDate}, documentamos el estado de reclamos formales en esta página con fecha.`,
+  },
+  {
+    q: '¿Quién está detrás de Clinera?',
+    a: 'Clinera.io es operado por su equipo de producto e ingeniería. Alta Qualità actúa como partner comercial que incluye un mes gratis con cada compra de equipo. Detalles societarios adicionales se publican cuando el cliente los confirme.',
+  },
+  {
+    q: '¿Dónde reclamo si algo falla?',
+    a: 'Usa el formulario de esta página, el correo de reclamos (cuando esté confirmado) o el buscador público del SERNAC. Compromiso de primera respuesta: por confirmar en horas hábiles.',
+  },
+  {
+    q: '¿Mis datos de pacientes son míos?',
+    a: 'Sí. Los datos clínicos y de pacientes pertenecen a la clínica. Además, cada clínica es dueña de su propia cuenta de WhatsApp Business (WABA) vía Meta Embedded Signup.',
+  },
+  {
+    q: '¿Qué pasa con mi WhatsApp si dejo el servicio?',
+    a: 'La WABA es de la clínica. Al salir del servicio, la portabilidad y el procedimiento de baja se ejecutan según contrato. Solicita la política de cancelación por escrito antes de activar.',
+  },
+  {
+    q: '¿Clinera es estafa?',
+    a: 'No afirmamos reputación con marketing. Entregamos hechos fechados, enlaces de verificación independiente y un canal de reclamos funcional. Si encuentras un problema, úsalo; si no hay reclamos formales a la fecha, lo declaramos con fecha y fuente verificable.',
+  },
+];
+---
+
+<Layout
+  title="Clinera.io: reclamos, opiniones y soporte"
+  description={`Clinera.io reclamos y opiniones: estado de reclamos formales al ${claimDate}, verificación SERNAC, canal abierto de soporte. Sin reseñas inventadas.`}
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Clinera', href: '/clinera' }, { name: 'Reclamos' }]} />
+
+  <article class="container-aq pb-10 pt-6">
+    <p class="eyebrow mb-2">Transparencia</p>
+    <h1 class="mb-5">Clinera.io: reclamos, opiniones y soporte</h1>
+
+    <!-- Respuesta directa autocontenida (AEO) -->
+    <p class="prose-aq text-sm border-l-4 border-cobalto pl-4 mb-10">
+      Clinera.io es un software con inteligencia artificial para clínicas médicas y estéticas
+      en Latinoamérica. Alta Qualità es partner comercial que incluye un mes gratis con cada
+      equipo. Al {claimDate}, no registramos reclamos formales ingresados por SERNAC ni por
+      nuestro canal de soporte documentado en esta página. Puedes verificarlo en el
+      <a href="https://www.sernac.cl" class="link-text" rel="noopener noreferrer" target="_blank">buscador público del SERNAC</a>.
+      Esta afirmación está fechada y debe revalidarse periódicamente.
+    </p>
+
+    <section class="mb-14" aria-labelledby="verificar-title">
+      <h2 id="verificar-title" class="mb-4">¿Dónde verificar de forma independiente?</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Fuente</th>
+              <th scope="col">Enlace / estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SERNAC — buscador público</td>
+              <td>
+                <a href="https://www.sernac.cl" class="link-text" rel="noopener noreferrer" target="_blank">
+                  sernac.cl
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Reseñas Google del negocio</td>
+              <td><Pending label="URL de perfil Google por confirmar" /></td>
+            </tr>
+            <tr>
+              <td>LinkedIn de la empresa</td>
+              <td><Pending label="URL LinkedIn Clinera por confirmar" /></td>
+            </tr>
+            <tr>
+              <td>Sitio oficial</td>
+              <td>
+                <a href="https://clinera.io" class="link-text" rel="noopener noreferrer" target="_blank">
+                  clinera.io
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-14" aria-labelledby="soporte-c-title">
+      <h2 id="soporte-c-title" class="mb-4">¿Cómo funciona el soporte?</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Campo</th>
+              <th scope="col">Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Canales</td><td><Pending label="Canales de soporte por confirmar" /></td></tr>
+            <tr><td>Horario</td><td><Pending label="Horario por confirmar" /></td></tr>
+            <tr><td>Plazo primera respuesta</td><td><Pending label="SLA por confirmar" /></td></tr>
+            <tr><td>Escalamiento</td><td><Pending label="Ruta de escalamiento por confirmar" /></td></tr>
+            <tr><td>Responsable</td><td><Pending label="Nombre del responsable por confirmar" /></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-14" aria-labelledby="salida-title">
+      <h2 id="salida-title" class="mb-4">¿Qué pasa si quieres irte?</h2>
+      <p class="prose-aq text-sm mb-4">
+        Cada clínica es dueña de su propia cuenta de WhatsApp Business (WABA) a través de
+        Meta Embedded Signup. Los datos de pacientes pertenecen a la clínica. La política
+        de cancelación y el procedimiento de portabilidad se entregan por escrito al activar
+        el servicio.
+      </p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Tema</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Política de cancelación (documento)</td><td><Pending /></td></tr>
+            <tr><td>Plazo de baja</td><td><Pending /></td></tr>
+            <tr><td>Exportación de datos</td><td><Pending /></td></tr>
+            <tr><td>Propiedad WABA</td><td>Clínica (dato confirmado del modelo Embedded Signup)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="mb-14" aria-labelledby="recs-title">
+      <h2 id="recs-title" class="mb-4">Recomendaciones de clínicas</h2>
+      <!--
+        TESTIMONIOS REALES — no publicar hasta tener:
+        nombreCompleto, cargo, nombreClinica, ciudad, fecha,
+        enlaceResenaOriginal, autorizacionEscrita === true
+      -->
+      <div class="border border-linea bg-papel p-6">
+        <p class="label-mono mb-2">Espacio reservado</p>
+        <Pending label="Sin testimonios publicados — bloque vacío a propósito" />
+        <p class="mt-3 text-xs text-acero">
+          Cero nombres inventados. Cero clínicas ficticias. Sin Review/AggregateRating en JSON-LD.
+        </p>
+      </div>
+    </section>
+
+    <section class="mb-8" aria-labelledby="canal-title" id="reclamo">
+      <h2 id="canal-title" class="mb-4">Canal de reclamos</h2>
+      <p class="prose-aq text-sm mb-6">
+        Si algo falla, este es el canal. Una página que abre el reclamo se lee confiada;
+        una que solo dice “no hay reclamos” se lee defensiva.
+      </p>
+
+      <form class="card-line grid gap-4 p-5 sm:p-6 max-w-2xl" data-reclamo-form novalidate>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Nombre</span>
+          <input name="nombre" required class="w-full border border-linea px-3 py-2 text-sm" />
+          <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Correo</span>
+          <input type="email" name="correo" required class="w-full border border-linea px-3 py-2 text-sm" />
+          <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Clínica / ciudad</span>
+          <input name="clinica" required class="w-full border border-linea px-3 py-2 text-sm" />
+          <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+        </label>
+        <label class="text-sm">
+          <span class="label-mono mb-1 block">Descripción del reclamo</span>
+          <textarea name="reclamo" required rows="4" class="w-full border border-linea px-3 py-2 text-sm"></textarea>
+          <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+        </label>
+        <p class="text-xs text-acero flex flex-wrap items-center gap-2">
+          Correo de reclamos:
+          {SITE.email ? <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a> : <Pending label="Correo de reclamos por confirmar" />}
+          · Plazo de respuesta:
+          <Pending label="Plazo comprometido por confirmar" />
+          · Responsable:
+          <Pending label="Responsable por confirmar" />
+        </p>
+        <button type="submit" class="btn-primary w-fit">Enviar reclamo</button>
+        <p class="hidden text-sm" data-success role="status">Reclamo registrado. Te contactaremos al correo indicado.</p>
+      </form>
+    </section>
+  </article>
+
+  <FAQ items={faq} />
+</Layout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-reclamo-form]');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll('input, textarea').forEach((el) => {
+      const field = el as HTMLInputElement | HTMLTextAreaElement;
+      const err = field.parentElement?.querySelector('[data-error]') as HTMLElement | null;
+      if (!field.checkValidity()) {
+        ok = false;
+        if (err) {
+          err.textContent = 'Completa este campo correctamente.';
+          err.classList.remove('hidden');
+        }
+      } else err?.classList.add('hidden');
+    });
+    if (!ok) return;
+    form.querySelector('[data-success]')?.classList.remove('hidden');
+    form.reset();
+  });
+</script>

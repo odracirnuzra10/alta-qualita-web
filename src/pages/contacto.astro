@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Pending from '../components/Pending.astro';
+import FAQ from '../components/FAQ.astro';
+import { SITE } from '../lib/site';
+import { whatsappUrl } from '../lib/equipos';
+
+const equipoParam = Astro.url.searchParams.get('equipo') || '';
+const wa = whatsappUrl('Hola Alta Qualità, quiero agendar una demo desde /contacto.');
+
+const faq = [
+  {
+    q: '¿Cómo agendo una demo?',
+    a: 'Completa el formulario con nombre, clínica, ciudad, equipo de interés, teléfono y correo. También puedes escribir por WhatsApp cuando el número esté publicado.',
+  },
+  {
+    q: '¿La demo tiene costo?',
+    a: 'Las condiciones de la demo (presencial, en clínica o showroom) se confirman al coordinar. No se publica un cobro inventado.',
+  },
+  {
+    q: '¿Puedo cotizar varios equipos?',
+    a: 'Sí. En el campo «equipo de interés» elige «Varios / aún no sé» o indícalo en el seguimiento.',
+  },
+  {
+    q: '¿Responden fuera de Santiago?',
+    a: 'Alta Qualità atiende clínicas en Chile. Cobertura exacta de visitas técnicas se confirma según ciudad.',
+  },
+  {
+    q: '¿Cuánto demoran en responder?',
+    a: 'El SLA de primera respuesta está por confirmar. Aparece como pendiente hasta que el cliente entregue el compromiso en horas.',
+  },
+];
+---
+
+<Layout
+  title="Contacto — agendar demo y cotizar"
+  description="Agenda una demo o cotiza equipos de estética Alta Qualità. Formulario de 6 campos + WhatsApp. Chile."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Contacto' }]} />
+
+  <section class="container-aq pb-8 pt-6">
+    <p class="eyebrow mb-2">Contacto</p>
+    <h1 class="mb-4">Agendar demo / cotizar</h1>
+    <p class="prose-aq text-sm">
+      Seis campos. Validación en línea. Sin bloquear la descarga de fichas técnicas.
+    </p>
+  </section>
+
+  <section class="container-aq grid gap-10 pb-16 lg:grid-cols-2">
+    <LeadForm defaultEquipo={equipoParam} sourcePage="/contacto" />
+
+    <div>
+      <h2 class="!text-2xl mb-4">Otros canales</h2>
+      <ul class="space-y-3 text-sm">
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="label-mono">Correo</span>
+          {SITE.email ? <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a> : <Pending />}
+        </li>
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="label-mono">Teléfono</span>
+          {SITE.phone ? <a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a> : <Pending />}
+        </li>
+        <li class="flex flex-wrap items-center gap-2">
+          <span class="label-mono">WhatsApp</span>
+          {wa ? (
+            <a href={wa} class="link-text" target="_blank" rel="noopener noreferrer" data-wa>
+              Abrir chat
+            </a>
+          ) : (
+            <Pending label="Número WhatsApp por confirmar" />
+          )}
+        </li>
+      </ul>
+      <p class="mt-8 text-xs text-acero">
+        Última actualización de esta página: {SITE.lastUpdated}
+      </p>
+    </div>
+  </section>
+
+  <FAQ items={faq} />
+</Layout>
+
+<script>
+  document.querySelector('[data-wa]')?.addEventListener('click', () => {
+    // @ts-expect-error
+    if (typeof window.gtag === 'function') window.gtag('event', 'click_whatsapp', { page_path: '/contacto' });
+  });
+</script>
