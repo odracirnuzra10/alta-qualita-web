@@ -1,0 +1,25 @@
+---
+/**
+ * Estado "Por confirmar" — nunca inventar datos.
+ * Muestra "—" con fondo papel. El hueco visible es deliberado.
+ */
+interface Props {
+  label?: string;
+  class?: string;
+  as?: 'span' | 'td' | 'div';
+}
+
+const { label = 'Por confirmar', class: className = '', as: Tag = 'span' } = Astro.props;
+---
+
+<Tag
+  class:list={[
+    'inline-flex min-h-[1.75rem] min-w-[2.5rem] items-center bg-papel px-2 font-mono text-xs tracking-[0.04em] text-acero',
+    className,
+  ]}
+  title={label}
+  data-pending="true"
+>
+  —
+  <span class="sr-only">{label}</span>
+</Tag>

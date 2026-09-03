@@ -1,0 +1,252 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SpecRow from '../components/SpecRow.astro';
+import ProductPlaceholder from '../components/ProductPlaceholder.astro';
+import PriceDisplay from '../components/PriceDisplay.astro';
+import FAQ from '../components/FAQ.astro';
+import { getEquipos, formatCLP, priceParts } from '../lib/equipos';
+import { SITE } from '../lib/site';
+
+const equipos = getEquipos();
+const comparadorHome = equipos.filter((e) =>
+  ['sculpt-dd', 'sculpt-dd-max', 'criock', 'ized'].includes(e.slug)
+);
+
+const homeFaq = [
+  {
+    q: '¿Cuánto cuestan los equipos de estética de Alta Qualità en Chile?',
+    a: 'Los precios netos van desde $4.500.000 (Sculpt-DD) hasta $14.500.000 (iZed Pro). Cada ficha muestra neto + IVA 19% + total. Ejemplo: Sculpt-DD = $4.500.000 neto + $855.000 IVA = $5.355.000 total.',
+  },
+  {
+    q: '¿Los equipos son italianos o coreanos?',
+    a: 'Son de origen coreano. El nombre Alta Qualità es italiano, pero los equipos se fabrican en Corea del Sur. El origen se declara abiertamente en cada ficha.',
+  },
+  {
+    q: '¿Puedo descargar la ficha técnica sin dejar mis datos?',
+    a: 'Sí. Las fichas PDF se descargan sin formulario. El lead se captura al agendar demo o cotizar, nunca bloqueando el dato técnico.',
+  },
+  {
+    q: '¿Qué es Clinera.io y por qué viene con el equipo?',
+    a: 'Clinera.io es software con IA para clínicas (agendamiento WhatsApp, voz y reportes). Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis implementado por el mismo equipo de ingenieros.',
+  },
+  {
+    q: '¿Alta Qualità vende a clínicas en todo Chile?',
+    a: 'Sí. Alta Qualità vende a clínicas estéticas, centros médico-estéticos y profesionales independientes en Chile. Agenda una demo o cotiza desde la página de contacto.',
+  },
+  {
+    q: '¿Dónde veo garantía, repuestos y soporte?',
+    a: 'En /soporte-tecnico y en cada ficha. Los plazos en meses y el SLA en horas se publican cuando el cliente los confirma; mientras tanto aparecen como «por confirmar».',
+  },
+  {
+    q: '¿Cómo comparo varios equipos antes de comprar?',
+    a: 'Usa el comparador en /comparador: tabla HTML con precio neto, IVA, total y campos técnicos lado a lado. Los datos faltantes se muestran vacíos, sin inventar cifras.',
+  },
+  {
+    q: '¿Cómo calculo en cuántos meses se paga un equipo?',
+    a: 'En /retorno: precio de sesión × sesiones al mes ÷ inversión neta. Los supuestos quedan visibles y editables.',
+  },
+];
+
+const heroSpecs = [
+  { label: 'Equipos en catálogo', value: '8' },
+  { label: 'Origen', value: 'Corea del Sur' },
+  { label: 'Garantía (meses)', value: null },
+  { label: 'Soporte (horas)', value: null },
+];
+---
+
+<Layout
+  title="Equipos de estética profesional coreanos en Chile"
+  description="Alta Qualità importa equipos de estética profesional de origen coreano a Chile. Precios netos + IVA visibles, fichas técnicas descargables y un mes de Clinera.io por compra."
+>
+  <!-- 1. Hero -->
+  <section class="border-b border-linea">
+    <div class="container-aq grid items-center gap-10 py-12 lg:grid-cols-2 lg:py-16">
+      <div>
+        <p class="eyebrow mb-3">Equipos de estética · Origen: Corea del Sur</p>
+        <h1 class="mb-5">
+          Datos técnicos completos para decidir una compra de alto ticket
+        </h1>
+        <p class="prose-aq mb-8 text-base">
+          Alta Qualità importa equipos de estética profesional coreanos para clínicas,
+          centros médico-estéticos y profesionales independientes en Chile. Precio neto,
+          IVA y specs en una sola ficha — sin humo.
+        </p>
+        <SpecRow specs={heroSpecs} class="mb-8" />
+        <div class="flex flex-wrap gap-3">
+          <a href="/contacto" class="btn-primary" data-track="agendar_demo">Agendar demo</a>
+          <a href="/equipos" class="btn-secondary">Ver catálogo</a>
+        </div>
+      </div>
+      <ProductPlaceholder name="equipo de estética profesional" fig="FIG. 01" />
+    </div>
+  </section>
+
+  <!-- 3. Catálogo -->
+  <section class="py-16" aria-labelledby="catalogo-title">
+    <div class="container-aq">
+      <p class="eyebrow mb-2">Catálogo</p>
+      <h2 id="catalogo-title" class="mb-3">Ocho equipos. Precio neto + IVA a la vista.</h2>
+      <p class="prose-aq mb-10 text-sm">
+        Cada ficha muestra origen coreano, precio en formato chileno y campos técnicos.
+        Lo que falta aparece como «por confirmar» — nunca inventado.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          equipos.map((e) => {
+            const p = priceParts(e.priceNeto);
+            return (
+              <a href={`/equipos/${e.slug}`} class="card-line group block p-4 no-underline transition-colors hover:border-grafito">
+                <p class="label-mono mb-2">{e.category}</p>
+                <h3 class="mb-3 text-xl group-hover:text-cobalto">{e.name}</h3>
+                <p class="font-mono text-sm font-medium text-grafito" style="font-variant-numeric: tabular-nums;">
+                  ${formatCLP(e.priceNeto)} neto
+                </p>
+                <p class="mt-1 font-mono text-[10px] tracking-[0.04em] text-acero">
+                  {p.ivaLabel} · {p.totalLabel}
+                </p>
+                <p class="mt-4 text-sm text-cobalto">Ver ficha →</p>
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Clinera -->
+  <section class="border-y border-linea bg-papel py-16" aria-labelledby="clinera-title">
+    <div class="container-aq grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="eyebrow mb-2">Partner oficial Clinera.io</p>
+        <h2 id="clinera-title">Tu equipo nuevo llega con la agenda ya funcionando</h2>
+        <p class="prose-aq mt-4 text-sm">
+          Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis de
+          Clinera.io — software con IA para agendamiento por WhatsApp, atención por voz y
+          reportes — implementado por el mismo equipo de ingenieros.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/clinera" class="btn-primary">Ver oferta Clinera</a>
+          <a href="/clinera-reclamos" class="btn-ghost">Reclamos y opiniones</a>
+        </div>
+      </div>
+      <div class="card-line bg-blanco p-6">
+        <p class="label-mono mb-4">Agentes Clinera</p>
+        <ul class="space-y-3 text-sm">
+          <li><span class="font-semibold text-grafito">AURA</span> — agendamiento por WhatsApp</li>
+          <li><span class="font-semibold text-grafito">CAMILA</span> — atención por voz</li>
+          <li><span class="font-semibold text-grafito">LIA</span> — reportes</li>
+        </ul>
+        <p class="mt-4 text-xs text-acero">
+          Cada clínica es dueña de su propia cuenta de WhatsApp Business (Meta Embedded Signup).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Comparador resumido -->
+  <section class="py-16" aria-labelledby="comp-title">
+    <div class="container-aq">
+      <p class="eyebrow mb-2">Comparador</p>
+      <h2 id="comp-title" class="mb-3">¿Qué equipo comparar primero?</h2>
+      <p class="prose-aq mb-8 text-sm">Tabla real HTML para extracción por buscadores e IA.</p>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Equipo</th>
+              <th scope="col">Categoría</th>
+              <th scope="col">Neto</th>
+              <th scope="col">IVA 19%</th>
+              <th scope="col">Total</th>
+              <th scope="col">Origen</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              comparadorHome.map((e) => {
+                const p = priceParts(e.priceNeto);
+                return (
+                  <tr>
+                    <td>
+                      <a href={`/equipos/${e.slug}`} class="link-text font-medium">
+                        {e.name}
+                      </a>
+                    </td>
+                    <td>{e.category}</td>
+                    <td class="font-mono text-cobalto font-medium">${formatCLP(e.priceNeto)}</td>
+                    <td class="font-mono">${formatCLP(p.iva)}</td>
+                    <td class="font-mono">${formatCLP(p.total)}</td>
+                    <td>{e.origin}</td>
+                  </tr>
+                );
+              })
+            }
+          </tbody>
+        </table>
+      </div>
+      <a href="/comparador" class="btn-secondary mt-6 inline-flex" data-track="ver_comparador">Abrir comparador completo</a>
+    </div>
+  </section>
+
+  <!-- 6. Soporte -->
+  <section class="border-y border-linea py-16" aria-labelledby="soporte-title">
+    <div class="container-aq grid gap-8 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow mb-2">Soporte y garantía</p>
+        <h2 id="soporte-title">El argumento que más pesa en la decisión</h2>
+        <p class="prose-aq mt-4 text-sm">
+          En compras de $5 a $17 millones, el comprador pregunta por repuestos en Chile,
+          plazos de garantía y tiempo de respuesta. Publicamos lo confirmado; lo demás
+          queda visible como pendiente.
+        </p>
+        <a href="/soporte-tecnico" class="btn-secondary mt-6 inline-flex">Ver soporte técnico</a>
+      </div>
+      <ul class="grid gap-3">
+        {['Garantía en meses (por confirmar)', 'Repuestos en stock en Chile', 'SLA de primera respuesta (por confirmar)', 'Capacitación incluida'].map((t) => (
+          <li class="border border-linea bg-papel px-4 py-3 font-mono text-xs uppercase tracking-[0.04em] text-grafito">{t}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. Retorno -->
+  <section class="py-16" aria-labelledby="roi-title">
+    <div class="container-aq max-w-3xl">
+      <p class="eyebrow mb-2">Retorno</p>
+      <h2 id="roi-title">¿En cuántos meses se paga el equipo?</h2>
+      <p class="prose-aq mt-4 text-sm">
+        Calcula con precio de sesión y volumen mensual. Supuestos a la vista, editables,
+        sin cifras de marketing inventadas.
+      </p>
+      <a href="/retorno" class="btn-primary mt-6 inline-flex">Abrir calculadora</a>
+    </div>
+  </section>
+
+  <FAQ items={homeFaq} />
+
+  <!-- 9. CTA final -->
+  <section class="border-t border-linea bg-grafito py-16 text-blanco">
+    <div class="container-aq text-center">
+      <h2 class="!text-blanco">Agenda una demo con datos sobre la mesa</h2>
+      <p class="mx-auto mt-4 max-w-[60ch] text-sm text-white/75">
+        Lleva la ficha técnica, el precio neto + IVA y las preguntas de garantía.
+        Sin testimonios inventados. Sin specs inventadas.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/contacto" class="btn-cobalto">Agendar demo</a>
+        <a href="/equipos" class="btn border border-white/40 text-blanco hover:bg-white/10">Ver catálogo</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.querySelectorAll('[data-track]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const name = (el as HTMLElement).dataset.track;
+      // @ts-expect-error
+      if (name && typeof window.gtag === 'function') window.gtag('event', name, { page_path: location.pathname });
+    });
+  });
+</script>

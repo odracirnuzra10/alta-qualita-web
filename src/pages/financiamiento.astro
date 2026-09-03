@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pending from '../components/Pending.astro';
+import FAQ from '../components/FAQ.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const faq = [
+  {
+    q: '¿Se puede financiar un equipo estético en Chile?',
+    a: 'Sí. Las clínicas suelen evaluar contado, crédito bancario o leasing. Alta Qualità orienta el proceso; tasas, pie y plazos exactos se confirman con cada entidad financiera y aparecen aquí cuando estén acordados.',
+  },
+  {
+    q: '¿El precio publicado es neto o con IVA?',
+    a: 'Siempre neto + IVA 19% visibles por separado. Ejemplo: $8.500.000 neto + $1.615.000 IVA = $10.115.000 total (CrioCK).',
+  },
+  {
+    q: '¿El leasing incluye el mes de Clinera.io?',
+    a: 'El mes gratis de Clinera.io está asociado a la compra del equipo en Alta Qualità. La modalidad de pago (contado, crédito o leasing) no cambia ese beneficio; condiciones operativas se confirman al cerrar.',
+  },
+  {
+    q: '¿Qué documentos piden para leasing de equipos médicos?',
+    a: 'Depende de la entidad. En general: antecedentes de la sociedad, estados financieros, cotización del equipo y datos del representante legal. La lista exacta se entrega al iniciar la evaluación.',
+  },
+  {
+    q: '¿Puedo ver cuotas estimadas antes de cotizar?',
+    a: 'Publicaremos simulaciones cuando existan condiciones confirmadas con partners financieros. Mientras tanto no inventamos tasas ni cuotas.',
+  },
+];
+---
+
+<Layout
+  title="Financiamiento de equipos estéticos en Chile"
+  description="Leasing, crédito o contado para equipos de estética profesional en Chile. Precios netos + IVA. Orientación Alta Qualità."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Financiamiento' }]} />
+
+  <section class="container-aq pb-8 pt-6">
+    <p class="eyebrow mb-2">Financiamiento</p>
+    <h1 class="mb-4">Leasing, crédito o contado: cómo se paga un equipo</h1>
+    <p class="prose-aq text-sm">
+      Una compra de $5 a $17 millones requiere claridad de flujo. Aquí documentamos las
+      modalidades disponibles. Condiciones numéricas (tasa, pie, plazo) se publican solo
+      cuando están confirmadas.
+    </p>
+  </section>
+
+  <section class="container-aq grid gap-4 pb-16 md:grid-cols-3">
+    {[
+      {
+        t: 'Contado',
+        d: 'Pago total neto + IVA. Acceso inmediato a ficha, instalación y mes Clinera.io según paquete.',
+      },
+      {
+        t: 'Crédito',
+        d: 'Financiamiento bancario o de consumo empresarial. Requisitos y tasa: por confirmar con entidad.',
+      },
+      {
+        t: 'Leasing',
+        d: 'Arrendamiento con opción de compra. Útil para preservar capital de trabajo. Condiciones: por confirmar.',
+      },
+    ].map((item) => (
+      <div class="card-line p-5">
+        <h2 class="!text-2xl mb-3">{item.t}</h2>
+        <p class="text-sm text-texto">{item.d}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="border-y border-linea bg-papel py-16">
+    <div class="container-aq">
+      <h2 class="mb-6">¿Qué datos de financiamiento faltan por confirmar?</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Campo</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            {['Tasa referencial', 'Pie mínimo', 'Plazo máximo (meses)', 'Partner financiero', 'Requisitos documentales'].map((f) => (
+              <tr>
+                <td>{f}</td>
+                <td><Pending /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-sm">
+        Guía relacionada:{' '}
+        <a href="/recursos/leasing-credito-contado-equipo-estetico-chile" class="link-text">
+          Leasing, crédito o contado
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="container-aq py-16">
+    <h2 class="mb-6">Solicitar evaluación de financiamiento</h2>
+    <LeadForm sourcePage="/financiamiento" />
+  </section>
+
+  <FAQ items={faq} />
+</Layout>

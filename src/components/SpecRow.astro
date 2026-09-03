@@ -1,0 +1,32 @@
+---
+import Pending from './Pending.astro';
+
+interface Spec {
+  label: string;
+  value: string | null;
+}
+
+interface Props {
+  specs: Spec[];
+  class?: string;
+}
+
+const { specs, class: className = '' } = Astro.props;
+---
+
+<div class:list={['grid grid-cols-2 border-t border-linea md:grid-cols-4', className]} role="list">
+  {
+    specs.map((spec) => (
+      <div class="border-linea px-0 py-3 md:border-r md:px-4 md:first:pl-0 md:last:border-r-0" role="listitem">
+        {spec.value ? (
+          <p class="font-mono text-base font-medium tracking-[0.04em] text-grafito" style="font-variant-numeric: tabular-nums;">
+            {spec.value}
+          </p>
+        ) : (
+          <Pending class="mb-1" />
+        )}
+        <p class="label-mono mt-1">{spec.label}</p>
+      </div>
+    ))
+  }
+</div>

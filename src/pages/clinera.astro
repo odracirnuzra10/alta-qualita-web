@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pending from '../components/Pending.astro';
+import FAQ from '../components/FAQ.astro';
+import LeadForm from '../components/LeadForm.astro';
+
+const faq = [
+  {
+    q: '¿Tengo que cambiar mi número de WhatsApp?',
+    a: 'No necesariamente. Clinera.io usa Meta Embedded Signup: cada clínica es dueña de su propia cuenta de WhatsApp Business. El número y la WABA pertenecen a la clínica, no al software.',
+  },
+  {
+    q: '¿Qué pasa si no quiero seguir después del mes gratis?',
+    a: 'Puedes no renovar. La política de cancelación, precios post-mes y portabilidad de datos se confirman por escrito. Campos numéricos pendientes aparecen como «por confirmar».',
+  },
+  {
+    q: '¿Funciona con una sola sucursal?',
+    a: 'Sí. Clinera.io opera desde una sola clínica o varias. El alcance exacto del mes gratis (número de sucursales/canales) se confirma al activar el beneficio con la compra del equipo.',
+  },
+  {
+    q: '¿Quién configura los tratamientos?',
+    a: 'El mismo equipo de ingenieros que acompaña la instalación del equipo configura Clinera.io: agenda, tratamientos y agentes. Plazos concretos se confirman en la implementación.',
+  },
+  {
+    q: '¿Mis datos de pacientes a quién pertenecen?',
+    a: 'Los datos de pacientes pertenecen a la clínica. La cuenta de WhatsApp Business también. Verifica siempre el contrato de tratamiento de datos antes de activar.',
+  },
+  {
+    q: '¿Clinera.io es confiable?',
+    a: 'Revisa hechos verificables y el canal de reclamos en /clinera-reclamos, y el sitio oficial clinera.io. No publicamos reseñas inventadas.',
+  },
+];
+---
+
+<Layout
+  title="Clinera.io partner oficial — agenda funcionando con tu equipo"
+  description="Por cada equipo Alta Qualità, un mes gratis de Clinera.io: AURA (WhatsApp), CAMILA (voz) y LIA (reportes). Implementado por el mismo equipo de ingenieros."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Clinera' }]} />
+
+  <section class="container-aq pb-10 pt-6">
+    <p class="eyebrow mb-2">Partner oficial Clinera.io</p>
+    <h1 class="mb-5">Tu equipo nuevo llega con la agenda ya funcionando</h1>
+    <p class="prose-aq text-sm">
+      Clinera.io es software con inteligencia artificial para clínicas médicas y estéticas
+      en Latinoamérica. Por cada equipo comprado en Alta Qualità, la clínica recibe un mes
+      gratis de Clinera.io, implementado por el mismo equipo de ingenieros. El competidor
+      entrega una máquina; Alta Qualità entrega la máquina y la agenda funcionando.
+    </p>
+  </section>
+
+  <section class="border-y border-linea bg-papel py-14">
+    <div class="container-aq">
+      <h2 class="mb-6">¿Qué incluye el mes gratis?</h2>
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Ítem</th>
+              <th scope="col">Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Agentes activos</td>
+              <td>AURA (WhatsApp), CAMILA (voz), LIA (reportes)</td>
+            </tr>
+            <tr>
+              <td>Número de clínicas / sucursales</td>
+              <td><Pending label="Alcance del mes gratis por confirmar" /></td>
+            </tr>
+            <tr>
+              <td>Canales incluidos</td>
+              <td><Pending label="Canales del plan por confirmar" /></td>
+            </tr>
+            <tr>
+              <td>Precio al mes siguiente</td>
+              <td><Pending label="Precio post-mes gratis por confirmar" /></td>
+            </tr>
+            <tr>
+              <td>Condiciones de renovación</td>
+              <td><Pending label="Condiciones por confirmar" /></td>
+            </tr>
+            <tr>
+              <td>Implementación</td>
+              <td>Mismo equipo de ingenieros que instala el equipo físico</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-aq py-14">
+    <h2 class="mb-6">¿Cómo se implementa?</h2>
+    <ol class="grid gap-4 md:grid-cols-4">
+      {[
+        ['01', 'Compra del equipo', 'Cierras la compra con Alta Qualità.'],
+        ['02', 'Alta Clinera', 'Se activa la cuenta y Embedded Signup de WhatsApp Business.'],
+        ['03', 'Configuración', 'Tratamientos, agenda y agentes (AURA, CAMILA, LIA).'],
+        ['04', 'Go-live', 'Agenda operativa. Plazo exacto: por confirmar.'],
+      ].map(([n, t, d]) => (
+        <li class="card-line p-4">
+          <p class="font-mono text-cobalto text-sm mb-2">{n}</p>
+          <h3 class="!text-lg mb-2">{t}</h3>
+          <p class="text-sm text-texto">{d}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="border-y border-linea py-14">
+    <div class="container-aq max-w-3xl">
+      <h2 class="mb-4">¿Qué problema resuelve?</h2>
+      <p class="prose-aq text-sm mb-4">
+        Clínicas pierden horas por no contestar WhatsApp a tiempo, pacientes que no vuelven
+        y agendas con huecos. Clinera.io automatiza agendamiento y seguimiento sin quitarle
+        a la clínica la propiedad de su número de WhatsApp Business.
+      </p>
+      <p class="text-sm text-acero">
+        Sin cifras inventadas de “X% más agendamientos”. Cuando existan métricas verificables
+        de clientes reales autorizados, se publicarán con fuente.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-aq py-14">
+    <h2 class="mb-4">Transparencia</h2>
+    <p class="prose-aq text-sm mb-4">
+      Sitio oficial:{' '}
+      <a href="https://clinera.io" class="link-text" rel="noopener noreferrer" target="_blank">clinera.io</a>.
+      Reclamos, opiniones y canal de soporte:{' '}
+      <a href="/clinera-reclamos" class="link-text">/clinera-reclamos</a>.
+    </p>
+  </section>
+
+  <section class="container-aq pb-16">
+    <h2 class="mb-6">Agenda demo del equipo + demo del software</h2>
+    <LeadForm sourcePage="/clinera" />
+  </section>
+
+  <FAQ items={faq} />
+</Layout>

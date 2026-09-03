@@ -1,0 +1,78 @@
+---
+import Logo from './Logo.astro';
+import { NAV_LINKS } from '../lib/site';
+
+const path = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-grafito/20 bg-grafito" style="height: 52px;">
+  <div class="container-aq flex h-[52px] items-center justify-between gap-4">
+    <Logo light />
+
+    <nav class="hidden items-center gap-5 lg:flex" aria-label="Principal">
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              'font-sans text-sm text-white/75 no-underline hover:text-blanco',
+              path === link.href || path.startsWith(link.href + '/') ? 'text-blanco' : '',
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="/contacto" class="btn-cobalto !py-2 !text-xs sm:!text-sm">Agendar demo</a>
+      <button
+        type="button"
+        class="inline-flex h-9 w-9 items-center justify-center border border-white/20 text-blanco lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        data-nav-toggle
+        aria-label="Abrir menú"
+      >
+        <span class="sr-only">Menú</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-nav" class="hidden border-t border-white/10 bg-grafito lg:hidden" hidden>
+    <nav class="container-aq flex flex-col gap-1 py-3" aria-label="Móvil">
+      {
+        NAV_LINKS.map((link) => (
+          <a href={link.href} class="py-2 font-sans text-sm text-white/80 no-underline hover:text-blanco">
+            {link.label}
+          </a>
+        ))
+      }
+      <a href="/contacto" class="py-2 font-sans text-sm text-cobalto no-underline">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.querySelector('[data-nav-toggle]');
+  const panel = document.getElementById('mobile-nav');
+  btn?.addEventListener('click', () => {
+    const open = panel?.hasAttribute('hidden') === false;
+    if (!panel || !btn) return;
+    if (open) {
+      panel.setAttribute('hidden', '');
+      panel.classList.add('hidden');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Abrir menú');
+    } else {
+      panel.removeAttribute('hidden');
+      panel.classList.remove('hidden');
+      btn.setAttribute('aria-expanded', 'true');
+      btn.setAttribute('aria-label', 'Cerrar menú');
+    }
+  });
+</script>

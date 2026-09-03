@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Pending from '../components/Pending.astro';
+import { getEquipos, formatCLP, priceParts } from '../lib/equipos';
+
+const equipos = getEquipos();
+---
+
+<Layout
+  title="Comparador de equipos de estética en Chile"
+  description="Compara precios netos + IVA y especificaciones técnicas de los 8 equipos Alta Qualità. Tabla HTML para decisión B2B."
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Comparador' }]} />
+
+  <section class="container-aq pb-16 pt-6">
+    <p class="eyebrow mb-2">Comparador interactivo</p>
+    <h1 class="mb-4">Compara equipos lado a lado</h1>
+    <p class="prose-aq mb-8 text-sm">
+      Selecciona hasta 4 equipos. Las celdas vacías son datos no confirmados.
+      Cifras destacadas en cobalto = precio neto.
+    </p>
+
+    <fieldset class="mb-8">
+      <legend class="label-mono mb-3">Selecciona equipos</legend>
+      <div class="flex flex-wrap gap-3" id="compare-select">
+        {
+          equipos.map((e) => (
+            <label class="inline-flex items-center gap-2 border border-linea px-3 py-2 text-sm">
+              <input type="checkbox" name="eq" value={e.slug} class="accent-cobalto" />
+              {e.name}
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <div class="overflow-x-auto">
+      <table id="compare-table">
+        <thead>
+          <tr>
+            <th scope="col">Campo</th>
+            {equipos.map((e) => (
+              <th scope="col" data-col={e.slug} class="compare-col">{e.name}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Categoría</th>
+            {equipos.map((e) => <td data-col={e.slug} class="compare-col">{e.category}</td>)}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Neto</th>
+            {equipos.map((e) => (
+              <td data-col={e.slug} class="compare-col font-mono font-medium text-cobalto">
+                ${formatCLP(e.priceNeto)}
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">IVA 19%</th>
+            {equipos.map((e) => (
+              <td data-col={e.slug} class="compare-col font-mono">${formatCLP(priceParts(e.priceNeto).iva)}</td>
+            ))}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Total</th>
+            {equipos.map((e) => (
+              <td data-col={e.slug} class="compare-col font-mono">${formatCLP(priceParts(e.priceNeto).total)}</td>
+            ))}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Origen</th>
+            {equipos.map((e) => <td data-col={e.slug} class="compare-col">{e.origin}</td>)}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Tecnología</th>
+            {equipos.map((e) => (
+              <td data-col={e.slug} class="compare-col">
+                {e.specs.tecnologia ? e.specs.tecnologia : <Pending />}
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Aplicación</th>
+            {equipos.map((e) => (
+              <td data-col={e.slug} class="compare-col">
+                {e.specs.aplicacion ? e.specs.aplicacion : <Pending />}
+              </td>
+            ))}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Garantía</th>
+            {equipos.map(() => (
+              <td class="compare-col"><Pending /></td>
+            ))}
+          </tr>
+          <tr>
+            <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Ficha</th>
+            {equipos.map((e) => (
+              <td data-col={e.slug} class="compare-col">
+                <a href={`/equipos/${e.slug}`} class="link-text">Ver</a>
+              </td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const boxes = document.querySelectorAll<HTMLInputElement>('#compare-select input');
+  const cols = document.querySelectorAll<HTMLElement>('[data-col]');
+
+  function sync() {
+    const selected = [...boxes].filter((b) => b.checked).map((b) => b.value);
+    // @ts-expect-error
+    if (typeof window.gtag === 'function') window.gtag('event', 'ver_comparador', { page_path: location.pathname });
+
+    if (selected.length === 0) {
+      cols.forEach((c) => c.classList.remove('hidden'));
+      return;
+    }
+    const limited = selected.slice(0, 4);
+    boxes.forEach((b) => {
+      if (!limited.includes(b.value) && b.checked) b.checked = false;
+      b.disabled = limited.length >= 4 && !limited.includes(b.value);
+    });
+    cols.forEach((c) => {
+      const slug = c.dataset.col!;
+      c.classList.toggle('hidden', !limited.includes(slug));
+    });
+  }
+
+  // Preselect first 4
+  boxes.forEach((b, i) => {
+    if (i < 4) b.checked = true;
+    b.addEventListener('change', sync);
+  });
+  sync();
+</script>

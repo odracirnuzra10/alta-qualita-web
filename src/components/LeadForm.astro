@@ -1,0 +1,151 @@
+---
+import { getEquipos } from '../lib/equipos';
+
+interface Props {
+  defaultEquipo?: string;
+  sourcePage?: string;
+}
+
+const { defaultEquipo = '', sourcePage = Astro.url.pathname } = Astro.props;
+const equipos = getEquipos();
+---
+
+<form
+  class="card-line grid gap-4 p-5 sm:p-6"
+  data-lead-form
+  data-source={sourcePage}
+  novalidate
+>
+  <div class="grid gap-4 sm:grid-cols-2">
+    <label class="block text-sm">
+      <span class="label-mono mb-1.5 block">Nombre</span>
+      <input
+        type="text"
+        name="nombre"
+        required
+        autocomplete="name"
+        class="w-full border border-linea bg-blanco px-3 py-2 font-sans text-sm text-grafito"
+      />
+      <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+    </label>
+    <label class="block text-sm">
+      <span class="label-mono mb-1.5 block">Clínica</span>
+      <input
+        type="text"
+        name="clinica"
+        required
+        class="w-full border border-linea bg-blanco px-3 py-2 font-sans text-sm text-grafito"
+      />
+      <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+    </label>
+    <label class="block text-sm">
+      <span class="label-mono mb-1.5 block">Ciudad</span>
+      <input
+        type="text"
+        name="ciudad"
+        required
+        autocomplete="address-level2"
+        class="w-full border border-linea bg-blanco px-3 py-2 font-sans text-sm text-grafito"
+      />
+      <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+    </label>
+    <label class="block text-sm">
+      <span class="label-mono mb-1.5 block">Equipo de interés</span>
+      <select
+        name="equipo"
+        required
+        class="w-full border border-linea bg-blanco px-3 py-2 font-sans text-sm text-grafito"
+      >
+        <option value="">Selecciona</option>
+        {equipos.map((e) => (
+          <option value={e.slug} selected={e.slug === defaultEquipo}>
+            {e.name}
+          </option>
+        ))}
+        <option value="varios">Varios / aún no sé</option>
+      </select>
+      <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+    </label>
+    <label class="block text-sm">
+      <span class="label-mono mb-1.5 block">Teléfono</span>
+      <input
+        type="tel"
+        name="telefono"
+        required
+        autocomplete="tel"
+        inputmode="tel"
+        class="w-full border border-linea bg-blanco px-3 py-2 font-sans text-sm text-grafito"
+      />
+      <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+    </label>
+    <label class="block text-sm">
+      <span class="label-mono mb-1.5 block">Correo</span>
+      <input
+        type="email"
+        name="correo"
+        required
+        autocomplete="email"
+        class="w-full border border-linea bg-blanco px-3 py-2 font-sans text-sm text-grafito"
+      />
+      <span class="mt-1 hidden text-xs text-red-700" data-error></span>
+    </label>
+  </div>
+
+  <p class="text-xs text-acero">Máximo seis campos. Validación en línea. Sin datos inventados.</p>
+
+  <button type="submit" class="btn-primary w-full sm:w-auto">Enviar solicitud de demo</button>
+  <p class="hidden text-sm text-grafito" data-success role="status">
+    Solicitud registrada. Te contactaremos para coordinar la demo.
+  </p>
+</form>
+
+<script>
+  function track(event: string, params: Record<string, string> = {}) {
+    // @ts-expect-error gtag optional
+    if (typeof window.gtag === 'function') {
+      // @ts-expect-error gtag optional
+      window.gtag('event', event, params);
+    }
+  }
+
+  document.querySelectorAll<HTMLFormElement>('[data-lead-form]').forEach((form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('input, select').forEach((el) => {
+        const field = el as HTMLInputElement | HTMLSelectElement;
+        const error = field.parentElement?.querySelector('[data-error]') as HTMLElement | null;
+        if (!field.checkValidity()) {
+          valid = false;
+          if (error) {
+            error.textContent =
+              field.type === 'email'
+                ? 'Ingresa un correo válido.'
+                : field.name === 'telefono'
+                  ? 'Ingresa un teléfono de contacto.'
+                  : 'Completa este campo.';
+            error.classList.remove('hidden');
+          }
+          field.setAttribute('aria-invalid', 'true');
+        } else if (error) {
+          error.classList.add('hidden');
+          field.removeAttribute('aria-invalid');
+        }
+      });
+      if (!valid) return;
+
+      const data = new FormData(form);
+      track('lead_enviado', {
+        equipo: String(data.get('equipo') || ''),
+        page_path: form.dataset.source || location.pathname,
+      });
+      track('agendar_demo', {
+        equipo: String(data.get('equipo') || ''),
+        page_path: form.dataset.source || location.pathname,
+      });
+
+      form.querySelector('[data-success]')?.classList.remove('hidden');
+      form.reset();
+    });
+  });
+</script>
