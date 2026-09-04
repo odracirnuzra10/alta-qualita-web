@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SpecRow from '../../components/SpecRow.astro';
 import PriceDisplay from '../../components/PriceDisplay.astro';
-import ProductPlaceholder from '../../components/ProductPlaceholder.astro';
+import ProductMedia from '../../components/ProductMedia.astro';
 import Pending from '../../components/Pending.astro';
 import FAQ from '../../components/FAQ.astro';
 import JsonLd from '../../components/JsonLd.astro';
@@ -39,6 +39,9 @@ const productLd = {
   brand: { '@type': 'Brand', name: 'Alta Qualità' },
   category: equipo.category,
   countryOfOrigin: 'KR',
+  ...(equipo.image
+    ? { image: `https://alta-qualita.cl${equipo.image}` }
+    : {}),
   offers: {
     '@type': 'Offer',
     price: equipo.priceNeto,
@@ -110,7 +113,7 @@ const productLd = {
         </p>
       </div>
 
-      <ProductPlaceholder name={equipo.name} fig="FIG. 01" />
+      <ProductMedia name={equipo.name} image={equipo.image} fig="FIG. 01" priority />
     </div>
 
     <!-- Specs table -->

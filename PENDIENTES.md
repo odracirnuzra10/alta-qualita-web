@@ -22,6 +22,9 @@ Regla: **no inventar**. Editar `src/data/equipos.json` y/o `src/lib/site.ts`.
 | Garantía | 12 meses |
 | SLA soporte | 48 horas |
 | Oferta Clinera | Implementación gratis (USD 450 → $0) + 3 meses con 50% off |
+| Fotos equipos | Adipolite, CorpoLift, SkinWave Max, iZed, CarboxCk (+ CorpoHera en disco, sin precio) |
+| Logo Clinera | SVG oficial desde Drive |
+| Nuevos equipos | Adipolite $4.000.000 · CorpoLift $11.000.000 · SkinWave Max $4.500.000 |
 
 ---
 
@@ -41,8 +44,10 @@ Regla: **no inventar**. Editar `src/data/equipos.json` y/o `src/lib/site.ts`.
 | Canales y horario de soporte | Vacío |
 | Financiamiento (tasa, pie, plazo, partner) | Vacío |
 
-### Equipos (los 8)
-Specs técnicas, certificaciones con número, qué incluye la compra (salvo garantía ya en 12 meses), ROI defaults, fotos reales, PDFs de ficha reales.  
+### Equipos (11 en catálogo)
+Specs técnicas, certificaciones con número, qué incluye la compra (salvo garantía ya en 12 meses), ROI defaults, PDFs de ficha reales.  
+Fotos pendientes: Sculpt-DD, Sculpt-DD Max, iZed Pro, CrioCK, KimiFace, EndoJiwoo.  
+**CorpoHera:** foto lista en `/img/equipos/corpohera.webp` — falta precio neto para publicar.  
 **Ambigüedad iZed (frío −5/−11 °C):** sin publicar hasta ficha oficial.
 
 ### Clinera (oferta)

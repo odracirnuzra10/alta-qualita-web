@@ -418,7 +418,7 @@ export const guiaBodies: Record<string, string> = {
 </table>
 
 <h2>¿Cuánto capital necesito según el equipo elegido?</h2>
-<p>Los precios netos confirmados en catálogo van desde $4.500.000 (Sculpt-DD) hasta $14.500.000 (iZed Pro), más IVA 19% si no lo recuperas como crédito fiscal. El desembolso inicial con financiamiento suele incluir pie, gastos de escrituración y primeras cuotas según la entidad —montos por confirmar en cada cotización crediticia.</p>
+<p>Los precios netos confirmados en catálogo van desde $4.000.000 (Adipolite) hasta $14.500.000 (iZed Pro), más IVA 19% si no lo recuperas como crédito fiscal. El desembolso inicial con financiamiento suele incluir pie, gastos de escrituración y primeras cuotas según la entidad —montos por confirmar en cada cotización crediticia.</p>
 <p>Modela tres equipos de referencia en la <a href="/retorno">calculadora de retorno</a> antes de elegir modalidad: a mayor capital, mayor cuota o mayor pie, según estructura del crédito.</p>
 
 <h2>¿Conviene pagar contado si tengo el capital?</h2>

@@ -9,7 +9,7 @@ const equipos = getEquipos();
 
 <Layout
   title="Comparador de equipos de estética en Chile"
-  description="Compara precios netos + IVA y especificaciones técnicas de los 8 equipos Alta Qualità. Tabla HTML para decisión B2B."
+  description={`Compara precios netos + IVA y especificaciones técnicas de los ${equipos.length} equipos Alta Qualità. Tabla HTML para decisión B2B.`}
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Comparador' }]} />
 
