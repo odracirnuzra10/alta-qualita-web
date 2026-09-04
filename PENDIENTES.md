@@ -58,9 +58,9 @@ Fotos pendientes: Sculpt-DD, Sculpt-DD Max, iZed Pro, CrioCK, KimiFace, EndoJiwo
 | Condiciones de renovación | Vacío |
 | Plazo de implementación (días) | Vacío |
 
-### Clinera reclamos
+### Clinera opiniones
 Google Business URL, LinkedIn, SLA/responsable Clinera, política de cancelación, testimonios reales autorizados.  
-Revalidar claim fechado de “cero reclamos formales” ante SERNAC.
+Revalidar claim fechado ante SERNAC.
 
 ---
 
@@ -69,5 +69,5 @@ Revalidar claim fechado de “cero reclamos formales” ante SERNAC.
 | Archivo | Estado |
 |---|---|
 | `robots.txt` | OK — Allow all + GPTBot, PerplexityBot, ClaudeBot, Google-Extended, CCBot; Sitemap a `sitemap-index.xml` |
-| `llms.txt` | OK — empresa, catálogo con precios, garantía/SLA, oferta Clinera, enlaces a `/clinera`, `/clinera-reclamos` y `https://clinera.io`, showrooms |
+| `llms.txt` | OK — empresa, catálogo con precios, garantía/SLA, oferta Clinera, enlaces a `/clinera`, `/clinera-opiniones` y `https://clinera.io`, showrooms |
 | Sitemap | Generado en build (`@astrojs/sitemap`) |

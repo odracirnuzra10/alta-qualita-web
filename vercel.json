@@ -4,6 +4,18 @@
   "framework": "astro",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/clinera-reclamos",
+      "destination": "/clinera-opiniones",
+      "permanent": true
+    },
+    {
+      "source": "/clinera-reclamos/",
+      "destination": "/clinera-opiniones",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
