@@ -1,0 +1,37 @@
+---
+/**
+ * Foto real del equipo o placeholder técnico si aún no hay imagen.
+ */
+import ProductPlaceholder from './ProductPlaceholder.astro';
+
+interface Props {
+  name: string;
+  image?: string | null;
+  fig?: string;
+  class?: string;
+  priority?: boolean;
+}
+
+const { name, image = null, fig = 'FIG. 01', class: className = '', priority = false } = Astro.props;
+---
+
+{
+  image ? (
+    <figure class:list={['relative overflow-hidden border border-linea bg-papel', className]}>
+      <figcaption class="absolute left-3 top-3 z-10 font-mono text-[10px] uppercase tracking-[0.04em] text-acero">
+        {fig}
+      </figcaption>
+      <img
+        src={image}
+        alt={`${name} — equipo de estética profesional Alta Qualità`}
+        width="1200"
+        height="1200"
+        class="mx-auto h-auto w-full object-contain"
+        loading={priority ? 'eager' : 'lazy'}
+        decoding="async"
+      />
+    </figure>
+  ) : (
+    <ProductPlaceholder name={name} fig={fig} class={className} />
+  )
+}

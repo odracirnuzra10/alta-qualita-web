@@ -5,11 +5,13 @@ import PriceDisplay from '../../components/PriceDisplay.astro';
 import { getEquipos, formatCLP, priceParts } from '../../lib/equipos';
 
 const equipos = getEquipos();
+const count = equipos.length;
+const minPrice = Math.min(...equipos.map((e) => e.priceNeto));
 ---
 
 <Layout
   title="Catálogo de equipos de estética coreanos en Chile"
-  description="Catálogo completo Alta Qualità: 8 equipos de estética profesional de origen coreano. Precios netos desde $4.500.000 + IVA. Fichas técnicas descargables."
+  description={`Catálogo completo Alta Qualità: ${count} equipos de estética profesional de origen coreano. Precios netos desde $${minPrice.toLocaleString('es-CL')} + IVA. Fichas técnicas descargables.`}
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Equipos' }]} />
 
@@ -17,7 +19,7 @@ const equipos = getEquipos();
     <p class="eyebrow mb-2">Catálogo completo</p>
     <h1 class="mb-4">Equipos de estética profesional</h1>
     <p class="prose-aq mb-10 text-sm">
-      Ocho equipos importados desde Corea del Sur. Precio neto, IVA 19% y total visibles
+      {count} equipos importados desde Corea del Sur. Precio neto, IVA 19% y total visibles
       en cada ficha. Specs vacías = «por confirmar», nunca inventadas.
     </p>
 
@@ -60,11 +62,24 @@ const equipos = getEquipos();
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {
         equipos.map((e) => (
-          <a href={`/equipos/${e.slug}`} class="card-line block p-5 no-underline hover:border-grafito">
-            <p class="label-mono mb-2">{e.category}</p>
-            <h2 class="!text-2xl mb-3">{e.name}</h2>
-            <PriceDisplay neto={e.priceNeto} />
-            <p class="mt-4 text-sm text-cobalto">Abrir ficha técnica →</p>
+          <a href={`/equipos/${e.slug}`} class="card-line block overflow-hidden no-underline hover:border-grafito">
+            {e.image ? (
+              <img
+                src={e.image}
+                alt=""
+                width="600"
+                height="600"
+                class="aspect-square w-full object-cover bg-papel"
+                loading="lazy"
+                decoding="async"
+              />
+            ) : null}
+            <div class="p-5">
+              <p class="label-mono mb-2">{e.category}</p>
+              <h2 class="!text-2xl mb-3">{e.name}</h2>
+              <PriceDisplay neto={e.priceNeto} />
+              <p class="mt-4 text-sm text-cobalto">Abrir ficha técnica →</p>
+            </div>
           </a>
         ))
       }

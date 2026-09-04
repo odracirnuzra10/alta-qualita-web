@@ -1,5 +1,88 @@
 [
   {
+    "slug": "adipolite",
+    "name": "Adipolite",
+    "category": "Contorno corporal",
+    "priceNeto": 4000000,
+    "origin": "Corea del Sur",
+    "image": "/img/equipos/adipolite.webp",
+    "intro": null,
+    "specsHighlight": [
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": "12 meses"
+      }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": "12 meses"
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": "12 meses",
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": [
+      "sculpt-dd",
+      "criock",
+      "corpolift"
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el Adipolite en Chile?",
+        "a": "El Adipolite tiene un precio neto de $4.000.000 + IVA 19% ($760.000). El total con IVA es $4.760.000. El precio no incluye instalación ni capacitación hasta que Alta Qualità confirme el paquete de compra."
+      },
+      {
+        "q": "¿De dónde es el Adipolite?",
+        "a": "El Adipolite es un equipo de estética profesional de origen coreano, importado a Chile por Alta Qualità. El origen coreano se declara en la ficha y en la documentación comercial."
+      },
+      {
+        "q": "¿Puedo descargar la ficha técnica del Adipolite sin dejar mis datos?",
+        "a": "Sí. La ficha técnica en PDF se descarga sin formulario. Alta Qualità captura el lead en agendar demo y cotizar, no bloqueando el dato técnico."
+      },
+      {
+        "q": "¿El Adipolite incluye la oferta Clinera.io?",
+        "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
+      }
+    ]
+  },
+  {
     "slug": "sculpt-dd",
     "name": "Sculpt-DD",
     "category": "Contorno corporal",
@@ -83,7 +166,8 @@
         "q": "¿El Sculpt-DD incluye la oferta Clinera.io?",
         "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
       }
-    ]
+    ],
+    "image": null
   },
   {
     "slug": "sculpt-dd-max",
@@ -168,6 +252,173 @@
       {
         "q": "¿La ficha PDF del Sculpt-DD Max requiere formulario?",
         "a": "No. La ficha técnica se descarga sin formulario. El lead se captura al agendar demo o cotizar."
+      }
+    ],
+    "image": null
+  },
+  {
+    "slug": "skinwave-max",
+    "name": "SkinWave Max",
+    "category": "Facial",
+    "priceNeto": 4500000,
+    "origin": "Corea del Sur",
+    "image": "/img/equipos/skinwave-max.webp",
+    "intro": null,
+    "specsHighlight": [
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": "12 meses"
+      }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": "12 meses"
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": "12 meses",
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": [
+      "kimiface",
+      "endojiwoo",
+      "carboxck"
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el SkinWave Max en Chile?",
+        "a": "El SkinWave Max tiene un precio neto de $4.500.000 + IVA 19% ($855.000). El total con IVA es $5.355.000. El precio no incluye instalación ni capacitación hasta que Alta Qualità confirme el paquete de compra."
+      },
+      {
+        "q": "¿De dónde es el SkinWave Max?",
+        "a": "El SkinWave Max es un equipo de estética profesional de origen coreano, importado a Chile por Alta Qualità. El origen coreano se declara en la ficha y en la documentación comercial."
+      },
+      {
+        "q": "¿Puedo descargar la ficha técnica del SkinWave Max sin dejar mis datos?",
+        "a": "Sí. La ficha técnica en PDF se descarga sin formulario. Alta Qualità captura el lead en agendar demo y cotizar, no bloqueando el dato técnico."
+      },
+      {
+        "q": "¿El SkinWave Max incluye la oferta Clinera.io?",
+        "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
+      }
+    ]
+  },
+  {
+    "slug": "corpolift",
+    "name": "CorpoLift",
+    "category": "Contorno corporal",
+    "priceNeto": 11000000,
+    "origin": "Corea del Sur",
+    "image": "/img/equipos/corpolift.webp",
+    "intro": null,
+    "specsHighlight": [
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": "12 meses"
+      }
+    ],
+    "specs": {
+      "tecnologia": null,
+      "aplicacion": null,
+      "potencia": null,
+      "frecuencia": null,
+      "temperatura": null,
+      "aplicadores": null,
+      "spot": null,
+      "duracionSesion": null,
+      "consumo": null,
+      "dimensiones": null,
+      "peso": null,
+      "certificaciones": null,
+      "origen": "Corea del Sur",
+      "garantia": "12 meses"
+    },
+    "certifications": {
+      "mfds": null,
+      "ce": null,
+      "iso13485": null,
+      "ispChile": null
+    },
+    "includes": {
+      "instalacion": null,
+      "capacitacionHoras": null,
+      "protocolos": null,
+      "garantia": "12 meses",
+      "repuestos": null
+    },
+    "roiDefaults": {
+      "precioSesion": null,
+      "sesionesMes": null
+    },
+    "related": [
+      "adipolite",
+      "sculpt-dd-max",
+      "ized"
+    ],
+    "faq": [
+      {
+        "q": "¿Cuánto cuesta el CorpoLift en Chile?",
+        "a": "El CorpoLift tiene un precio neto de $11.000.000 + IVA 19% ($2.090.000). El total con IVA es $13.090.000. El precio no incluye instalación ni capacitación hasta que Alta Qualità confirme el paquete de compra."
+      },
+      {
+        "q": "¿De dónde es el CorpoLift?",
+        "a": "El CorpoLift es un equipo de estética profesional de origen coreano, importado a Chile por Alta Qualità. El origen coreano se declara en la ficha y en la documentación comercial."
+      },
+      {
+        "q": "¿Puedo descargar la ficha técnica del CorpoLift sin dejar mis datos?",
+        "a": "Sí. La ficha técnica en PDF se descarga sin formulario. Alta Qualità captura el lead en agendar demo y cotizar, no bloqueando el dato técnico."
+      },
+      {
+        "q": "¿El CorpoLift incluye la oferta Clinera.io?",
+        "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
       }
     ]
   },
@@ -255,7 +506,8 @@
         "q": "¿Cómo calculo el retorno del iZed?",
         "a": "Usa la calculadora de retorno en alta-qualita.cl/retorno: precio de sesión × sesiones al mes ÷ inversión neta. Los supuestos quedan visibles y editables."
       }
-    ]
+    ],
+    "image": "/img/equipos/ized.webp"
   },
   {
     "slug": "ized-pro",
@@ -341,7 +593,8 @@
         "q": "¿Dónde veo la garantía del iZed Pro?",
         "a": "Los equipos Alta Qualità tienen 12 meses de garantía. El detalle de coberturas y exclusiones se confirma por escrito en la orden de compra."
       }
-    ]
+    ],
+    "image": null
   },
   {
     "slug": "criock",
@@ -427,7 +680,8 @@
         "q": "¿La ficha técnica del CrioCK se descarga gratis?",
         "a": "Sí. La descarga del PDF no exige formulario. El lead se captura al agendar demo o cotizar."
       }
-    ]
+    ],
+    "image": null
   },
   {
     "slug": "kimiface",
@@ -513,7 +767,8 @@
         "q": "¿Cómo agendo una demo del KimiFace?",
         "a": "Desde el botón «Agendar demo» de la ficha, la página de contacto o WhatsApp indicando KimiFace como equipo de interés."
       }
-    ]
+    ],
+    "image": null
   },
   {
     "slug": "endojiwoo",
@@ -599,7 +854,8 @@
         "q": "¿Incluye capacitación el EndoJiwoo?",
         "a": "La capacitación en horas se confirma en la cotización. El campo aparece como «por confirmar» hasta que el cliente entregue el dato definitivo."
       }
-    ]
+    ],
+    "image": null
   },
   {
     "slug": "carboxck",
@@ -685,6 +941,7 @@
         "q": "¿Puedo calcular el retorno del CarboxCk?",
         "a": "Sí. En alta-qualita.cl/retorno puedes simular meses para recuperar la inversión con precio de sesión y volumen mensual editables."
       }
-    ]
+    ],
+    "image": "/img/equipos/carboxck.webp"
   }
 ]
