@@ -3,11 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
+import { SITE } from '../lib/site';
+
+const garantia = SITE.trustBar.garantiaMeses;
+const sla = SITE.trustBar.soporteHoras;
 
 const faq = [
   {
     q: '¿Cuántos meses de garantía tienen los equipos Alta Qualità?',
-    a: 'El plazo en meses se publica cuando el proveedor lo confirma. Hasta entonces el campo aparece como «por confirmar» en la barra de confianza y en cada ficha.',
+    a: `Los equipos Alta Qualità tienen ${garantia} meses de garantía. El detalle de coberturas y exclusiones se confirma por escrito en la orden de compra.`,
   },
   {
     q: '¿Hay repuestos en Chile?',
@@ -15,7 +19,7 @@ const faq = [
   },
   {
     q: '¿Cuál es el tiempo de primera respuesta del soporte?',
-    a: 'El SLA en horas está pendiente de confirmación del cliente. No se publica un número inventado.',
+    a: `El SLA de primera respuesta es de ${sla} horas. Canales y horario de atención se confirman al cerrar la compra.`,
   },
   {
     q: '¿La capacitación está incluida?',
@@ -30,7 +34,7 @@ const faq = [
 
 <Layout
   title="Soporte técnico, garantía y repuestos"
-  description="Garantía, repuestos en Chile, SLA de soporte y capacitación incluida para equipos Alta Qualità. Datos confirmados o campos vacíos — sin humo."
+  description={`Garantía ${garantia} meses, repuestos en Chile, SLA de soporte en ${sla} horas y capacitación incluida para equipos Alta Qualità.`}
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Soporte técnico' }]} />
 
@@ -55,7 +59,7 @@ const faq = [
         <tbody>
           <tr>
             <td>Garantía (meses)</td>
-            <td><Pending label="Meses de garantía por confirmar" /></td>
+            <td>{garantia} meses</td>
           </tr>
           <tr>
             <td>Repuestos</td>
@@ -63,7 +67,7 @@ const faq = [
           </tr>
           <tr>
             <td>Soporte — primera respuesta</td>
-            <td class="inline-flex items-center gap-1">En <Pending label="Horas SLA por confirmar" /> horas</td>
+            <td>En {sla} horas</td>
           </tr>
           <tr>
             <td>Capacitación</td>

@@ -48,10 +48,18 @@ export const SITE = {
     credentials: null as string | null,
   },
   trustBar: {
-    garantiaMeses: null as string | null,
+    garantiaMeses: '12',
     repuestos: 'REPUESTOS EN STOCK',
-    soporteHoras: null as string | null,
+    soporteHoras: '48',
     capacitacion: 'CAPACITACIÓN INCLUIDA',
+  },
+  clineraOffer: {
+    implementationFeeUsd: 450,
+    implementationFeePromoUsd: 0,
+    discountMonths: 3,
+    discountPercent: 50,
+    summary:
+      'Implementación gratis (USD 450 → $0) y 3 meses con 50% de descuento',
   },
   lastUpdated: '2026-09',
   ivaRate: 0.19,

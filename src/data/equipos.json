@@ -7,10 +7,22 @@
     "origin": "Corea del Sur",
     "intro": null,
     "specsHighlight": [
-      { "label": "Tecnología", "value": null },
-      { "label": "Aplicadores", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": null,
@@ -26,7 +38,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -38,14 +50,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["sculpt-dd-max", "criock", "ized"],
+    "related": [
+      "sculpt-dd-max",
+      "criock",
+      "ized"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el Sculpt-DD en Chile?",
@@ -64,8 +80,8 @@
         "a": "El paquete de compra (instalación, horas de capacitación, protocolos, garantía y repuestos) se confirma al cotizar. Los campos pendientes aparecen como «por confirmar» hasta que el cliente entregue los datos definitivos."
       },
       {
-        "q": "¿El Sculpt-DD incluye un mes de Clinera.io?",
-        "a": "Sí. Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis de Clinera.io, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
+        "q": "¿El Sculpt-DD incluye la oferta Clinera.io?",
+        "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
       }
     ]
   },
@@ -77,10 +93,22 @@
     "origin": "Corea del Sur",
     "intro": null,
     "specsHighlight": [
-      { "label": "Tecnología", "value": null },
-      { "label": "Aplicadores", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": null,
@@ -96,7 +124,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -108,14 +136,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["sculpt-dd", "criock", "ized-pro"],
+    "related": [
+      "sculpt-dd",
+      "criock",
+      "ized-pro"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el Sculpt-DD Max en Chile?",
@@ -147,10 +179,22 @@
     "origin": "Corea del Sur",
     "intro": "El iZed es un equipo de electroestimulación muscular usado en clínicas estéticas para inducir contracciones profundas equivalentes a horas de entrenamiento. Se comercializa en Chile para centros médico-estéticos y profesionales independientes. Las especificaciones técnicas definitivas (incluyendo cualquier protocolo de frío) se confirman con la ficha del fabricante antes de publicar cifras.",
     "specsHighlight": [
-      { "label": "Tecnología", "value": "Electroestimulación muscular" },
-      { "label": "Aplicadores", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": "Electroestimulación muscular"
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": "Electroestimulación muscular",
@@ -166,7 +210,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -178,14 +222,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["ized-pro", "sculpt-dd", "criock"],
+    "related": [
+      "ized-pro",
+      "sculpt-dd",
+      "criock"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el iZed en Chile?",
@@ -217,10 +265,22 @@
     "origin": "Corea del Sur",
     "intro": "El iZed Pro es la versión de mayor ticket de la línea iZed de electroestimulación muscular de origen coreano. Está orientado a clínicas estéticas y centros médico-estéticos en Chile que buscan capacidad de alto volumen. Las especificaciones técnicas completas se publican cuando el fabricante las confirma.",
     "specsHighlight": [
-      { "label": "Tecnología", "value": "Electroestimulación muscular" },
-      { "label": "Aplicadores", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": "Electroestimulación muscular"
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": "Electroestimulación muscular",
@@ -236,7 +296,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -248,14 +308,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["ized", "criock", "sculpt-dd-max"],
+    "related": [
+      "ized",
+      "criock",
+      "sculpt-dd-max"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el iZed Pro en Chile?",
@@ -267,7 +331,7 @@
       },
       {
         "q": "¿El iZed Pro incluye Clinera.io?",
-        "a": "Sí. Cada compra de equipo en Alta Qualità incluye un mes gratis de Clinera.io implementado por el equipo de ingenieros."
+        "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
       },
       {
         "q": "¿Puedo financiar el iZed Pro?",
@@ -275,7 +339,7 @@
       },
       {
         "q": "¿Dónde veo la garantía del iZed Pro?",
-        "a": "El plazo de garantía en meses se publica cuando el proveedor lo confirma. Mientras tanto el campo aparece como «por confirmar» en la ficha."
+        "a": "Los equipos Alta Qualità tienen 12 meses de garantía. El detalle de coberturas y exclusiones se confirma por escrito en la orden de compra."
       }
     ]
   },
@@ -287,10 +351,22 @@
     "origin": "Corea del Sur",
     "intro": null,
     "specsHighlight": [
-      { "label": "Tecnología", "value": null },
-      { "label": "Aplicadores", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": null,
@@ -306,7 +382,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -318,14 +394,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["sculpt-dd", "ized", "carboxck"],
+    "related": [
+      "sculpt-dd",
+      "ized",
+      "carboxck"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta una máquina de criolipólisis CrioCK en Chile?",
@@ -357,10 +437,22 @@
     "origin": "Corea del Sur",
     "intro": null,
     "specsHighlight": [
-      { "label": "Tecnología", "value": null },
-      { "label": "Aplicadores", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": null
+      },
+      {
+        "label": "Aplicadores",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": null,
@@ -376,7 +468,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -388,14 +480,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["endojiwoo", "carboxck", "sculpt-dd"],
+    "related": [
+      "endojiwoo",
+      "carboxck",
+      "sculpt-dd"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el KimiFace en Chile?",
@@ -427,10 +523,22 @@
     "origin": "Corea del Sur",
     "intro": "El EndoJiwoo es un equipo de microfibra láser bajo la piel, orientado a óvalo facial y papada. Pertenece a la familia de lifting estructural profundo usada en clínicas de estética facial. Se importa desde Corea del Sur y se comercializa en Chile para centros médico-estéticos y profesionales independientes.",
     "specsHighlight": [
-      { "label": "Tecnología", "value": "Microfibra láser (endoláser)" },
-      { "label": "Aplicación", "value": "Óvalo facial y papada" },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": "Microfibra láser (endoláser)"
+      },
+      {
+        "label": "Aplicación",
+        "value": "Óvalo facial y papada"
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": "Microfibra láser (endoláser)",
@@ -446,7 +554,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -458,14 +566,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["kimiface", "carboxck", "ized"],
+    "related": [
+      "kimiface",
+      "carboxck",
+      "ized"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el EndoJiwoo en Chile?",
@@ -497,10 +609,22 @@
     "origin": "Corea del Sur",
     "intro": "El CarboxCk es un equipo de carboxiterapia: aplica CO₂ medicinal para oxigenar el tejido y mejorar la microcirculación. Se usa en clínicas estéticas para protocolos corporales y faciales según indicación profesional. Origen: Corea del Sur.",
     "specsHighlight": [
-      { "label": "Tecnología", "value": "Carboxiterapia (CO₂ medicinal)" },
-      { "label": "Aplicación", "value": null },
-      { "label": "Sesión", "value": null },
-      { "label": "Garantía", "value": null }
+      {
+        "label": "Tecnología",
+        "value": "Carboxiterapia (CO₂ medicinal)"
+      },
+      {
+        "label": "Aplicación",
+        "value": null
+      },
+      {
+        "label": "Sesión",
+        "value": null
+      },
+      {
+        "label": "Garantía",
+        "value": null
+      }
     ],
     "specs": {
       "tecnologia": "Carboxiterapia (CO₂ medicinal)",
@@ -516,7 +640,7 @@
       "peso": null,
       "certificaciones": null,
       "origen": "Corea del Sur",
-      "garantia": null
+      "garantia": "12 meses"
     },
     "certifications": {
       "mfds": null,
@@ -528,14 +652,18 @@
       "instalacion": null,
       "capacitacionHoras": null,
       "protocolos": null,
-      "garantia": null,
+      "garantia": "12 meses",
       "repuestos": null
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
-    "related": ["endojiwoo", "kimiface", "criock"],
+    "related": [
+      "endojiwoo",
+      "kimiface",
+      "criock"
+    ],
     "faq": [
       {
         "q": "¿Cuánto cuesta una máquina de carboxiterapia CarboxCk en Chile?",
