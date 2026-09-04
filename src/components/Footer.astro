@@ -1,6 +1,5 @@
 ---
 import Logo from './Logo.astro';
-import Pending from './Pending.astro';
 import { SITE } from '../lib/site';
 ---
 
@@ -11,6 +10,10 @@ import { SITE } from '../lib/site';
       <p class="prose-aq mt-4 text-sm text-acero">
         Importadora chilena de equipos de estética profesional de origen coreano.
         Showrooms en Vitacura, Concón y Los Ángeles.
+      </p>
+      <p class="mt-3 font-mono text-[10px] uppercase tracking-[0.06em] text-acero">
+        {SITE.legalName}<br />
+        RUT {SITE.rut}
       </p>
     </div>
 
@@ -36,7 +39,7 @@ import { SITE } from '../lib/site';
     </div>
 
     <div>
-      <p class="label-mono mb-3">Showrooms</p>
+      <p class="label-mono mb-3">Showrooms y contacto</p>
       <ul class="space-y-3 text-sm text-texto">
         {
           SITE.showrooms.map((s) => (
@@ -47,9 +50,13 @@ import { SITE } from '../lib/site';
             </li>
           ))
         }
-        <li class="flex flex-wrap items-center gap-2 pt-1">
-          Correo:
-          {SITE.email ? <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a> : <Pending />}
+        <li>
+          Correo:{' '}
+          <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a>
+        </li>
+        <li>
+          Tel. / WhatsApp:{' '}
+          <a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a>
         </li>
         <li><a href="/contacto" class="link-text">Formulario y agendar demo</a></li>
       </ul>
@@ -58,7 +65,7 @@ import { SITE } from '../lib/site';
 
   <div class="border-t border-linea">
     <div class="container-aq flex flex-col gap-2 py-4 font-mono text-[10px] uppercase tracking-[0.06em] text-acero sm:flex-row sm:justify-between">
-      <span>© {new Date().getFullYear()} Alta Qualità · Chile</span>
+      <span>© {new Date().getFullYear()} {SITE.legalName} · RUT {SITE.rut}</span>
       <span>Última actualización: {SITE.lastUpdated}</span>
       <span>Equipos de origen: Corea del Sur</span>
     </div>

@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
-import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
 import Showrooms from '../components/Showrooms.astro';
 import { SITE } from '../lib/site';
@@ -14,7 +13,7 @@ const wa = whatsappUrl('Hola Alta Qualità, quiero agendar una demo desde /conta
 const faq = [
   {
     q: '¿Cómo agendo una demo?',
-    a: 'Completa el formulario con nombre, clínica, ciudad, equipo de interés, teléfono y correo. También puedes visitar un showroom en Vitacura, Concón o Los Ángeles, o escribir por WhatsApp cuando el número esté publicado.',
+    a: 'Completa el formulario con nombre, clínica, ciudad, equipo de interés, teléfono y correo. También puedes visitar un showroom en Vitacura, Concón o Los Ángeles, o escribir por WhatsApp.',
   },
   {
     q: '¿Dónde están los showrooms?',
@@ -29,8 +28,8 @@ const faq = [
     a: 'Sí. En el campo «equipo de interés» elige «Varios / aún no sé» o indícalo en el seguimiento.',
   },
   {
-    q: '¿Cuánto demoran en responder?',
-    a: 'El SLA de primera respuesta está por confirmar. Aparece como pendiente hasta que el cliente entregue el compromiso en horas.',
+    q: '¿Cuál es el correo y teléfono de Alta Qualità?',
+    a: `Correo ${SITE.email}. Teléfono y WhatsApp ${SITE.phone}. Razón social: ${SITE.legalName}, RUT ${SITE.rut}.`,
   },
 ];
 ---
@@ -58,21 +57,22 @@ const faq = [
       <ul class="space-y-3 text-sm">
         <li class="flex flex-wrap items-center gap-2">
           <span class="label-mono">Correo</span>
-          {SITE.email ? <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a> : <Pending />}
+          <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a>
         </li>
         <li class="flex flex-wrap items-center gap-2">
           <span class="label-mono">Teléfono</span>
-          {SITE.phone ? <a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a> : <Pending />}
+          <a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a>
         </li>
         <li class="flex flex-wrap items-center gap-2">
           <span class="label-mono">WhatsApp</span>
-          {wa ? (
+          {wa && (
             <a href={wa} class="link-text" target="_blank" rel="noopener noreferrer" data-wa>
               Abrir chat
             </a>
-          ) : (
-            <Pending label="Número WhatsApp por confirmar" />
           )}
+        </li>
+        <li class="pt-2 font-mono text-[10px] uppercase tracking-[0.06em] text-acero">
+          {SITE.legalName} · RUT {SITE.rut}
         </li>
       </ul>
       <p class="mt-8 text-xs text-acero">

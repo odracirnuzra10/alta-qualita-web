@@ -1,0 +1,222 @@
+---
+/**
+ * Banner del convenio Clinera — rompe a propósito con la línea gráfica AQ
+ * (cobalto/filetes) usando la marca Clinera: ink, gradiente IA, mint, radios.
+ */
+interface Props {
+  equipoName?: string;
+  compact?: boolean;
+}
+
+const { equipoName, compact = false } = Astro.props;
+const title = equipoName
+  ? `Un mes de Clinera.io gratis con ${equipoName}`
+  : 'Tu equipo nuevo llega con la agenda ya funcionando';
+---
+
+<section
+  class:list={['clinera-break', compact ? 'clinera-break--compact' : '']}
+  aria-labelledby="clinera-banner-title"
+>
+  <div class="clinera-break__inner">
+    <div class="clinera-break__brand">
+      <img
+        src="/img/logo-clinera.png"
+        alt="Clinera.io"
+        width="220"
+        height="51"
+        class="clinera-break__logo"
+        loading="lazy"
+      />
+      <p class="clinera-break__badge">Partner oficial</p>
+    </div>
+
+    <div class="clinera-break__copy">
+      <h2 id="clinera-banner-title" class="clinera-break__title">{title}</h2>
+      <p class="clinera-break__text">
+        Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis de
+        Clinera.io — AURA (WhatsApp), CAMILA (voz) y LIA (reportes) — implementado por el
+        mismo equipo de ingenieros.
+      </p>
+      {
+        !compact && (
+          <ul class="clinera-break__agents">
+            <li><strong>AURA</strong> · agendamiento WhatsApp</li>
+            <li><strong>CAMILA</strong> · atención por voz</li>
+            <li><strong>LIA</strong> · reportes</li>
+          </ul>
+        )
+      }
+      <div class="clinera-break__actions">
+        <a href="/clinera" class="clinera-break__cta">Ver oferta Clinera</a>
+        <a href="https://clinera.io" class="clinera-break__link" rel="noopener noreferrer" target="_blank">
+          clinera.io ↗
+        </a>
+        <a href="/clinera-reclamos" class="clinera-break__link">Reclamos y opiniones</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .clinera-break {
+    /* Marca Clinera — contraste deliberado con AQ */
+    --cl-ink: #111318;
+    --cl-mint: #10b981;
+    --cl-cyan: #009fe3;
+    --cl-violet: #7c3aed;
+    --cl-magenta: #c850c0;
+    --cl-grad: linear-gradient(135deg, #009fe3 0%, #7c3aed 50%, #c850c0 100%);
+    margin: 0;
+    padding: 0;
+    background: var(--cl-ink);
+    color: #f4f5f7;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .clinera-break::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: var(--cl-grad);
+  }
+
+  .clinera-break::after {
+    content: '';
+    position: absolute;
+    right: -10%;
+    top: -40%;
+    width: 55%;
+    height: 180%;
+    background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.28), transparent 65%);
+    pointer-events: none;
+  }
+
+  .clinera-break__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 900px) {
+    .clinera-break__inner {
+      grid-template-columns: minmax(180px, 240px) 1fr;
+      align-items: center;
+      gap: 3rem;
+      padding: 3.5rem 1.5rem;
+    }
+  }
+
+  .clinera-break--compact .clinera-break__inner {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .clinera-break__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .clinera-break__logo {
+    width: min(220px, 100%);
+    height: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
+
+  .clinera-break__badge {
+    margin: 0;
+    font-family: 'Source Code Pro', ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cl-mint);
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    border-radius: 9999px;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .clinera-break__title {
+    margin: 0 0 0.75rem;
+    font-family: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: #fff;
+  }
+
+  .clinera-break__text {
+    margin: 0 0 1.25rem;
+    max-width: 58ch;
+    font-family: 'Plus Jakarta Sans', 'Source Sans 3', system-ui, sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(244, 245, 247, 0.82);
+  }
+
+  .clinera-break__agents {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.85rem;
+    color: rgba(244, 245, 247, 0.75);
+  }
+
+  .clinera-break__agents strong {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .clinera-break__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.25rem;
+  }
+
+  .clinera-break__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 1.25rem;
+    border-radius: 9999px;
+    background: var(--cl-mint);
+    color: #04140e;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter 150ms;
+  }
+
+  .clinera-break__cta:hover {
+    filter: brightness(1.08);
+  }
+
+  .clinera-break__link {
+    color: rgba(244, 245, 247, 0.85);
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-size: 0.875rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 159, 227, 0.6);
+  }
+
+  .clinera-break__link:hover {
+    color: #fff;
+    border-bottom-color: var(--cl-cyan);
+  }
+</style>

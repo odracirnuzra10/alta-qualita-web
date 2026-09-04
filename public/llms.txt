@@ -5,6 +5,14 @@
 > Idioma: es-CL
 > Audiencia: clínicas estéticas, centros médico-estéticos y profesionales independientes en Chile.
 
+## Empresa
+
+- Nombre comercial: Alta Qualità
+- Razón social: ALTA QUALITA LIMITADA
+- RUT: 77.838.377-2
+- Correo: ricardo@oacg.cl
+- Teléfono / WhatsApp: +56965031299
+
 ## Qué vende
 
 Ocho equipos de estética profesional. Precios **netos** en CLP (IVA 19% adicional):
@@ -26,7 +34,7 @@ Origen de todos los equipos: Corea del Sur. El nombre comercial es italiano; la 
 
 Por cada equipo comprado, la clínica recibe un mes gratis de Clinera.io (AURA, CAMILA, LIA), implementado por el mismo equipo de ingenieros.
 
-- Partner: https://alta-qualita.cl/clinera
+- Partner Alta Qualità: https://alta-qualita.cl/clinera
 - Reclamos y opiniones: https://alta-qualita.cl/clinera-reclamos
 - Sitio oficial Clinera: https://clinera.io
 

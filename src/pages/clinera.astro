@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
 import LeadForm from '../components/LeadForm.astro';
+import ClineraBanner from '../components/ClineraBanner.astro';
 
 const faq = [
   {
@@ -39,16 +40,7 @@ const faq = [
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Clinera' }]} />
 
-  <section class="container-aq pb-10 pt-6">
-    <p class="eyebrow mb-2">Partner oficial Clinera.io</p>
-    <h1 class="mb-5">Tu equipo nuevo llega con la agenda ya funcionando</h1>
-    <p class="prose-aq text-sm">
-      Clinera.io es software con inteligencia artificial para clínicas médicas y estéticas
-      en Latinoamérica. Por cada equipo comprado en Alta Qualità, la clínica recibe un mes
-      gratis de Clinera.io, implementado por el mismo equipo de ingenieros. El competidor
-      entrega una máquina; Alta Qualità entrega la máquina y la agenda funcionando.
-    </p>
-  </section>
+  <ClineraBanner />
 
   <section class="border-y border-linea bg-papel py-14">
     <div class="container-aq">
