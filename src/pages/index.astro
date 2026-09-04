@@ -26,7 +26,7 @@ const homeFaq = [
   },
   {
     q: '¿Qué es Clinera.io y por qué viene con el equipo?',
-    a: 'Clinera.io es software con IA para clínicas (agendamiento WhatsApp, voz y reportes). Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis implementado por el mismo equipo de ingenieros.',
+    a: 'Clinera.io es software con IA para clínicas (agendamiento WhatsApp, voz y reportes). Por cada equipo comprado en Alta Qualità: implementación gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros.',
   },
   {
     q: '¿Alta Qualità vende a clínicas en todo Chile?',
@@ -34,7 +34,7 @@ const homeFaq = [
   },
   {
     q: '¿Dónde veo garantía, repuestos y soporte?',
-    a: 'En /soporte-tecnico y en cada ficha. Los plazos en meses y el SLA en horas se publican cuando el cliente los confirma; mientras tanto aparecen como «por confirmar».',
+    a: 'En /soporte-tecnico y en cada ficha. Garantía: 12 meses. SLA de primera respuesta: 48 horas. Repuestos en stock en Chile y capacitación incluida.',
   },
   {
     q: '¿Cómo comparo varios equipos antes de comprar?',
@@ -49,14 +49,14 @@ const homeFaq = [
 const heroSpecs = [
   { label: 'Equipos en catálogo', value: '8' },
   { label: 'Origen', value: 'Corea del Sur' },
-  { label: 'Garantía (meses)', value: null },
-  { label: 'Soporte (horas)', value: null },
+  { label: 'Garantía (meses)', value: '12' },
+  { label: 'Soporte (horas)', value: '48' },
 ];
 ---
 
 <Layout
   title="Equipos de estética profesional coreanos en Chile"
-  description="Alta Qualità importa equipos de estética profesional de origen coreano a Chile. Precios netos + IVA visibles, fichas técnicas descargables y un mes de Clinera.io por compra."
+  description="Alta Qualità importa equipos de estética profesional de origen coreano a Chile. Precios netos + IVA visibles, fichas técnicas descargables y oferta Clinera.io (implementación gratis + 3 meses al 50%)."
 >
   <!-- 1. Hero -->
   <section class="border-b border-linea">
@@ -175,7 +175,7 @@ const heroSpecs = [
         <a href="/soporte-tecnico" class="btn-secondary mt-6 inline-flex">Ver soporte técnico</a>
       </div>
       <ul class="grid gap-3">
-        {['Garantía en meses (por confirmar)', 'Repuestos en stock en Chile', 'SLA de primera respuesta (por confirmar)', 'Capacitación incluida'].map((t) => (
+        {['Garantía 12 meses', 'Repuestos en stock en Chile', 'SLA de primera respuesta: 48 horas', 'Capacitación incluida'].map((t) => (
           <li class="border border-linea bg-papel px-4 py-3 font-mono text-xs uppercase tracking-[0.04em] text-grafito">{t}</li>
         ))}
       </ul>

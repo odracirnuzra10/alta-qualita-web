@@ -3,14 +3,17 @@
  * Banner del convenio Clinera — rompe a propósito con la línea gráfica AQ
  * (cobalto/filetes) usando la marca Clinera: ink, gradiente IA, mint, radios.
  */
+import { SITE } from '../lib/site';
+
 interface Props {
   equipoName?: string;
   compact?: boolean;
 }
 
 const { equipoName, compact = false } = Astro.props;
+const offer = SITE.clineraOffer;
 const title = equipoName
-  ? `Un mes de Clinera.io gratis con ${equipoName}`
+  ? `Clinera.io con ${equipoName}: implementación gratis + 3 meses al 50%`
   : 'Tu equipo nuevo llega con la agenda ya funcionando';
 ---
 
@@ -21,10 +24,10 @@ const title = equipoName
   <div class="clinera-break__inner">
     <div class="clinera-break__brand">
       <img
-        src="/img/logo-clinera.png"
+        src="/img/clinera-logo-white.svg"
         alt="Clinera.io"
         width="220"
-        height="51"
+        height="28"
         class="clinera-break__logo"
         loading="lazy"
       />
@@ -34,9 +37,10 @@ const title = equipoName
     <div class="clinera-break__copy">
       <h2 id="clinera-banner-title" class="clinera-break__title">{title}</h2>
       <p class="clinera-break__text">
-        Por cada equipo comprado en Alta Qualità, la clínica recibe un mes gratis de
-        Clinera.io — AURA (WhatsApp), CAMILA (voz) y LIA (reportes) — implementado por el
-        mismo equipo de ingenieros.
+        Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis
+        (USD {offer.implementationFeeUsd} → ${offer.implementationFeePromoUsd}) y{' '}
+        {offer.discountMonths} meses con {offer.discountPercent}% de descuento —
+        AURA (WhatsApp), CAMILA (voz) y LIA (reportes) — por el mismo equipo de ingenieros.
       </p>
       {
         !compact && (
@@ -129,7 +133,6 @@ const title = equipoName
     width: min(220px, 100%);
     height: auto;
     display: block;
-    filter: brightness(0) invert(1);
   }
 
   .clinera-break__badge {

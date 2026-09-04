@@ -5,6 +5,9 @@ import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ClineraBanner from '../components/ClineraBanner.astro';
+import { SITE } from '../lib/site';
+
+const offer = SITE.clineraOffer;
 
 const faq = [
   {
@@ -12,16 +15,16 @@ const faq = [
     a: 'No necesariamente. Clinera.io usa Meta Embedded Signup: cada clínica es dueña de su propia cuenta de WhatsApp Business. El número y la WABA pertenecen a la clínica, no al software.',
   },
   {
-    q: '¿Qué pasa si no quiero seguir después del mes gratis?',
-    a: 'Puedes no renovar. La política de cancelación, precios post-mes y portabilidad de datos se confirman por escrito. Campos numéricos pendientes aparecen como «por confirmar».',
+    q: '¿Qué pasa después de los 3 meses con 50% de descuento?',
+    a: 'Pasas al precio de lista vigente. La política de cancelación, el precio post-oferta y la portabilidad de datos se confirman por escrito. El precio de lista aparece como «por confirmar» hasta publicarlo.',
   },
   {
     q: '¿Funciona con una sola sucursal?',
-    a: 'Sí. Clinera.io opera desde una sola clínica o varias. El alcance exacto del mes gratis (número de sucursales/canales) se confirma al activar el beneficio con la compra del equipo.',
+    a: 'Sí. Clinera.io opera desde una sola clínica o varias. El alcance exacto de la oferta (número de sucursales/canales) se confirma al activar el beneficio con la compra del equipo.',
   },
   {
     q: '¿Quién configura los tratamientos?',
-    a: 'El mismo equipo de ingenieros que acompaña la instalación del equipo configura Clinera.io: agenda, tratamientos y agentes. Plazos concretos se confirman en la implementación.',
+    a: 'El mismo equipo de ingenieros que acompaña la instalación del equipo configura Clinera.io: agenda, tratamientos y agentes. La implementación tiene valor de lista USD 450 y con la compra del equipo pasa a $0.',
   },
   {
     q: '¿Mis datos de pacientes a quién pertenecen?',
@@ -36,7 +39,7 @@ const faq = [
 
 <Layout
   title="Clinera.io partner oficial — agenda funcionando con tu equipo"
-  description="Por cada equipo Alta Qualità, un mes gratis de Clinera.io: AURA (WhatsApp), CAMILA (voz) y LIA (reportes). Implementado por el mismo equipo de ingenieros."
+  description={`Por cada equipo Alta Qualità: ${offer.summary.toLowerCase()} de Clinera.io (AURA, CAMILA, LIA). Implementado por el mismo equipo de ingenieros.`}
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Clinera' }]} />
 
@@ -44,7 +47,7 @@ const faq = [
 
   <section class="border-y border-linea bg-papel py-14">
     <div class="container-aq">
-      <h2 class="mb-6">¿Qué incluye el mes gratis?</h2>
+      <h2 class="mb-6">¿Qué incluye la oferta Clinera?</h2>
       <div class="overflow-x-auto">
         <table>
           <thead>
@@ -59,24 +62,31 @@ const faq = [
               <td>AURA (WhatsApp), CAMILA (voz), LIA (reportes)</td>
             </tr>
             <tr>
+              <td>Implementación</td>
+              <td>
+                Gratis con compra de equipo (USD {offer.implementationFeeUsd} → ${offer.implementationFeePromoUsd}).
+                Mismo equipo de ingenieros que instala el equipo físico.
+              </td>
+            </tr>
+            <tr>
+              <td>Descuento inicial</td>
+              <td>{offer.discountMonths} meses con {offer.discountPercent}% de descuento</td>
+            </tr>
+            <tr>
               <td>Número de clínicas / sucursales</td>
-              <td><Pending label="Alcance del mes gratis por confirmar" /></td>
+              <td><Pending label="Alcance de la oferta por confirmar" /></td>
             </tr>
             <tr>
               <td>Canales incluidos</td>
               <td><Pending label="Canales del plan por confirmar" /></td>
             </tr>
             <tr>
-              <td>Precio al mes siguiente</td>
-              <td><Pending label="Precio post-mes gratis por confirmar" /></td>
+              <td>Precio de lista post-oferta</td>
+              <td><Pending label="Precio de lista post-oferta por confirmar" /></td>
             </tr>
             <tr>
               <td>Condiciones de renovación</td>
               <td><Pending label="Condiciones por confirmar" /></td>
-            </tr>
-            <tr>
-              <td>Implementación</td>
-              <td>Mismo equipo de ingenieros que instala el equipo físico</td>
             </tr>
           </tbody>
         </table>
@@ -90,7 +100,7 @@ const faq = [
       {[
         ['01', 'Compra del equipo', 'Cierras la compra con Alta Qualità.'],
         ['02', 'Alta Clinera', 'Se activa la cuenta y Embedded Signup de WhatsApp Business.'],
-        ['03', 'Configuración', 'Tratamientos, agenda y agentes (AURA, CAMILA, LIA).'],
+        ['03', 'Configuración', 'Tratamientos, agenda y agentes (AURA, CAMILA, LIA). Implementación a $0.'],
         ['04', 'Go-live', 'Agenda operativa. Plazo exacto: por confirmar.'],
       ].map(([n, t, d]) => (
         <li class="card-line p-4">

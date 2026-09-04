@@ -19,6 +19,9 @@ Regla: **no inventar**. Editar `src/data/equipos.json` y/o `src/lib/site.ts`.
 | Showroom Los Ángeles | Av. Gabriela Mistral 269 |
 | Tipografía | Editorial clínico (Fraunces / Source Sans 3 / Source Code Pro) |
 | Banner Clinera | Marca Clinera (logo + ink/mint/gradiente) |
+| Garantía | 12 meses |
+| SLA soporte | 48 horas |
+| Oferta Clinera | Implementación gratis (USD 450 → $0) + 3 meses con 50% off |
 
 ---
 
@@ -35,20 +38,18 @@ Regla: **no inventar**. Editar `src/data/equipos.json` y/o `src/lib/site.ts`.
 ### Comercial / soporte AQ
 | Campo | Estado |
 |---|---|
-| Garantía — meses | Vacío |
-| SLA soporte — horas | Vacío |
 | Canales y horario de soporte | Vacío |
 | Financiamiento (tasa, pie, plazo, partner) | Vacío |
 
 ### Equipos (los 8)
-Specs técnicas, certificaciones con número, qué incluye la compra, ROI defaults, fotos reales, PDFs de ficha reales.  
+Specs técnicas, certificaciones con número, qué incluye la compra (salvo garantía ya en 12 meses), ROI defaults, fotos reales, PDFs de ficha reales.  
 **Ambigüedad iZed (frío −5/−11 °C):** sin publicar hasta ficha oficial.
 
 ### Clinera (oferta)
 | Campo | Estado |
 |---|---|
-| Sucursales / canales del mes gratis | Vacío |
-| Precio al mes siguiente | Vacío |
+| Sucursales / canales de la oferta | Vacío |
+| Precio de lista post-oferta | Vacío |
 | Condiciones de renovación | Vacío |
 | Plazo de implementación (días) | Vacío |
 
@@ -63,5 +64,5 @@ Revalidar claim fechado de “cero reclamos formales” ante SERNAC.
 | Archivo | Estado |
 |---|---|
 | `robots.txt` | OK — Allow all + GPTBot, PerplexityBot, ClaudeBot, Google-Extended, CCBot; Sitemap a `sitemap-index.xml` |
-| `llms.txt` | OK — empresa, catálogo con precios, **enlaces a `/clinera`, `/clinera-reclamos` y `https://clinera.io`**, showrooms |
+| `llms.txt` | OK — empresa, catálogo con precios, garantía/SLA, oferta Clinera, enlaces a `/clinera`, `/clinera-reclamos` y `https://clinera.io`, showrooms |
 | Sitemap | Generado en build (`@astrojs/sitemap`) |
