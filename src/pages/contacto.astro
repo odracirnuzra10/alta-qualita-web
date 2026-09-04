@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
 import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
+import Showrooms from '../components/Showrooms.astro';
 import { SITE } from '../lib/site';
 import { whatsappUrl } from '../lib/equipos';
 
@@ -13,19 +14,19 @@ const wa = whatsappUrl('Hola Alta Qualità, quiero agendar una demo desde /conta
 const faq = [
   {
     q: '¿Cómo agendo una demo?',
-    a: 'Completa el formulario con nombre, clínica, ciudad, equipo de interés, teléfono y correo. También puedes escribir por WhatsApp cuando el número esté publicado.',
+    a: 'Completa el formulario con nombre, clínica, ciudad, equipo de interés, teléfono y correo. También puedes visitar un showroom en Vitacura, Concón o Los Ángeles, o escribir por WhatsApp cuando el número esté publicado.',
+  },
+  {
+    q: '¿Dónde están los showrooms?',
+    a: 'Vitacura: Los Abedules 3085. Concón: Las Pelargonias 843, Oficina 1112. Los Ángeles: Av. Gabriela Mistral 269. Agenda la visita desde este formulario indicando la ciudad.',
   },
   {
     q: '¿La demo tiene costo?',
-    a: 'Las condiciones de la demo (presencial, en clínica o showroom) se confirman al coordinar. No se publica un cobro inventado.',
+    a: 'Las condiciones de la demo (presencial en showroom, en clínica o remota) se confirman al coordinar. No se publica un cobro inventado.',
   },
   {
     q: '¿Puedo cotizar varios equipos?',
     a: 'Sí. En el campo «equipo de interés» elige «Varios / aún no sé» o indícalo en el seguimiento.',
-  },
-  {
-    q: '¿Responden fuera de Santiago?',
-    a: 'Alta Qualità atiende clínicas en Chile. Cobertura exacta de visitas técnicas se confirma según ciudad.',
   },
   {
     q: '¿Cuánto demoran en responder?',
@@ -36,7 +37,7 @@ const faq = [
 
 <Layout
   title="Contacto — agendar demo y cotizar"
-  description="Agenda una demo o cotiza equipos de estética Alta Qualità. Formulario de 6 campos + WhatsApp. Chile."
+  description="Agenda una demo en showroom Vitacura, Concón o Los Ángeles, o cotiza equipos Alta Qualità. Formulario de 6 campos."
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Contacto' }]} />
 
@@ -45,14 +46,15 @@ const faq = [
     <h1 class="mb-4">Agendar demo / cotizar</h1>
     <p class="prose-aq text-sm">
       Seis campos. Validación en línea. Sin bloquear la descarga de fichas técnicas.
+      Puedes agendar en cualquiera de los tres showrooms.
     </p>
   </section>
 
-  <section class="container-aq grid gap-10 pb-16 lg:grid-cols-2">
+  <section class="container-aq grid gap-10 pb-12 lg:grid-cols-2">
     <LeadForm defaultEquipo={equipoParam} sourcePage="/contacto" />
 
     <div>
-      <h2 class="!text-2xl mb-4">Otros canales</h2>
+      <h2 class="mb-4">Otros canales</h2>
       <ul class="space-y-3 text-sm">
         <li class="flex flex-wrap items-center gap-2">
           <span class="label-mono">Correo</span>
@@ -76,6 +78,14 @@ const faq = [
       <p class="mt-8 text-xs text-acero">
         Última actualización de esta página: {SITE.lastUpdated}
       </p>
+    </div>
+  </section>
+
+  <section class="border-y border-linea bg-papel py-14" aria-labelledby="showrooms-title">
+    <div class="container-aq">
+      <p class="eyebrow mb-2">Presencia en Chile</p>
+      <h2 id="showrooms-title" class="mb-6">Showrooms</h2>
+      <Showrooms />
     </div>
   </section>
 

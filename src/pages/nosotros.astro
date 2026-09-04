@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
+import Showrooms from '../components/Showrooms.astro';
 
 const faq = [
   {
@@ -15,7 +16,7 @@ const faq = [
   },
   {
     q: '¿Dónde están ubicados?',
-    a: 'Operan en Chile. Dirección exacta, teléfono y correo se publican cuando el cliente los confirma; mientras tanto aparecen como «por confirmar».',
+    a: 'Showrooms en Vitacura (Los Abedules 3085), Concón (Las Pelargonias 843, Oficina 1112) y Los Ángeles (Av. Gabriela Mistral 269). Agenda una visita desde /contacto.',
   },
   {
     q: '¿Alta Qualità está relacionada con Método Hebe o Protocolo Lumina?',
@@ -23,14 +24,14 @@ const faq = [
   },
   {
     q: '¿Cómo contacto a Alta Qualità?',
-    a: 'Desde /contacto: formulario de demo, o WhatsApp cuando el número esté confirmado.',
+    a: 'Desde /contacto: formulario de demo, visita a showroom, o WhatsApp cuando el número esté confirmado.',
   },
 ];
 ---
 
 <Layout
   title="Nosotros — por qué equipos coreanos"
-  description="Alta Qualità: importadora chilena de equipos de estética profesional de origen coreano. Quiénes somos y por qué Corea."
+  description="Alta Qualità: importadora chilena de equipos de estética profesional de origen coreano. Showrooms en Vitacura, Concón y Los Ángeles."
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Nosotros' }]} />
 
@@ -49,31 +50,40 @@ const faq = [
     </p>
   </section>
 
-  <section class="border-y border-linea bg-papel py-14">
+  <section class="border-y border-linea bg-papel py-14" aria-labelledby="showrooms-nos">
     <div class="container-aq">
-      <h2 class="mb-6">Datos de la empresa</h2>
-      <div class="overflow-x-auto">
-        <table>
-          <thead>
-            <tr><th scope="col">Campo</th><th scope="col">Valor</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Nombre comercial</td><td>Alta Qualità</td></tr>
-            <tr><td>Razón social</td><td><Pending /></td></tr>
-            <tr><td>RUT</td><td><Pending /></td></tr>
-            <tr><td>Dirección</td><td><Pending /></td></tr>
-            <tr><td>Ciudad</td><td><Pending /></td></tr>
-            <tr><td>Correo</td><td><Pending /></td></tr>
-            <tr><td>Teléfono</td><td><Pending /></td></tr>
-            <tr><td>País de operación</td><td>Chile</td></tr>
-            <tr><td>Origen de equipos</td><td>Corea del Sur</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <h2 id="showrooms-nos" class="mb-3">¿Dónde ver los equipos?</h2>
+      <p class="prose-aq mb-8 text-sm">
+        Tres showrooms en Chile para demo presencial. Coordina la visita desde contacto.
+      </p>
+      <Showrooms />
     </div>
   </section>
 
   <section class="container-aq py-14">
+    <h2 class="mb-6">Datos de la empresa</h2>
+    <div class="overflow-x-auto">
+      <table>
+        <thead>
+          <tr><th scope="col">Campo</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nombre comercial</td><td>Alta Qualità</td></tr>
+          <tr><td>Razón social</td><td><Pending /></td></tr>
+          <tr><td>RUT</td><td><Pending /></td></tr>
+          <tr><td>Showroom Vitacura</td><td>Los Abedules 3085, Vitacura</td></tr>
+          <tr><td>Showroom Concón</td><td>Las Pelargonias 843, Oficina 1112, Concón</td></tr>
+          <tr><td>Showroom Los Ángeles</td><td>Av. Gabriela Mistral 269, Los Ángeles</td></tr>
+          <tr><td>Correo</td><td><Pending /></td></tr>
+          <tr><td>Teléfono</td><td><Pending /></td></tr>
+          <tr><td>País de operación</td><td>Chile</td></tr>
+          <tr><td>Origen de equipos</td><td>Corea del Sur</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="container-aq pb-14">
     <h2 class="mb-4">¿Por qué equipos coreanos?</h2>
     <p class="prose-aq text-sm mb-4">
       Corea del Sur concentra fabricantes de dispositivos estéticos con trazabilidad MFDS,

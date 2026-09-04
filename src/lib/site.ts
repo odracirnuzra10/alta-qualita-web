@@ -5,16 +5,36 @@ export const SITE = {
   locale: 'es-CL',
   tagline: 'Equipos de estética profesional de origen coreano',
   description:
-    'Alta Qualità es una importadora chilena de equipos de estética profesional de origen coreano. Vende a clínicas estéticas, centros médico-estéticos y profesionales independientes en Chile.',
+    'Alta Qualità es una importadora chilena de equipos de estética profesional de origen coreano. Vende a clínicas estéticas, centros médico-estéticos y profesionales independientes en Chile. Showrooms en Vitacura, Concón y Los Ángeles.',
   email: null as string | null, // Por confirmar
   phone: null as string | null, // Por confirmar
   whatsapp: null as string | null, // Por confirmar — formato internacional sin +
   address: {
-    street: null as string | null,
-    city: null as string | null,
-    region: null as string | null,
+    street: 'Los Abedules 3085',
+    city: 'Vitacura',
+    region: 'Región Metropolitana',
     country: 'CL',
   },
+  showrooms: [
+    {
+      city: 'Vitacura',
+      region: 'Región Metropolitana',
+      street: 'Los Abedules 3085',
+      label: 'Showroom Vitacura',
+    },
+    {
+      city: 'Concón',
+      region: 'Región de Valparaíso',
+      street: 'Las Pelargonias 843, Oficina 1112',
+      label: 'Showroom Concón',
+    },
+    {
+      city: 'Los Ángeles',
+      region: 'Región del Biobío',
+      street: 'Av. Gabriela Mistral 269',
+      label: 'Showroom Los Ángeles',
+    },
+  ] as const,
   social: {
     // sameAs reales cuando existan
     instagram: null as string | null,
@@ -36,6 +56,8 @@ export const SITE = {
   lastUpdated: '2026-09',
   ivaRate: 0.19,
 } as const;
+
+export type Showroom = (typeof SITE.showrooms)[number];
 
 export const NAV_LINKS = [
   { href: '/equipos', label: 'Equipos' },

@@ -40,6 +40,24 @@ const orgLd = {
   areaServed: 'CL',
   ...(SITE.email ? { email: SITE.email } : {}),
   ...(SITE.phone ? { telephone: SITE.phone } : {}),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.city,
+    addressRegion: SITE.address.region,
+    addressCountry: SITE.address.country,
+  },
+  location: SITE.showrooms.map((s) => ({
+    '@type': 'Place',
+    name: s.label,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: s.street,
+      addressLocality: s.city,
+      addressRegion: s.region,
+      addressCountry: 'CL',
+    },
+  })),
   sameAs: [SITE.social.instagram, SITE.social.linkedin, SITE.social.facebook].filter(Boolean),
 };
 
@@ -83,7 +101,7 @@ const websiteLd = {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 

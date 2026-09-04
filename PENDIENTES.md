@@ -15,7 +15,11 @@ Regla del proyecto: **no inventar**. Cuando entregues el dato, edita `src/data/e
 | Correo (`email`) | Vacío |
 | Teléfono (`phone`) | Vacío |
 | WhatsApp (`whatsapp`, formato internacional sin +) | Vacío |
-| Dirección (calle, ciudad, región) | Vacío |
+| Dirección (calle, ciudad, región) | **Completado** — 3 showrooms |
+| Showroom Vitacura | Los Abedules 3085 |
+| Showroom Concón | Las Pelargonias 843, Oficina 1112 |
+| Showroom Los Ángeles | Av. Gabriela Mistral 269 |
+
 | Redes `sameAs` (Instagram, LinkedIn, Facebook) | Vacío |
 | GA4 Measurement ID (`ga4Id`) | Vacío |
 | Autor con nombre y credenciales | Vacío (queda “Equipo técnico Alta Qualità”) |
@@ -133,7 +137,8 @@ Redacción actual fechada al **3 de septiembre de 2026**.
 
 | Campo | Estado |
 |---|---|
-| Razón social, RUT, dirección, ciudad, correo, teléfono | Vacío |
+| Razón social, RUT, correo, teléfono | Vacío |
+| Showrooms (Vitacura, Concón, Los Ángeles) | **Completado** |
 
 ---
 

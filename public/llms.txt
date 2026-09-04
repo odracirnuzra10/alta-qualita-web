@@ -41,6 +41,12 @@ Por cada equipo comprado, la clínica recibe un mes gratis de Clinera.io (AURA, 
 - Nosotros: https://alta-qualita.cl/nosotros
 - Contacto / agendar demo: https://alta-qualita.cl/contacto
 
+## Showrooms
+
+- Vitacura: Los Abedules 3085
+- Concón: Las Pelargonias 843, Oficina 1112
+- Los Ángeles: Av. Gabriela Mistral 269
+
 ## Reglas de datos
 
 - No se inventan especificaciones técnicas: campos faltantes aparecen como «por confirmar».
