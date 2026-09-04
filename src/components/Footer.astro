@@ -10,6 +10,7 @@ import { SITE } from '../lib/site';
       <Logo />
       <p class="prose-aq mt-4 text-sm text-acero">
         Importadora chilena de equipos de estética profesional de origen coreano.
+        Showrooms en Vitacura, Concón y Los Ángeles.
       </p>
     </div>
 
@@ -35,19 +36,20 @@ import { SITE } from '../lib/site';
     </div>
 
     <div>
-      <p class="label-mono mb-3">Contacto</p>
-      <ul class="space-y-2 text-sm text-texto">
-        <li class="flex items-center gap-2">
+      <p class="label-mono mb-3">Showrooms</p>
+      <ul class="space-y-3 text-sm text-texto">
+        {
+          SITE.showrooms.map((s) => (
+            <li>
+              <span class="font-semibold text-grafito">{s.city}</span>
+              <br />
+              <span class="text-acero">{s.street}</span>
+            </li>
+          ))
+        }
+        <li class="flex flex-wrap items-center gap-2 pt-1">
           Correo:
           {SITE.email ? <a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a> : <Pending />}
-        </li>
-        <li class="flex items-center gap-2">
-          Teléfono:
-          {SITE.phone ? <a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a> : <Pending />}
-        </li>
-        <li class="flex items-center gap-2">
-          Ciudad:
-          {SITE.address.city ? <span>{SITE.address.city}, Chile</span> : <Pending />}
         </li>
         <li><a href="/contacto" class="link-text">Formulario y agendar demo</a></li>
       </ul>
@@ -55,7 +57,7 @@ import { SITE } from '../lib/site';
   </div>
 
   <div class="border-t border-linea">
-    <div class="container-aq flex flex-col gap-2 py-4 font-mono text-[10px] uppercase tracking-[0.04em] text-acero sm:flex-row sm:justify-between">
+    <div class="container-aq flex flex-col gap-2 py-4 font-mono text-[10px] uppercase tracking-[0.06em] text-acero sm:flex-row sm:justify-between">
       <span>© {new Date().getFullYear()} Alta Qualità · Chile</span>
       <span>Última actualización: {SITE.lastUpdated}</span>
       <span>Equipos de origen: Corea del Sur</span>

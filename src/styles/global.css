@@ -9,9 +9,10 @@
   --color-linea: #d9dde0;
   --color-texto: #41474d;
 
-  --font-display: "Barlow Condensed", sans-serif;
-  --font-sans: "Barlow", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  /* Editorial clínico */
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Source Sans Pro", sans-serif;
+  --font-mono: "Source Code Pro", ui-monospace, monospace;
 
   --max-width-content: 1180px;
 }
@@ -37,7 +38,8 @@
 
   body {
     @apply bg-blanco text-texto font-sans antialiased;
-    line-height: 1.6;
+    line-height: 1.65;
+    font-size: 1.0625rem; /* 17px — lectura editorial */
   }
 
   :focus-visible {
@@ -49,28 +51,30 @@
   h2,
   .heading-display {
     font-family: var(--font-display);
-    font-weight: 700;
-    text-transform: uppercase;
-    line-height: 0.98;
-    letter-spacing: -0.005em;
+    font-weight: 600;
+    text-transform: none;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
     color: var(--color-grafito);
+    font-optical-sizing: auto;
   }
 
   h1 {
-    font-size: clamp(2.125rem, 4vw, 4rem); /* 34–64px */
+    font-size: clamp(2rem, 4.2vw, 3.5rem); /* ~32–56px */
+    font-weight: 650;
   }
 
   h2 {
-    font-size: clamp(1.75rem, 3vw, 2.625rem); /* ~28–42px */
+    font-size: clamp(1.5rem, 2.8vw, 2.25rem); /* ~24–36px */
   }
 
   h3 {
     font-family: var(--font-display);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: -0.005em;
-    line-height: 1.05;
-    font-size: clamp(1.5rem, 2vw, 1.75rem);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    font-size: clamp(1.25rem, 1.8vw, 1.5rem);
     color: var(--color-grafito);
   }
 
@@ -84,7 +88,7 @@
 
   th,
   td {
-    @apply border border-linea px-3 py-2 align-top;
+    @apply border border-linea px-3 py-2.5 align-top;
   }
 
   th {
@@ -98,11 +102,11 @@
   }
 
   .eyebrow {
-    @apply font-mono text-[11px] uppercase tracking-[0.04em] text-cobalto;
+    @apply font-mono text-[11px] uppercase tracking-[0.06em] text-cobalto;
   }
 
   .label-mono {
-    @apply font-mono text-[9px] uppercase tracking-[0.04em] text-acero;
+    @apply font-mono text-[9px] uppercase tracking-[0.06em] text-acero;
     font-variant-numeric: tabular-nums;
   }
 
@@ -111,7 +115,7 @@
   .btn-cobalto,
   .btn-secondary,
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 font-sans text-sm font-medium transition-colors duration-150 no-underline;
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 font-sans text-sm font-semibold transition-colors duration-150 no-underline;
     border-radius: 2px;
   }
 
@@ -136,7 +140,8 @@
   }
 
   .prose-aq {
-    @apply max-w-[65ch] text-texto;
+    @apply max-w-[68ch] text-texto;
+    line-height: 1.7;
   }
 
   .prose-aq p {
