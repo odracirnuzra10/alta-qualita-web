@@ -7,6 +7,7 @@ import ProductPlaceholder from '../../components/ProductPlaceholder.astro';
 import Pending from '../../components/Pending.astro';
 import FAQ from '../../components/FAQ.astro';
 import JsonLd from '../../components/JsonLd.astro';
+import ClineraBanner from '../../components/ClineraBanner.astro';
 import { getEquipos, getEquipo, formatCLP, priceParts } from '../../lib/equipos';
 import { SPEC_LABELS, SITE } from '../../lib/site';
 
@@ -236,15 +237,10 @@ const productLd = {
       <a href={`/retorno?equipo=${equipo.slug}`} class="link-text mt-4 inline-block text-sm">Abrir calculadora completa →</a>
     </section>
 
-    <!-- Clinera -->
-    <section class="mt-16 border border-linea bg-papel p-6" aria-labelledby="clinera-eq">
-      <h2 id="clinera-eq" class="!text-2xl mb-3">Un mes de Clinera.io gratis con esta compra</h2>
-      <p class="prose-aq text-sm">
-        Al comprar el {equipo.name}, la clínica recibe un mes gratis de Clinera.io
-        (AURA, CAMILA, LIA), implementado por el mismo equipo de ingenieros.
-      </p>
-      <a href="/clinera" class="btn-secondary mt-4 inline-flex">Ver detalle Clinera</a>
-    </section>
+    <!-- Clinera — marca Clinera (rompe con AQ) -->
+    <div class="mt-16">
+      <ClineraBanner equipoName={equipo.name} compact />
+    </div>
 
     <FAQ items={equipo.faq} title={`Preguntas frecuentes sobre ${equipo.name}`} />
 

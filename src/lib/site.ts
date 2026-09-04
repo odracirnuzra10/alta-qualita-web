@@ -1,14 +1,15 @@
 export const SITE = {
   name: 'Alta Qualità',
-  legalName: 'Alta Qualità', // Por confirmar: razón social exacta
+  legalName: 'ALTA QUALITA LIMITADA',
+  rut: '77.838.377-2',
   domain: 'https://alta-qualita.cl',
   locale: 'es-CL',
   tagline: 'Equipos de estética profesional de origen coreano',
   description:
     'Alta Qualità es una importadora chilena de equipos de estética profesional de origen coreano. Vende a clínicas estéticas, centros médico-estéticos y profesionales independientes en Chile. Showrooms en Vitacura, Concón y Los Ángeles.',
-  email: null as string | null, // Por confirmar
-  phone: null as string | null, // Por confirmar
-  whatsapp: null as string | null, // Por confirmar — formato internacional sin +
+  email: 'ricardo@oacg.cl',
+  phone: '+56965031299',
+  whatsapp: '56965031299',
   address: {
     street: 'Los Abedules 3085',
     city: 'Vitacura',
@@ -36,14 +37,13 @@ export const SITE = {
     },
   ] as const,
   social: {
-    // sameAs reales cuando existan
     instagram: null as string | null,
     linkedin: null as string | null,
     facebook: null as string | null,
   },
   ga4Id: null as string | null, // Por confirmar — G-XXXXXXXX
   author: {
-    name: null as string | null, // Por confirmar
+    name: 'Ricardo Oyarzún',
     role: 'Equipo técnico Alta Qualità',
     credentials: null as string | null,
   },

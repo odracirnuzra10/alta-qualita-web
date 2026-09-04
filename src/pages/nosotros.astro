@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import Pending from '../components/Pending.astro';
 import FAQ from '../components/FAQ.astro';
 import Showrooms from '../components/Showrooms.astro';
+import { SITE } from '../lib/site';
 
 const faq = [
   {
@@ -69,13 +69,13 @@ const faq = [
         </thead>
         <tbody>
           <tr><td>Nombre comercial</td><td>Alta Qualità</td></tr>
-          <tr><td>Razón social</td><td><Pending /></td></tr>
-          <tr><td>RUT</td><td><Pending /></td></tr>
+          <tr><td>Razón social</td><td>{SITE.legalName}</td></tr>
+          <tr><td>RUT</td><td class="font-mono">{SITE.rut}</td></tr>
           <tr><td>Showroom Vitacura</td><td>Los Abedules 3085, Vitacura</td></tr>
           <tr><td>Showroom Concón</td><td>Las Pelargonias 843, Oficina 1112, Concón</td></tr>
           <tr><td>Showroom Los Ángeles</td><td>Av. Gabriela Mistral 269, Los Ángeles</td></tr>
-          <tr><td>Correo</td><td><Pending /></td></tr>
-          <tr><td>Teléfono</td><td><Pending /></td></tr>
+          <tr><td>Correo</td><td><a href={`mailto:${SITE.email}`} class="link-text">{SITE.email}</a></td></tr>
+          <tr><td>Teléfono</td><td><a href={`tel:${SITE.phone}`} class="link-text">{SITE.phone}</a></td></tr>
           <tr><td>País de operación</td><td>Chile</td></tr>
           <tr><td>Origen de equipos</td><td>Corea del Sur</td></tr>
         </tbody>
