@@ -105,7 +105,14 @@ const productLd = {
         <PriceDisplay neto={equipo.priceNeto} class="mb-6" />
 
         <div class="flex flex-wrap gap-3">
-          <a href={`/contacto?equipo=${equipo.slug}`} class="btn-primary">Agendar demo</a>
+          <a href={`/contacto?equipo=${equipo.slug}`} class="btn-primary">Agendar demo en showroom</a>
+          {
+            equipo.slug === 'skinwave-max' ? (
+              <a href="/skinwave-max" class="btn-secondary">
+                Ver landing SkinWave Max
+              </a>
+            ) : null
+          }
           <a
             href={`/fichas/${equipo.slug}.pdf`}
             class="btn-secondary"

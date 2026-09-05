@@ -176,23 +176,23 @@
   {
     "slug": "skinwave-max",
     "name": "SkinWave Max",
-    "category": "Facial",
+    "category": "HIFU facial",
     "priceNeto": 4500000,
     "origin": "Corea del Sur",
     "image": "/img/equipos/skinwave-max.webp",
-    "intro": null,
+    "intro": "SkinWave Max es el HIFU facial coreano certificado por Alta Qualità. Ultrasonido focalizado de alta intensidad para lifting no invasivo sobre epidermis, dermis y SMAS (1,5 / 3,0 / 4,5 mm). Fabricado en Corea del Sur, con cartuchos de 14.000 disparos —40% más capacidad que el estándar de 10.000 del mercado— y precio neto publicado en Chile.",
     "specsHighlight": [
       {
         "label": "Tecnología",
-        "value": null
+        "value": "HIFU facial"
       },
       {
-        "label": "Aplicadores",
-        "value": null
+        "label": "Cartuchos",
+        "value": "1,5 / 3,0 / 4,5 mm · 14.000 disparos"
       },
       {
         "label": "Sesión",
-        "value": null
+        "value": "30–60 min"
       },
       {
         "label": "Garantía",
@@ -200,18 +200,18 @@
       }
     ],
     "specs": {
-      "tecnologia": null,
-      "aplicacion": null,
-      "potencia": null,
-      "frecuencia": null,
+      "tecnologia": "HIFU facial (ultrasonido focalizado de alta intensidad)",
+      "aplicacion": "Lifting facial no invasivo · rejuvenecimiento · contorno",
+      "potencia": "Energía ajustable 0,1–2,0 J",
+      "frecuencia": "4 / 7–8 / 10 MHz según cartucho",
       "temperatura": null,
-      "aplicadores": null,
-      "spot": null,
-      "duracionSesion": null,
+      "aplicadores": "Cartuchos 1,5 mm · 3,0 mm · 4,5 mm (14.000 disparos c/u)",
+      "spot": "Profundidades 1,5 / 3,0 / 4,5 mm (epidermis / dermis / SMAS)",
+      "duracionSesion": "30–60 min según protocolo y zona",
       "consumo": null,
       "dimensiones": null,
       "peso": null,
-      "certificaciones": null,
+      "certificaciones": "Certificado e importado por Alta Qualità · Origen MFDS (Corea)",
       "origen": "Corea del Sur",
       "garantia": "12 meses"
     },
@@ -226,29 +226,37 @@
       "capacitacionHoras": null,
       "protocolos": null,
       "garantia": "12 meses",
-      "repuestos": null
+      "repuestos": "Stock en Chile"
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
     "related": [
-      "kimiface",
-      "endojiwoo",
-      "carboxck"
+      "cuky-hifu",
+      "ized",
+      "kimiface"
     ],
     "faq": [
       {
         "q": "¿Cuánto cuesta el SkinWave Max en Chile?",
-        "a": "El SkinWave Max tiene un precio neto de $4.500.000 + IVA 19% ($855.000). El total con IVA es $5.355.000. El precio no incluye instalación ni capacitación hasta que Alta Qualità confirme el paquete de compra."
+        "a": "El SkinWave Max tiene un precio neto de $4.500.000 + IVA 19% ($855.000). El total con IVA es $5.355.000. En Alta Qualità todos los precios se publican en neto + IVA. El precio no incluye instalación ni capacitación hasta que se confirme el paquete de compra."
+      },
+      {
+        "q": "¿Qué tecnología usa el SkinWave Max?",
+        "a": "SkinWave Max es un HIFU facial: ultrasonido focalizado de alta intensidad que deposita puntos de coagulación térmica a 1,5 mm, 3,0 mm y 4,5 mm (epidermis, dermis y SMAS). Las frecuencias típicas por profundidad son ~10 MHz, 7–8 MHz y 4 MHz. Cada cartucho entrega 14.000 disparos (+40% vs el estándar de 10.000 del mercado)."
+      },
+      {
+        "q": "¿Puedo ver SkinWave Max en showroom?",
+        "a": "Sí. Alta Qualità tiene showrooms en Vitacura, Concón y Los Ángeles para que veas y pruebes la máquina antes de comprar. Agenda una demo en alta-qualita.cl/contacto o en la landing /skinwave-max."
+      },
+      {
+        "q": "¿Hay repuestos de SkinWave Max en Chile?",
+        "a": "Sí. Alta Qualità mantiene repuestos y cartuchos en stock en Chile, con garantía de 12 meses y soporte con primera respuesta en 48 horas."
       },
       {
         "q": "¿De dónde es el SkinWave Max?",
-        "a": "El SkinWave Max es un equipo de estética profesional de origen coreano, importado a Chile por Alta Qualità. El origen coreano se declara en la ficha y en la documentación comercial."
-      },
-      {
-        "q": "¿Puedo descargar la ficha técnica del SkinWave Max sin dejar mis datos?",
-        "a": "Sí. La ficha técnica en PDF se descarga sin formulario. Alta Qualità captura el lead en agendar demo y cotizar, no bloqueando el dato técnico."
+        "a": "El SkinWave Max es un equipo de estética profesional de origen coreano, certificado e importado a Chile por Alta Qualità."
       },
       {
         "q": "¿El SkinWave Max incluye la oferta Clinera.io?",

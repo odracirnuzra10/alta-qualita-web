@@ -24,7 +24,7 @@ const comparadorHome = equipos.filter((e) =>
 const homeFaq = [
   {
     q: '¿Cuánto cuestan los equipos de estética de Alta Qualità en Chile?',
-    a: `Los precios netos van desde $${formatCLP(minPrice)} (${minName}) hasta $${formatCLP(maxPrice)} (${maxName}). Cada ficha muestra neto + IVA 19% + total. Ejemplo: iZED = $7.500.000 neto + $1.425.000 IVA = $8.925.000 total.`,
+    a: `Todos los precios son neto + IVA 19%. Van desde $${formatCLP(minPrice)} (${minName}) hasta $${formatCLP(maxPrice)} (${maxName}). Cada ficha muestra neto, IVA y total. Ejemplo: SkinWave Max = $4.500.000 neto + $855.000 IVA = $5.355.000 total.`,
   },
   {
     q: '¿Los equipos son italianos o coreanos?',
@@ -78,17 +78,57 @@ const heroSpecs = [
         </h1>
         <p class="prose-aq mb-8 text-base">
           Alta Qualità importa equipos de estética profesional coreanos para clínicas,
-          centros médico-estéticos y profesionales independientes en Chile. Precio neto,
-          IVA y specs en una sola ficha — sin humo.
+          centros médico-estéticos y profesionales independientes en Chile.
+          <strong>Todos los precios son neto + IVA.</strong> Repuestos en Chile.
+          Showrooms en Vitacura, Concón y Los Ángeles para ver las máquinas antes de comprar.
         </p>
         <SpecRow specs={heroSpecs} class="mb-8" />
         <div class="flex flex-wrap gap-3">
-          <a href="/contacto" class="btn-primary" data-track="agendar_demo">Agendar demo</a>
+          <a href="/contacto" class="btn-primary" data-track="agendar_demo">Agendar demo en showroom</a>
           <a href="/equipos" class="btn-secondary">Ver catálogo</a>
-          <a href="/recursos/que-es-ized-ultrasonido-focalizado-chile" class="btn-ghost" data-track="guia_ized_hero">Guía iZED</a>
+          <a href="/skinwave-max" class="btn-ghost" data-track="skinwave_hero">SkinWave Max</a>
         </div>
       </div>
       <ProductMedia name="iZED" image={heroImage} fig="FIG. 01" priority />
+    </div>
+  </section>
+
+  <!-- SkinWave Max destacado -->
+  <section class="home-ized" aria-labelledby="home-swm-title">
+    <div class="container-aq home-ized__grid">
+      <div>
+        <p class="eyebrow mb-2">HIFU facial · Corea del Sur</p>
+        <p class="home-ized__brand">SkinWave Max</p>
+        <h2 id="home-swm-title" class="mb-4 text-2xl sm:text-3xl">
+          HIFU facial coreano certificado — verlo en showroom
+        </h2>
+        <p class="prose-aq mb-6 max-w-[46ch] text-sm">
+          Lifting no invasivo a 1,5 / 3,0 / 4,5&nbsp;mm. Cartuchos con 14.000 disparos (+40%).
+          $4.500.000 neto + IVA. Repuestos en Chile. Agenda demo en Vitacura, Concón o Los Ángeles.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/skinwave-max" class="btn-primary" data-track="skinwave_home">
+            Ver SkinWave Max
+          </a>
+          <a
+            href="/recursos/que-es-skinwave-max-hifu-facial-coreano-chile"
+            class="btn-secondary"
+            data-track="guia_skinwave_home"
+          >
+            Leer guía HIFU
+          </a>
+        </div>
+      </div>
+      <a href="/skinwave-max" class="home-ized__media no-underline" aria-label="Abrir landing SkinWave Max">
+        <img
+          src="/img/equipos/skinwave-max.webp"
+          alt="SkinWave Max HIFU facial coreano"
+          width="840"
+          height="840"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
     </div>
   </section>
 
@@ -148,7 +188,7 @@ const heroSpecs = [
             const pricedRow = hasPrice(e.priceNeto);
             const p = pricedRow ? priceParts(e.priceNeto) : null;
             return (
-              <a href={`/equipos/${e.slug}`} class="card-line group block overflow-hidden no-underline transition-colors hover:border-grafito">
+              <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : `/equipos/${e.slug}`} class="card-line group block overflow-hidden no-underline transition-colors hover:border-grafito">
                 {e.image ? (
                   <img
                     src={e.image}
@@ -208,7 +248,7 @@ const heroSpecs = [
                 return (
                   <tr>
                     <td>
-                      <a href={`/equipos/${e.slug}`} class="link-text font-medium">
+                      <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : `/equipos/${e.slug}`} class="link-text font-medium">
                         {e.name}
                       </a>
                     </td>
