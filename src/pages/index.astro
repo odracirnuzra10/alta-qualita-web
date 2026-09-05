@@ -86,10 +86,50 @@ const heroSpecs = [
         <div class="flex flex-wrap gap-3">
           <a href="/contacto" class="btn-primary" data-track="agendar_demo">Agendar demo en showroom</a>
           <a href="/equipos" class="btn-secondary">Ver catálogo</a>
+          <a href="/endojiwoo" class="btn-ghost" data-track="endojiwoo_hero">EndoJiwoo ENDOLASER</a>
           <a href="/skinwave-max" class="btn-ghost" data-track="skinwave_hero">SkinWave Max</a>
         </div>
       </div>
       <ProductMedia name="iZED" image={heroImage} fig="FIG. 01" priority />
+    </div>
+  </section>
+
+  <!-- EndoJiwoo ENDOLASER destacado -->
+  <section class="home-ized" aria-labelledby="home-ejw-title">
+    <div class="container-aq home-ized__grid">
+      <div>
+        <p class="eyebrow mb-2">ENDOLASER · Corea del Sur</p>
+        <p class="home-ized__brand">EndoJiwoo</p>
+        <h2 id="home-ejw-title" class="mb-4 text-2xl sm:text-3xl">
+          El ENDOLASER coreano — tres ondas, verlo en showroom
+        </h2>
+        <p class="prose-aq mb-6 max-w-[46ch] text-sm">
+          635 / 1470 / 980&nbsp;nm. Desde $7.200.000 neto + IVA (+$2.000.000 por potencia).
+          Repuestos en Chile. Agenda demo en Vitacura, Concón o Los Ángeles.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/endojiwoo" class="btn-primary" data-track="endojiwoo_home">
+            Ver ENDOLASER EndoJiwoo
+          </a>
+          <a
+            href="/recursos/que-es-endojiwoo-endolaser-coreano-chile"
+            class="btn-secondary"
+            data-track="guia_endojiwoo_home"
+          >
+            Leer guía ENDOLASER
+          </a>
+        </div>
+      </div>
+      <a href="/endojiwoo" class="home-ized__media no-underline" aria-label="Abrir landing EndoJiwoo ENDOLASER">
+        <img
+          src="/img/equipos/endojiwoo.webp"
+          alt="EndoJiwoo ENDOLASER coreano"
+          width="840"
+          height="840"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
     </div>
   </section>
 
@@ -188,7 +228,7 @@ const heroSpecs = [
             const pricedRow = hasPrice(e.priceNeto);
             const p = pricedRow ? priceParts(e.priceNeto) : null;
             return (
-              <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : `/equipos/${e.slug}`} class="card-line group block overflow-hidden no-underline transition-colors hover:border-grafito">
+              <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : e.slug === 'endojiwoo' ? '/endojiwoo' : `/equipos/${e.slug}`} class="card-line group block overflow-hidden no-underline transition-colors hover:border-grafito">
                 {e.image ? (
                   <img
                     src={e.image}
@@ -248,7 +288,7 @@ const heroSpecs = [
                 return (
                   <tr>
                     <td>
-                      <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : `/equipos/${e.slug}`} class="link-text font-medium">
+                      <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : e.slug === 'endojiwoo' ? '/endojiwoo' : `/equipos/${e.slug}`} class="link-text font-medium">
                         {e.name}
                       </a>
                     </td>

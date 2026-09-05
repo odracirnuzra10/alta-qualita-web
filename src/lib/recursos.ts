@@ -309,6 +309,63 @@ export const guias: Guia[] = [
       },
     ],
   },
+  {
+    slug: 'que-es-endojiwoo-endolaser-coreano-chile',
+    title: 'Qué es EndoJiwoo: el ENDOLASER coreano en Chile',
+    h1: 'ENDOLASER coreano EndoJiwoo: tres ondas, precio neto + IVA',
+    description:
+      'Guía B2B sobre EndoJiwoo, el ENDOLASER coreano importado por Alta Qualità: 635 / 1470 / 980 nm, tres potencias (+$2.000.000 neto por escalón), showrooms, repuestos en Chile y precios neto + IVA.',
+    published: '2026-09-05',
+    updated: '2026-09-05',
+    relatedEquipos: ['endojiwoo', 'skinwave-max', 'ized'],
+    keywords: [
+      'ENDOLASER',
+      'EndoJiwoo',
+      'endláser Chile',
+      'endolaser coreano',
+      'EndoJiwoo precio',
+      'láser diodo 980 1470',
+    ],
+    brand: 'EndoJiwoo',
+    lede:
+      'EndoJiwoo es el ENDOLASER coreano que Alta Qualità trae a Chile: 635 / 1470 / 980 nm, tres potencias desde $7.200.000 neto + IVA. Repuestos en Chile. Demo en showroom.',
+    cover: {
+      src: '/img/equipos/endojiwoo.webp',
+      alt: 'EndoJiwoo — ENDOLASER coreano',
+      caption: 'EndoJiwoo · ENDOLASER · Corea del Sur',
+    },
+    gallery: [
+      {
+        src: '/img/equipos/endojiwoo.webp',
+        alt: 'Equipo EndoJiwoo ENDOLASER',
+        caption: 'EndoJiwoo · desde $7.200.000 neto + IVA',
+      },
+    ],
+    highlights: [
+      { label: 'Tecnología', value: 'ENDOLASER' },
+      { label: 'Ondas', value: '635 · 1470 · 980 nm' },
+      { label: 'Origen', value: 'Corea del Sur' },
+      { label: 'Desde', value: '$7.200.000 neto + IVA' },
+    ],
+    faq: [
+      {
+        q: '¿Qué es EndoJiwoo?',
+        a: 'EndoJiwoo es el ENDOLASER coreano importado por Alta Qualità: láser diodo de tres longitudes de onda (635, 1470 y 980 nm) para lipólisis, lifting facial y apoyo antiinflamatorio.',
+      },
+      {
+        q: '¿EndoJiwoo es un ENDOLASER?',
+        a: 'Sí. EndoJiwoo es el ENDOLASER fabricado en Corea del Sur que Alta Qualità comercializa en Chile, con ficha, precio neto + IVA, repuestos locales y demo en showroom.',
+      },
+      {
+        q: '¿Cuánto cuesta EndoJiwoo en Chile?',
+        a: 'Tres potencias: 635 nm $7.200.000 neto, 1470 nm $9.200.000 neto y 980 nm $11.200.000 neto. Cada escalón suma $2.000.000. Todos + IVA 19%.',
+      },
+      {
+        q: '¿Puedo ver EndoJiwoo antes de comprar?',
+        a: 'Sí. Showrooms en Vitacura, Concón y Los Ángeles. Agenda una demo del ENDOLASER en persona.',
+      },
+    ],
+  },
 
 ];
 

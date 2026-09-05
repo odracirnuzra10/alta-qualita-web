@@ -560,7 +560,7 @@ export const guiaBodies: Record<string, string> = {
 <tr><td>Facial / lifting</td><td><a href="/equipos/ized">iZED</a> o iZED Pro</td><td>$7.500.000 – $14.500.000</td><td>Por confirmar en ficha</td></tr>
 <tr><td>Corporal volumen</td><td><a href="/equipos/sculpt-dd">Sculpt-DD</a> (electroestimulación)</td><td>$4.500.000</td><td>$5.355.000</td></tr>
 <tr><td>Complemento vascular / CO₂</td><td><a href="/equipos/carboxck">CarboxCk</a> (carboxiterapia)</td><td>$7.500.000</td><td>$8.925.000</td></tr>
-<tr><td>Endoláser corporal</td><td><a href="/equipos/endojiwoo">EndoJiwoo</a></td><td>$7.200.000</td><td>$8.568.000</td></tr>
+<tr><td>ENDOLASER</td><td><a href="/endojiwoo">EndoJiwoo</a></td><td>Desde $7.200.000</td><td>Desde $8.568.000</td></tr>
 </tbody>
 </table>
 
@@ -759,6 +759,57 @@ export const guiaBodies: Record<string, string> = {
 
 <h2>Próximo paso</h2>
 <p>Revisa la <a href="/skinwave-max">landing SkinWave Max</a>, la <a href="/equipos/skinwave-max">ficha de catálogo</a>, o <a href="/contacto">agenda una demo en showroom</a> con precio neto + IVA a la vista.</p>
+`.trim(),
+
+  'que-es-endojiwoo-endolaser-coreano-chile': `
+<p><strong>EndoJiwoo</strong> es el <strong>ENDOLASER</strong> coreano que Alta Qualità importa a Chile para clínicas estéticas y centros médico-estéticos. Esta guía resume qué es el ENDOLASER, cómo trabajan las tres ondas (635 / 1470 / 980&nbsp;nm), cómo se escalan los precios (+$2.000.000 neto por potencia) y cómo verlo en showroom antes de comprar.</p>
+
+<figure class="guia-inline">
+  <img src="/img/equipos/endojiwoo.webp" alt="EndoJiwoo ENDOLASER coreano" width="900" height="900" loading="lazy" decoding="async" />
+  <figcaption>FIG. 01 · EndoJiwoo — ENDOLASER · fabricado en Corea del Sur · importado por Alta Qualità</figcaption>
+</figure>
+
+<h2>EndoJiwoo = ENDOLASER coreano</h2>
+<p>En el mercado se busca <strong>ENDOLASER</strong>, <strong>endláser</strong> o <strong>endolaser</strong>: láser diodo con fibra bajo la piel para lipólisis y lifting estructural. <strong>EndoJiwoo es ese ENDOLASER</strong>, fabricado en Corea del Sur y traído a Chile por Alta Qualità — con precio neto + IVA, repuestos locales y demo presencial.</p>
+
+<div class="guia-callout">
+  <p><strong>Precio claro:</strong> en Alta Qualità <em>todos</em> los precios se publican en <strong>neto + IVA 19%</strong>. EndoJiwoo parte en <strong>$7.200.000 neto</strong> (635&nbsp;nm). Cada escalón de potencia suma <strong>$2.000.000 neto</strong>.</p>
+</div>
+
+<h2>Tres ondas, tres potencias</h2>
+<table>
+<thead><tr><th>Onda</th><th>Potencia</th><th>Rol clínico típico</th><th>Precio neto</th><th>IVA 19%</th><th>Total</th></tr></thead>
+<tbody>
+<tr><td>635 nm</td><td>Apoyo fotónico</td><td>Antiinflamatorio / reparación</td><td>$7.200.000</td><td>$1.368.000</td><td>$8.568.000</td></tr>
+<tr><td>1470 nm</td><td>Hasta 9 W</td><td>Lipólisis de precisión (agua)</td><td>$9.200.000</td><td>$1.748.000</td><td>$10.948.000</td></tr>
+<tr><td>980 nm</td><td>Hasta 30 W</td><td>Alta energía / coagulación</td><td>$11.200.000</td><td>$2.128.000</td><td>$13.328.000</td></tr>
+</tbody>
+</table>
+<p>El equipo puede operar 980&nbsp;nm y 1470&nbsp;nm de forma combinada (hasta ~39&nbsp;W según protocolo). La indicación clínica la define el profesional tratante.</p>
+
+<h2>Para qué se usa el ENDOLASER</h2>
+<ul>
+<li>Lipólisis de grasa localizada (abdomen, brazos, muslos, zonas finas)</li>
+<li>Refinamiento de óvalo facial, mandíbula y papada</li>
+<li>Lifting / firmeza facial como complemento de agenda no quirúrgica</li>
+<li>Apoyo antiinflamatorio con 635&nbsp;nm</li>
+</ul>
+
+<h2>Repuestos, garantía y showrooms</h2>
+<p>Alta Qualità mantiene <strong>repuestos en stock en Chile</strong>, garantía de 12 meses y soporte con primera respuesta en 48 horas. Puedes ver y probar el ENDOLASER EndoJiwoo en <strong>Vitacura, Concón y Los Ángeles</strong>.</p>
+
+<h2>EndoJiwoo vs otras líneas del catálogo</h2>
+<table>
+<thead><tr><th>Equipo</th><th>Tecnología</th><th>Uso principal</th><th>Precio neto</th></tr></thead>
+<tbody>
+<tr><td><a href="/equipos/endojiwoo">EndoJiwoo</a></td><td>ENDOLASER</td><td>Lipólisis / lifting con fibra</td><td>Desde $7.200.000</td></tr>
+<tr><td><a href="/equipos/skinwave-max">SkinWave Max</a></td><td>HIFU facial</td><td>Lifting no invasivo facial</td><td>$4.500.000</td></tr>
+<tr><td><a href="/equipos/ized">iZED</a></td><td>Ultrasonido focalizado</td><td>Contorno corporal</td><td>$7.500.000</td></tr>
+</tbody>
+</table>
+
+<h2>Próximo paso</h2>
+<p>Revisa la <a href="/endojiwoo">landing EndoJiwoo ENDOLASER</a>, la <a href="/equipos/endojiwoo">ficha de catálogo</a>, o <a href="/contacto">agenda una demo en showroom</a> con las tres potencias y precio neto + IVA a la vista.</p>
 `.trim(),
 
 };
