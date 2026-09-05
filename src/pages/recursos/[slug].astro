@@ -18,7 +18,15 @@ if (!guia) throw new Error(`Guía no encontrada: ${slug}`);
 
 const body = guiaBodies[guia.slug] || '<p>Contenido en preparación.</p>';
 const related = guia.relatedEquipos.map((s) => getEquipo(s)).filter(Boolean);
+const relatedGuias = (guia.relatedGuias || []).map((s) => getGuia(s)).filter(Boolean);
 const isVisual = Boolean(guia.cover);
+const schemaType = guia.schemaType || 'Article';
+
+function equipoHref(slug: string) {
+  if (slug === 'skinwave-max') return '/skinwave-max';
+  if (slug === 'endojiwoo') return '/endojiwoo';
+  return `/equipos/${slug}`;
+}
 
 function formatDate(iso: string) {
   return new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', {
@@ -30,17 +38,36 @@ function formatDate(iso: string) {
 
 const articleLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': schemaType,
   headline: guia.title,
   description: guia.description,
   datePublished: guia.published,
   dateModified: guia.updated,
   inLanguage: 'es-CL',
   ...(guia.cover ? { image: `${SITE.domain}${guia.cover.src}` } : {}),
-  author: { '@type': 'Organization', name: SITE.name },
+  author: {
+    '@type': 'Person',
+    name: SITE.author.name,
+    jobTitle: SITE.author.role,
+  },
   publisher: { '@type': 'Organization', name: SITE.name, url: SITE.domain },
   mainEntityOfPage: `${SITE.domain}/recursos/${guia.slug}`,
+  keywords: guia.keywords.join(', '),
 };
+
+const itemListLd = guia.productList
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Máquinas base para una clínica estética',
+      itemListElement: guia.productList.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.name,
+        url: `${SITE.domain}${p.href}`,
+      })),
+    }
+  : null;
 
 const faqItems = guia.faq.map((f) => ({ q: f.q, a: f.a }));
 ---
@@ -50,8 +77,9 @@ const faqItems = guia.faq.map((f) => ({ q: f.q, a: f.a }));
   description={guia.description}
   dateModified={guia.updated}
   ogImage={guia.cover?.src}
+  canonical={`/recursos/${guia.slug}`}
 >
-  <JsonLd data={articleLd} slot="head" />
+  <JsonLd data={itemListLd ? [articleLd, itemListLd] : articleLd} slot="head" />
 
   <Breadcrumbs
     items={[
@@ -196,7 +224,7 @@ const faqItems = guia.faq.map((f) => ({ q: f.q, a: f.a }));
                 {related.map(
                   (e) =>
                     e && (
-                      <a href={`/equipos/${e.slug}`} class="guia-related group no-underline">
+                      <a href={equipoHref(e.slug)} class="guia-related group no-underline">
                         {e.image ? (
                           <div class="guia-related__media">
                             <img
@@ -244,9 +272,33 @@ const faqItems = guia.faq.map((f) => ({ q: f.q, a: f.a }));
         </div>
 
         <div
-          class="prose-aq guia-body max-w-none text-sm [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:mt-6 [&_h3]:mb-3 [&_table]:my-6 [&_ul]:my-4 [&_ol]:my-4"
+          class="prose-aq guia-body blog-body max-w-none text-sm [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:mt-6 [&_h3]:mb-3 [&_table]:my-6 [&_ul]:my-4 [&_ol]:my-4"
           set:html={body}
         />
+
+        {
+          relatedGuias.length > 0 && (
+            <section class="mt-14 border-t border-linea pt-10" aria-labelledby="rel-guias">
+              <h2 id="rel-guias" class="mb-6">
+                Sigue leyendo
+              </h2>
+              <div class="grid gap-4 sm:grid-cols-2">
+                {relatedGuias.map(
+                  (g) =>
+                    g && (
+                      <a
+                        href={`/recursos/${g.slug}`}
+                        class="card-line block p-4 no-underline hover:border-grafito"
+                      >
+                        <h3 class="!text-xl mb-2">{g.title}</h3>
+                        <p class="text-sm text-texto">{g.description}</p>
+                      </a>
+                    )
+                )}
+              </div>
+            </section>
+          )
+        }
 
         {
           related.length > 0 && (
@@ -259,7 +311,7 @@ const faqItems = guia.faq.map((f) => ({ q: f.q, a: f.a }));
                   (e) =>
                     e && (
                       <a
-                        href={`/equipos/${e.slug}`}
+                        href={equipoHref(e.slug)}
                         class="card-line block p-4 no-underline hover:border-grafito"
                       >
                         <p class="label-mono mb-1">{e.category}</p>
