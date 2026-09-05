@@ -697,5 +697,68 @@ export const guiaBodies: Record<string, string> = {
 <p>Revisa la <a href="/equipos/ized">ficha iZED</a>, compara con <a href="/equipos/ized-pro">iZED Pro</a> y <a href="/equipos/sculpt-dd">Sculpt-DD</a>, o <a href="/contacto">agenda una demo</a> con precio neto + IVA sobre la mesa.</p>
 `.trim(),
 
+  'que-es-skinwave-max-hifu-facial-coreano-chile': `
+<p><strong>SkinWave Max</strong> es el HIFU facial coreano que Alta Qualità certifica e importa a Chile para clínicas estéticas y centros médico-estéticos. Esta guía resume qué es, cómo funciona el ultrasonido focalizado a 1,5 / 3,0 / 4,5&nbsp;mm, por qué la capacidad de cartucho importa (+40%), cuánto cuesta en <strong>neto + IVA</strong> y cómo verlo en showroom antes de comprar.</p>
+
+<figure class="guia-inline">
+  <img src="/img/equipos/skinwave-max.webp" alt="SkinWave Max HIFU facial coreano" width="900" height="900" loading="lazy" decoding="async" />
+  <figcaption>FIG. 01 · SkinWave Max — HIFU facial · fabricado en Corea del Sur · certificado Alta Qualità</figcaption>
+</figure>
+
+<h2>Qué es SkinWave Max</h2>
+<p><strong>SkinWave Max</strong> es un equipo de <strong>HIFU facial</strong> (High-Intensity Focused Ultrasound): ultrasonido de alta intensidad enfocado en puntos precisos bajo la piel. El objetivo clínico es un lifting no quirúrgico —estimular colágeno y tensar el plano SMAS— sin cortes ni tiempo de baja laboral de quirófano.</p>
+<p>Alta Qualità lo importa desde <strong>Corea del Sur</strong> y lo publica con precio neto visible, ficha técnica, <strong>repuestos en Chile</strong> y demo en showroom. No es un HIFU corporal genérico: el protocolo está pensado para rostro y cuello.</p>
+
+<div class="guia-callout">
+  <p><strong>Precio claro:</strong> en Alta Qualità <em>todos</em> los precios se publican en <strong>neto + IVA 19%</strong>. SkinWave Max: <strong>$4.500.000 neto</strong> · IVA $855.000 · total $5.355.000.</p>
+</div>
+
+<h2>Cómo funciona el HIFU facial</h2>
+<p>El HIFU concentra energía ultrasónica en un punto (PCT — punto de coagulación térmica) a una profundidad determinada. La epidermis se preserva; el estímulo ocurre en dermis y SMAS. Las profundidades clínicas estándar del rostro son:</p>
+<table>
+<thead><tr><th>Profundidad</th><th>Frecuencia típica</th><th>Capa</th><th>Objetivo</th></tr></thead>
+<tbody>
+<tr><td>1,5 mm</td><td>~10 MHz</td><td>Epidermis / dermis superficial</td><td>Textura, poros, líneas finas</td></tr>
+<tr><td>3,0 mm</td><td>~7–8 MHz</td><td>Dermis profunda</td><td>Colágeno, firmeza</td></tr>
+<tr><td>4,5 mm</td><td>~4 MHz</td><td>SMAS</td><td>Lifting y contorno</td></tr>
+</tbody>
+</table>
+<p>La energía por disparo en equipos faciales profesionales suele ajustarse entre <strong>0,1 y 2,0 J</strong>. SkinWave Max opera en ese rango, con cartuchos dedicados por profundidad.</p>
+
+<h2>+40% de capacidad de cartucho: por qué importa</h2>
+<p>Muchos cartuchos HIFU del mercado entregan alrededor de <strong>10.000 disparos</strong>. SkinWave Max entrega <strong>14.000 disparos</strong> por cartucho: un <strong>+40%</strong> de capacidad útil.</p>
+<p>Para una clínica con agenda facial intensa, eso se traduce en menos cambios de cartucho y un costo operativo más predecible por sesión. Combínalo con <a href="/skinwave-max">repuestos en stock en Chile</a>: no solo compras el equipo, compras continuidad de servicio.</p>
+
+<h2>SkinWave Max vs otros equipos del catálogo</h2>
+<table>
+<thead><tr><th>Equipo</th><th>Tecnología</th><th>Uso principal</th><th>Precio neto</th></tr></thead>
+<tbody>
+<tr><td><a href="/equipos/skinwave-max">SkinWave Max</a></td><td>HIFU facial</td><td>Lifting / rejuvenecimiento facial</td><td>$4.500.000</td></tr>
+<tr><td><a href="/equipos/cuky-hifu">Cuky HIFU</a></td><td>HIFU</td><td>Protocolos HIFU de entrada</td><td>$890.000</td></tr>
+<tr><td><a href="/equipos/ized">iZED</a></td><td>Ultrasonido focalizado corporal</td><td>Grasa localizada / contorno</td><td>$7.500.000</td></tr>
+</tbody>
+</table>
+<p>Si tu demanda es facial (óvalo, papada, firmeza), SkinWave Max es la línea específica. Si buscas contorno corporal por ultrasonido, revisa <a href="/recursos/que-es-ized-ultrasonido-focalizado-chile">iZED</a>.</p>
+
+<h2>Repuestos, garantía y showrooms</h2>
+<p>Alta Qualità mantiene <strong>repuestos en stock en Chile</strong>, garantía de 12 meses y soporte con primera respuesta en 48 horas. Puedes ver y probar SkinWave Max en los showrooms de <strong>Vitacura, Concón y Los Ángeles</strong> antes de comprar.</p>
+<ul>
+<li>Demo presencial con equipo técnico</li>
+<li>Precio neto + IVA publicado (sin sorpresas de “desde”)</li>
+<li>Repuestos y cartuchos con logística local</li>
+<li>Capacitación incluida al adquirir el equipo</li>
+</ul>
+
+<h2>Precio SkinWave Max en Chile</h2>
+<ul>
+<li><strong>Neto:</strong> $4.500.000</li>
+<li><strong>IVA 19%:</strong> $855.000</li>
+<li><strong>Total:</strong> $5.355.000</li>
+</ul>
+<p>Instalación y condiciones de capacitación se confirman en cotización. Usa la <a href="/retorno">calculadora de retorno</a> con tu precio de sesión y ocupación real.</p>
+
+<h2>Próximo paso</h2>
+<p>Revisa la <a href="/skinwave-max">landing SkinWave Max</a>, la <a href="/equipos/skinwave-max">ficha de catálogo</a>, o <a href="/contacto">agenda una demo en showroom</a> con precio neto + IVA a la vista.</p>
+`.trim(),
 
 };

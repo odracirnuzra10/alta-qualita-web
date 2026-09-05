@@ -252,6 +252,64 @@ export const guias: Guia[] = [
       },
     ],
   },
+  {
+    slug: 'que-es-skinwave-max-hifu-facial-coreano-chile',
+    title: 'Qué es SkinWave Max: HIFU facial coreano certificado en Chile',
+    h1: 'HIFU facial coreano certificado para lifting sin cirugía',
+    description:
+      'Guía B2B sobre SkinWave Max: qué es el HIFU facial, profundidades 1,5/3,0/4,5 mm, +40% de capacidad de cartucho, precio neto + IVA, repuestos en Chile y showrooms Alta Qualità.',
+    published: '2026-09-05',
+    updated: '2026-09-05',
+    relatedEquipos: ['skinwave-max', 'cuky-hifu', 'ized'],
+    keywords: [
+      'SkinWave Max',
+      'HIFU facial Chile',
+      'HIFU coreano',
+      'máquina HIFU precio Chile',
+      'SkinWave Max precio',
+      'HIFU lifting facial',
+    ],
+    brand: 'SkinWave Max',
+    lede:
+      'HIFU facial fabricado en Corea del Sur, certificado por Alta Qualità. Cartuchos 1,5 / 3,0 / 4,5 mm con 14.000 disparos (+40%). Precio neto + IVA. Repuestos en Chile. Demo en showroom.',
+    cover: {
+      src: '/img/equipos/skinwave-max.webp',
+      alt: 'SkinWave Max — HIFU facial coreano',
+      caption: 'SkinWave Max · HIFU facial · Corea del Sur',
+    },
+    gallery: [
+      {
+        src: '/img/equipos/skinwave-max.webp',
+        alt: 'Equipo SkinWave Max HIFU facial',
+        caption: 'SkinWave Max · $4.500.000 neto + IVA',
+      },
+    ],
+    highlights: [
+      { label: 'Tecnología', value: 'HIFU facial' },
+      { label: 'Capacidad', value: '14.000 disparos' },
+      { label: 'Origen', value: 'Corea del Sur' },
+      { label: 'Precio', value: '$4.500.000 neto + IVA' },
+    ],
+    faq: [
+      {
+        q: '¿Qué es SkinWave Max?',
+        a: 'SkinWave Max es un equipo de HIFU facial (ultrasonido focalizado de alta intensidad) de origen coreano, certificado e importado por Alta Qualità, para lifting no invasivo a 1,5 / 3,0 / 4,5 mm.',
+      },
+      {
+        q: '¿Cuánto cuesta SkinWave Max en Chile?',
+        a: 'Precio neto $4.500.000 + IVA 19% ($855.000). Total con IVA: $5.355.000. Todos los precios Alta Qualità se publican en neto + IVA.',
+      },
+      {
+        q: '¿Puedo ver SkinWave Max antes de comprar?',
+        a: 'Sí. Alta Qualità tiene showrooms en Vitacura, Concón y Los Ángeles. Agenda una demo y prueba el equipo en persona.',
+      },
+      {
+        q: '¿Hay repuestos en Chile?',
+        a: 'Sí. Mantenemos repuestos en stock en Chile, con garantía de 12 meses y soporte con primera respuesta en 48 horas.',
+      },
+    ],
+  },
+
 ];
 
 export function getGuia(slug: string): Guia | undefined {

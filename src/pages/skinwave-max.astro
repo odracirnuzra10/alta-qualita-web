@@ -1,0 +1,340 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQ from '../components/FAQ.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Showrooms from '../components/Showrooms.astro';
+import { formatCLP, priceParts, getEquipo } from '../lib/equipos';
+import { SITE } from '../lib/site';
+
+const equipo = getEquipo('skinwave-max');
+if (!equipo) throw new Error('SkinWave Max no encontrado en catálogo');
+
+const neto = equipo.priceNeto ?? 4_500_000;
+const price = priceParts(neto);
+const image = equipo.image || '/img/equipos/skinwave-max.webp';
+
+const SHOTS_STD = 10_000;
+const SHOTS_SWM = Math.round(SHOTS_STD * 1.4); // +40%
+
+const depths = [
+  {
+    mm: '1,5 mm',
+    mhz: '~10 MHz',
+    layer: 'Epidermis / dermis superficial',
+    use: 'Textura, poros, líneas finas',
+  },
+  {
+    mm: '3,0 mm',
+    mhz: '~7–8 MHz',
+    layer: 'Dermis profunda',
+    use: 'Colágeno, firmeza, elasticidad',
+  },
+  {
+    mm: '4,5 mm',
+    mhz: '~4 MHz',
+    layer: 'SMAS',
+    use: 'Lifting y contorno facial',
+  },
+];
+
+const highlights = [
+  { label: 'Origen', value: 'Corea del Sur' },
+  { label: 'Certificación', value: 'Alta Qualità' },
+  { label: 'Repuestos', value: 'Stock en Chile' },
+  { label: 'Precio', value: `$${formatCLP(neto)} neto + IVA` },
+];
+
+const faq = [
+  {
+    q: '¿Qué es SkinWave Max?',
+    a: 'SkinWave Max es un HIFU facial de origen coreano certificado e importado por Alta Qualità. Usa ultrasonido focalizado de alta intensidad para lifting no invasivo sobre epidermis, dermis y SMAS (1,5 / 3,0 / 4,5 mm).',
+  },
+  {
+    q: '¿El precio incluye IVA?',
+    a: `No. Todos los precios de Alta Qualità se publican en neto. SkinWave Max cuesta $${formatCLP(neto)} neto + IVA 19% ($${formatCLP(price.iva)}). Total con IVA: $${formatCLP(price.total)}.`,
+  },
+  {
+    q: '¿Puedo ver la máquina antes de comprar?',
+    a: 'Sí. Tenemos showrooms en Vitacura, Concón y Los Ángeles. Agenda una demo y prueba SkinWave Max en persona con el equipo técnico.',
+  },
+  {
+    q: '¿Hay repuestos en Chile?',
+    a: 'Sí. Alta Qualità mantiene repuestos en stock en Chile, garantía de 12 meses y soporte con primera respuesta en 48 horas. No dependes de un envío improvisado desde Asia para cada falla.',
+  },
+  {
+    q: '¿Qué significa +40% de capacidad?',
+    a: `Los cartuchos faciales HIFU del mercado suelen ofrecer alrededor de ${SHOTS_STD.toLocaleString('es-CL')} disparos. SkinWave Max entrega ${SHOTS_SWM.toLocaleString('es-CL')} disparos por cartucho (+40%), lo que reduce el costo operativo por sesión.`,
+  },
+];
+
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'SkinWave Max',
+  description:
+    'HIFU facial coreano certificado por Alta Qualità. Ultrasonido focalizado 1,5 / 3,0 / 4,5 mm, cartuchos de 14.000 disparos (+40% vs estándar), fabricado en Corea del Sur. Precio neto + IVA. Repuestos en Chile.',
+  brand: { '@type': 'Brand', name: 'SkinWave Max' },
+  countryOfOrigin: 'KR',
+  image: `${SITE.domain}${image}`,
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'CLP',
+    price: neto,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: neto,
+      priceCurrency: 'CLP',
+      valueAddedTaxIncluded: false,
+    },
+    availability: 'https://schema.org/InStock',
+    url: `${SITE.domain}/skinwave-max`,
+    seller: { '@type': 'Organization', name: SITE.name },
+  },
+};
+---
+
+<Layout
+  title="SkinWave Max — HIFU facial coreano certificado | Alta Qualità"
+  description={`SkinWave Max: HIFU facial fabricado en Corea del Sur, certificado por Alta Qualità. Cartuchos 1,5/3,0/4,5 mm con ${SHOTS_SWM.toLocaleString('es-CL')} disparos (+40%). Precio $${formatCLP(neto)} neto + IVA. Repuestos en Chile. Ver en showroom.`}
+  ogImage={image}
+  canonical="/skinwave-max"
+>
+  <JsonLd data={productLd} slot="head" />
+
+  <article class="swm">
+    <header class="swm-hero">
+      <div class="container-aq swm-hero__grid">
+        <div class="swm-hero__copy">
+          <p class="eyebrow swm-hero__eyebrow">HIFU facial · Certificado Alta Qualità</p>
+          <p class="swm-hero__brand">SkinWave Max</p>
+          <h1 class="swm-hero__title">El HIFU facial coreano para lifting sin cirugía</h1>
+          <p class="swm-hero__lede">
+            Fabricado en Corea del Sur. Ultrasonido focalizado a 1,5 / 3,0 / 4,5&nbsp;mm.
+            Cartuchos con {SHOTS_SWM.toLocaleString('es-CL')} disparos (+40%).
+            <strong>Precio neto + IVA.</strong> Repuestos en Chile. Puedes verlo en showroom.
+          </p>
+          <div class="swm-hero__cta">
+            <a href="/contacto" class="btn-primary" data-track="swm_demo">Agendar demo en showroom</a>
+            <a href="#precio" class="btn-secondary">Ver precio neto + IVA</a>
+          </div>
+          <p class="swm-hero__note">
+            Vitacura · Concón · Los Ángeles — agenda y prueba la máquina antes de comprar.
+          </p>
+        </div>
+
+        <figure class="swm-hero__figure">
+          <img
+            src={image}
+            alt="SkinWave Max — equipo HIFU facial de origen coreano"
+            width="1200"
+            height="1200"
+            class="swm-hero__img"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <figcaption class="swm-hero__caption">FIG. 01 · SkinWave Max · Corea del Sur</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <section class="swm-strip" aria-label="Datos clave">
+      <div class="container-aq swm-strip__grid">
+        {
+          highlights.map((h) => (
+            <div class="swm-strip__item">
+              <p class="label-mono">{h.label}</p>
+              <p class="swm-strip__value">{h.value}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Showrooms emphasis -->
+    <section class="swm-showrooms container-aq" aria-labelledby="swm-show-title">
+      <p class="eyebrow mb-2">Showrooms</p>
+      <h2 id="swm-show-title" class="mb-3">Ven a ver SkinWave Max en persona</h2>
+      <p class="prose-aq mb-8 max-w-[54ch] text-sm">
+        No compres a ciegas. En nuestros showrooms puedes ver el equipo, tocar los cartuchos,
+        revisar protocolos y hablar con soporte técnico antes de firmar.
+      </p>
+      <Showrooms />
+      <div class="mt-6">
+        <a href="/contacto" class="btn-primary" data-track="swm_showroom">Reservar visita</a>
+      </div>
+    </section>
+
+    <!-- Repuestos -->
+    <section class="swm-parts" aria-labelledby="swm-parts-title">
+      <div class="container-aq swm-parts__grid">
+        <div>
+          <p class="eyebrow mb-2">Postventa</p>
+          <h2 id="swm-parts-title" class="mb-4">Repuestos en Chile, no en tránsito</h2>
+          <p class="prose-aq mb-5 max-w-[48ch] text-sm">
+            Alta Qualità mantiene <strong>repuestos en stock</strong> para SkinWave Max y el resto
+            del catálogo. Garantía 12 meses. Primera respuesta de soporte en 48 horas.
+            Tu clínica no se queda detenida esperando un envío improvisado.
+          </p>
+          <ul class="swm-parts__list">
+            <li>Repuestos y cartuchos con stock local</li>
+            <li>Garantía 12 meses por escrito</li>
+            <li>SLA de primera respuesta: 48 horas</li>
+            <li>Capacitación incluida al comprar</li>
+          </ul>
+        </div>
+        <div class="swm-parts__panel">
+          <p class="label-mono mb-3">Soporte Alta Qualità</p>
+          <p class="swm-parts__stat">{SITE.trustBar.repuestos}</p>
+          <p class="mt-2 text-sm text-acero">
+            Garantía {SITE.trustBar.garantiaMeses} meses · Soporte {SITE.trustBar.soporteHoras} h
+          </p>
+          <a href="/soporte-tecnico" class="btn-secondary mt-6 inline-flex">Ver soporte técnico</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="swm-tech container-aq" aria-labelledby="swm-tech-title">
+      <p class="eyebrow mb-2">Tecnología</p>
+      <h2 id="swm-tech-title" class="mb-3">Tres profundidades. Un protocolo facial.</h2>
+      <p class="prose-aq mb-10 max-w-[54ch] text-sm">
+        El HIFU deposita puntos de coagulación térmica bajo la piel para estimular colágeno
+        y tensar el SMAS sin cortes. SkinWave Max trabaja las tres capas clínicas del rostro.
+      </p>
+      <div class="swm-depths">
+        {
+          depths.map((d, i) => (
+            <div class="swm-depth" style={`--i: ${i}`}>
+              <p class="swm-depth__mm">{d.mm}</p>
+              <p class="label-mono mb-2">{d.mhz}</p>
+              <p class="swm-depth__layer">{d.layer}</p>
+              <p class="swm-depth__use">{d.use}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="swm-capacity" aria-labelledby="swm-cap-title">
+      <div class="container-aq swm-capacity__grid">
+        <div>
+          <p class="eyebrow mb-2">Capacidad operativa</p>
+          <h2 id="swm-cap-title" class="mb-4">+40% de disparos por cartucho</h2>
+          <p class="prose-aq mb-6 max-w-[48ch] text-sm">
+            Menos cambios de cartucho, más sesiones por unidad de costo. Pensado para clínicas
+            con agenda facial intensa.
+          </p>
+          <div class="swm-compare" role="group" aria-label="Comparación de capacidad">
+            <div class="swm-compare__col">
+              <p class="label-mono mb-1">Estándar mercado</p>
+              <p class="swm-compare__num">{SHOTS_STD.toLocaleString('es-CL')}</p>
+              <p class="text-sm text-acero">disparos / cartucho</p>
+            </div>
+            <div class="swm-compare__col swm-compare__col--hi">
+              <p class="label-mono mb-1">SkinWave Max</p>
+              <p class="swm-compare__num">{SHOTS_SWM.toLocaleString('es-CL')}</p>
+              <p class="text-sm text-acero">disparos / cartucho · +40%</p>
+            </div>
+          </div>
+        </div>
+        <figure class="swm-capacity__figure">
+          <img
+            src={image}
+            alt="Detalle SkinWave Max HIFU facial"
+            width="800"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="swm-specs container-aq" aria-labelledby="swm-specs-title">
+      <p class="eyebrow mb-2">Ficha técnica</p>
+      <h2 id="swm-specs-title" class="mb-8">Especificaciones HIFU facial</h2>
+      <div class="overflow-x-auto">
+        <table class="swm-table">
+          <tbody>
+            <tr><th scope="row">Tecnología</th><td>HIFU facial — ultrasonido focalizado de alta intensidad</td></tr>
+            <tr><th scope="row">Origen</th><td>Corea del Sur</td></tr>
+            <tr><th scope="row">Certificación / importación</th><td>Certificado e importado por Alta Qualità</td></tr>
+            <tr><th scope="row">Profundidades</th><td>1,5 mm · 3,0 mm · 4,5 mm</td></tr>
+            <tr><th scope="row">Frecuencia por cartucho</th><td>~10 MHz / ~7–8 MHz / ~4 MHz</td></tr>
+            <tr><th scope="row">Energía</th><td>0,1–2,0 J ajustable</td></tr>
+            <tr>
+              <th scope="row">Disparos por cartucho</th>
+              <td>
+                {SHOTS_SWM.toLocaleString('es-CL')} (+40% vs {SHOTS_STD.toLocaleString('es-CL')} típicos)
+              </td>
+            </tr>
+            <tr><th scope="row">Repuestos</th><td>Stock en Chile · soporte local</td></tr>
+            <tr><th scope="row">Indicación</th><td>Lifting facial no invasivo, firmeza, contorno, rejuvenecimiento</td></tr>
+            <tr><th scope="row">Duración de sesión</th><td>30–60 min según protocolo y zona</td></tr>
+            <tr><th scope="row">Garantía</th><td>12 meses</td></tr>
+            <tr><th scope="row">Precio</th><td>${formatCLP(neto)} neto + IVA 19%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="precio" class="swm-price" aria-labelledby="swm-price-title">
+      <div class="container-aq swm-price__inner">
+        <div>
+          <p class="eyebrow mb-2">Inversión</p>
+          <h2 id="swm-price-title" class="mb-2">Todos los precios son neto + IVA</h2>
+          <p class="mb-5 max-w-[46ch] text-sm text-acero">
+            En Alta Qualità el precio de lista es siempre neto. El IVA 19% se muestra aparte.
+            Así comparas cotizaciones sin mezclar brutos y netos.
+          </p>
+          <p class="font-display text-4xl font-semibold tracking-[-0.03em] text-grafito sm:text-5xl">
+            ${formatCLP(neto)}
+            <span class="mt-1 block font-sans text-base font-normal text-acero sm:text-lg">
+              neto · + IVA 19%
+            </span>
+          </p>
+          <p class="mt-3 font-mono text-sm text-acero" style="font-variant-numeric: tabular-nums;">
+            IVA ${formatCLP(price.iva)} · Total ${formatCLP(price.total)}
+          </p>
+          <p class="prose-aq mt-5 max-w-[46ch] text-sm">
+            Mismo precio que en la <a href="/equipos/skinwave-max">ficha de catálogo</a>.
+            Instalación y capacitación se confirman al cotizar.
+          </p>
+        </div>
+        <div class="swm-price__actions">
+          <a href="/contacto" class="btn-primary w-full sm:w-auto" data-track="swm_cotizar">
+            Cotizar SkinWave Max
+          </a>
+          <a href="/equipos/skinwave-max" class="btn-secondary w-full sm:w-auto">
+            Ver ficha completa
+          </a>
+          <a
+            href="/recursos/que-es-skinwave-max-hifu-facial-coreano-chile"
+            class="btn-ghost w-full sm:w-auto"
+          >
+            Leer guía HIFU
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faq} title="Preguntas sobre SkinWave Max" />
+
+    <section class="swm-final" aria-label="Agendar demo SkinWave Max">
+      <div class="container-aq text-center">
+        <p class="swm-final__brand">SkinWave Max</p>
+        <h2 class="swm-final__title mb-4">Ven al showroom. Prueba el HIFU. Cotiza en neto + IVA.</h2>
+        <p class="mx-auto mb-8 max-w-[48ch] text-sm text-white/75">
+          Vitacura · Concón · Los Ángeles. Repuestos en Chile. Certificado e importado por
+          Alta Qualità desde Corea del Sur.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/contacto" class="btn-cobalto" data-track="swm_final_demo">Agendar demo</a>
+          <a href="/equipos" class="btn-ghost !border-white/35 !text-blanco hover:!bg-white/10">
+            Ver catálogo
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>

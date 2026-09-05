@@ -19,7 +19,7 @@
 | Equipo | Precio neto | Ficha |
 |---|---|---|
 | Sculpt-DD | $4.500.000 | https://alta-qualita.cl/equipos/sculpt-dd |
-| SkinWave Max | $4.500.000 | https://alta-qualita.cl/equipos/skinwave-max |
+| SkinWave Max | $4.500.000 | https://alta-qualita.cl/skinwave-max |
 | Sculpt-DD Max | $6.500.000 | https://alta-qualita.cl/equipos/sculpt-dd-max |
 | KimiFace | $7.200.000 | https://alta-qualita.cl/equipos/kimiface |
 | EndoJiwoo | $7.200.000 | https://alta-qualita.cl/equipos/endojiwoo |
@@ -33,7 +33,7 @@ Origen de todos los equipos: Corea del Sur. El nombre comercial es italiano; la 
 
 - Sculpt-DD: $4.500.000 neto — https://alta-qualita.cl/equipos/sculpt-dd
 - Sculpt-DD Firm: $6.500.000 neto — https://alta-qualita.cl/equipos/sculpt-dd-max
-- SkinWave Max: $4.500.000 neto — https://alta-qualita.cl/equipos/skinwave-max
+- SkinWave Max (HIFU facial coreano): $4.500.000 neto + IVA — landing https://alta-qualita.cl/skinwave-max · ficha https://alta-qualita.cl/equipos/skinwave-max
 - Cuorpo Lift: $11.000.000 neto — https://alta-qualita.cl/equipos/corpolift
 - iZED: $7.500.000 neto — https://alta-qualita.cl/equipos/ized
 - iZED Pro: $14.500.000 neto — https://alta-qualita.cl/equipos/ized-pro
@@ -66,6 +66,7 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 ## Páginas principales
 
 - Catálogo: https://alta-qualita.cl/equipos
+- SkinWave Max (HIFU facial): https://alta-qualita.cl/skinwave-max
 - Comparador: https://alta-qualita.cl/comparador
 - Financiamiento: https://alta-qualita.cl/financiamiento
 - Soporte técnico: https://alta-qualita.cl/soporte-tecnico
@@ -74,17 +75,25 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 - Nosotros: https://alta-qualita.cl/nosotros
 - Contacto / agendar demo: https://alta-qualita.cl/contacto
 
-## Showrooms
+## Showrooms (ver las máquinas antes de comprar)
 
 - Vitacura: Los Abedules 3085
 - Concón: Las Pelargonias 843, Oficina 1112
 - Los Ángeles: Av. Gabriela Mistral 269
 
+## Postventa
+
+- Repuestos en stock en Chile
+- Garantía: 12 meses
+- SLA primera respuesta: 48 horas
+- Capacitación incluida
+
 ## Reglas de datos
 
 - No se inventan especificaciones técnicas: campos faltantes aparecen como «por confirmar».
 - No hay reseñas ni AggregateRating inventados.
-- Precios siempre como neto + IVA + total.
+- **Todos los precios son neto + IVA 19% + total** (nunca solo bruto).
 
 ## SEO / Recursos destacados
 - Qué es iZED: https://alta-qualita.cl/recursos/que-es-ized-ultrasonido-focalizado-chile
+- Qué es SkinWave Max (HIFU facial coreano): https://alta-qualita.cl/recursos/que-es-skinwave-max-hifu-facial-coreano-chile
