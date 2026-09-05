@@ -626,10 +626,19 @@ export const guiaBodies: Record<string, string> = {
   'que-es-ized-ultrasonido-focalizado-chile': `
 <p><strong>iZED</strong> es una de las palabras clave que más buscan clínicas y centros médico-estéticos cuando evalúan tecnología coreana de contorno corporal. Esta guía resume qué es el equipo, cómo lo describe el fabricante, cómo se usa en protocolos clínicos en Chile y qué debes verificar antes de comprarlo —sin inventar specs ni promesas de resultado.</p>
 
+<figure class="guia-inline">
+  <img src="/img/equipos/ized.webp" alt="Equipo iZED de ultrasonido focalizado" width="900" height="900" loading="lazy" decoding="async" />
+  <figcaption>FIG. 01 · iZED — ultrasonido terapéutico focalizado · origen Corea del Sur</figcaption>
+</figure>
+
 <h2>Qué es iZED (y por qué importa el nombre)</h2>
 <p><strong>iZED</strong> (también escrito IZED / iZed) es la marca y el equipo de <strong>ultrasonido terapéutico focalizado</strong> desarrollado en Corea del Sur. En el sitio oficial del fabricante (<a href="https://ized.es/" rel="noopener noreferrer">ized.es</a>) se presenta como tecnología de estética médica para rejuvenecimiento y contorno corporal, con sede de referencia en Seúl (Gangnam).</p>
 <p>En la ficha de equipos del fabricante, <strong>iZED</strong> se describe como un sistema no quirúrgico que trabaja sobre adipocitos de la capa de grasa subcutánea mediante ultrasonido focalizado, con el objetivo de remodelar silueta sin dañar tejidos vecinos y sin tiempo de recuperación asociado a cirugía.</p>
 <p>En Chile, Alta Qualità publica el <a href="/equipos/ized">iZED</a> en catálogo con precio neto visible y origen coreano declarado. El objetivo de esta página es potenciar la búsqueda de la palabra <strong>ized</strong> / <strong>iZED</strong> con información verificable para compradores B2B.</p>
+
+<div class="guia-callout">
+  <p><strong>Dato clave del fabricante:</strong> iZED trabaja con energía focalizada de <strong>60 joules</strong> sobre grasa subcutánea localizada. No es criolipólisis ni HIEMT: es ultrasonido focalizado.</p>
+</div>
 
 <h2>Cómo funciona iZED según el fabricante</h2>
 <p>Según <a href="https://ized.es/latam/equipment/" rel="noopener noreferrer">ized.es (equipment)</a>, el equipo iZED:</p>
@@ -639,6 +648,11 @@ export const guiaBodies: Record<string, string> = {
 <li>Busca precisión sobre el panículo adiposo subcutáneo para cambios de contorno visibles en el marco de un protocolo clínico.</li>
 </ul>
 <p>La versión <strong>iZED Pro</strong> se presenta como ampliación del equipo base, con cabezales adicionales orientados a ampliar el menú de tratamientos (incluido facial en la descripción del fabricante). En Alta Qualità el <a href="/equipos/ized-pro">iZED Pro</a> aparece como la opción de mayor ticket de la línea.</p>
+
+<figure class="guia-inline">
+  <img src="/img/equipos/ized-pro.webp" alt="Equipo iZED Pro" width="900" height="900" loading="lazy" decoding="async" />
+  <figcaption>FIG. 02 · iZED Pro — línea ampliada · $14.500.000 neto</figcaption>
+</figure>
 
 <h2>iZED en la práctica clínica chilena (Método Hebe)</h2>
 <p>En clínicas chilenas que ya operan con tecnología coreana, <strong>iZED</strong> aparece como pieza de contorno corporal dentro de planes combinados. En <a href="https://metodohebe.cl/" rel="noopener noreferrer">metodohebe.cl</a> y su material clínico asociado, iZED se menciona en el contexto de remodelación corporal no quirúrgica y, en contenidos de profundidad, como <strong>ultrasonido focalizado de alta energía (60 joules)</strong> frente a HIFU corporal convencional de menor energía por disparo.</p>
@@ -682,5 +696,6 @@ export const guiaBodies: Record<string, string> = {
 <h2>Próximo paso</h2>
 <p>Revisa la <a href="/equipos/ized">ficha iZED</a>, compara con <a href="/equipos/ized-pro">iZED Pro</a> y <a href="/equipos/sculpt-dd">Sculpt-DD</a>, o <a href="/contacto">agenda una demo</a> con precio neto + IVA sobre la mesa.</p>
 `.trim(),
+
 
 };

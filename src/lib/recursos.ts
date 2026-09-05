@@ -1,5 +1,16 @@
 export type FAQItem = { q: string; a: string };
 
+export type GuiaImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+export type GuiaHighlight = {
+  label: string;
+  value: string;
+};
+
 export type Guia = {
   slug: string;
   title: string;
@@ -10,6 +21,12 @@ export type Guia = {
   relatedEquipos: string[];
   keywords: string[];
   faq: FAQItem[];
+  /** Optional visual treatment for featured guides */
+  brand?: string;
+  lede?: string;
+  cover?: GuiaImage;
+  gallery?: GuiaImage[];
+  highlights?: GuiaHighlight[];
 };
 
 export const guias: Guia[] = [
@@ -176,7 +193,7 @@ export const guias: Guia[] = [
   {
     slug: 'que-es-ized-ultrasonido-focalizado-chile',
     title: 'Qué es iZED: ultrasonido focalizado para contorno corporal en Chile',
-    h1: 'Qué es iZED: ultrasonido focalizado para contorno corporal en Chile',
+    h1: 'Ultrasonido focalizado para contorno corporal en Chile',
     description:
       'Guía B2B sobre iZED: qué es, cómo funciona el ultrasonido focalizado de 60 joules, diferencia con HIEMT y criolipólisis, precio en Chile y criterio de compra para clínicas.',
     published: '2026-09-05',
@@ -189,6 +206,32 @@ export const guias: Guia[] = [
       'ultrasonido focalizado estética',
       'iZED precio Chile',
       'equipo iZED clínica',
+    ],
+    brand: 'iZED',
+    lede:
+      'Equipo coreano de ultrasonido terapéutico focalizado para grasa localizada. 60 joules según el fabricante, sin cirugía, con precio neto publicado en Chile.',
+    cover: {
+      src: '/img/equipos/ized.webp',
+      alt: 'Equipo iZED de ultrasonido focalizado — vista frontal',
+      caption: 'iZED · Ultrasonido focalizado · Origen Corea del Sur',
+    },
+    gallery: [
+      {
+        src: '/img/equipos/ized.webp',
+        alt: 'Máquina iZED para contorno corporal no invasivo',
+        caption: 'iZED — línea base · $7.500.000 neto',
+      },
+      {
+        src: '/img/equipos/ized-pro.webp',
+        alt: 'Máquina iZED Pro con cabezales ampliados',
+        caption: 'iZED Pro — línea ampliada · $14.500.000 neto',
+      },
+    ],
+    highlights: [
+      { label: 'Tecnología', value: 'Ultrasonido focalizado' },
+      { label: 'Energía', value: '60 joules' },
+      { label: 'Origen', value: 'Corea del Sur' },
+      { label: 'Precio neto', value: '$7.500.000' },
     ],
     faq: [
       {

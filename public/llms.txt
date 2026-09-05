@@ -41,12 +41,12 @@ Origen de todos los equipos: Corea del Sur. El nombre comercial es italiano; la 
 - KimiFace: $7.200.000 neto — https://alta-qualita.cl/equipos/kimiface
 - EndoJiwoo: $7.200.000 neto — https://alta-qualita.cl/equipos/endojiwoo
 - CarboxCk: $7.500.000 neto — https://alta-qualita.cl/equipos/carboxck
-- CorpoHera: precio a cotizar — https://alta-qualita.cl/equipos/corpohera
-- Cuky Body: precio a cotizar — https://alta-qualita.cl/equipos/cuky-body
-- Cuky HIFU: precio a cotizar — https://alta-qualita.cl/equipos/cuky-hifu
-- Hao Face: precio a cotizar — https://alta-qualita.cl/equipos/hao-face
+- CorpoHera: $11.000.000 neto — https://alta-qualita.cl/equipos/corpohera
+- Cuky Body: $5.500.000 neto — https://alta-qualita.cl/equipos/cuky-body
+- Cuky HIFU: $890.000 neto — https://alta-qualita.cl/equipos/cuky-hifu
+- Hao Face: $5.500.000 neto — https://alta-qualita.cl/equipos/hao-face
 - Laser Trimax: precio a cotizar — https://alta-qualita.cl/equipos/laser-trimax
-- RejuveSkin: precio a cotizar — https://alta-qualita.cl/equipos/rejuveskin
+- RejuveSkin: $3.500.000 neto — https://alta-qualita.cl/equipos/rejuveskin
 
 ## Garantía y soporte
 
