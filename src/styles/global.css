@@ -106,23 +106,8 @@
     width: 100%;
     max-width: 1180px;
     margin-inline: auto;
-    /* Móvil: margen real visible (antes px-4 = 16px se veía pegado al borde) */
-    padding-inline: max(1.5rem, env(safe-area-inset-left, 0px))
-      max(1.5rem, env(safe-area-inset-right, 0px));
-  }
-
-  @media (min-width: 640px) {
-    .container-aq {
-      padding-inline: max(1.75rem, env(safe-area-inset-left, 0px))
-        max(1.75rem, env(safe-area-inset-right, 0px));
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container-aq {
-      padding-inline: max(2rem, env(safe-area-inset-left, 0px))
-        max(2rem, env(safe-area-inset-right, 0px));
-    }
+    /* padding-inline is unlayered at the end of this file so a later
+       `padding: X 0` shorthand on the same element cannot wipe the gutter. */
   }
 
   .eyebrow {
@@ -803,7 +788,7 @@ figure.guia-inline figcaption {
 }
 
 .swm-tech {
-  padding: 3rem 0 2rem;
+  padding-block: 3rem 2rem;
 }
 
 .swm-depths {
@@ -905,7 +890,7 @@ figure.guia-inline figcaption {
 }
 
 .swm-specs {
-  padding: 3rem 0;
+  padding-block: 3rem;
 }
 
 .swm-table {
@@ -1098,7 +1083,7 @@ figure.guia-inline figcaption {
   letter-spacing: -0.02em;
   margin-top: 0.2rem;
 }
-.ejw-endolaser { padding: 3rem 0 1.5rem; }
+.ejw-endolaser { padding-block: 3rem 1.5rem; }
 .ejw-bullets {
   list-style: none;
   padding: 0;
@@ -1172,7 +1157,7 @@ figure.guia-inline figcaption {
   letter-spacing: -0.03em;
   color: var(--color-grafito);
 }
-.ejw-waves { padding: 3rem 0 2rem; }
+.ejw-waves { padding-block: 3rem 2rem; }
 .ejw-wave-grid {
   display: grid;
   gap: 1rem;
@@ -1231,7 +1216,7 @@ figure.guia-inline figcaption {
   color: var(--color-acero);
   margin-top: 0.25rem;
 }
-.ejw-specs { padding: 3rem 0; }
+.ejw-specs { padding-block: 3rem; }
 .ejw-table {
   width: 100%;
   border-collapse: collapse;
@@ -1298,4 +1283,28 @@ figure.guia-inline figcaption {
   .ejw-hero__cta,
   .ejw-hero__figure,
   .ejw-wave { animation: none; }
+}
+
+/*
+  Unlayered so it wins over section rules like `.swm-tech { padding: 3rem 0 }`.
+  Tailwind @layer components loses to those shorthands and zeroed the mobile gutter
+  on Tecnología / Ficha / ENDOLASER / ondas.
+*/
+.container-aq {
+  padding-inline: max(1.5rem, env(safe-area-inset-left, 0px))
+    max(1.5rem, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 640px) {
+  .container-aq {
+    padding-inline: max(1.75rem, env(safe-area-inset-left, 0px))
+      max(1.75rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-aq {
+    padding-inline: max(2rem, env(safe-area-inset-left, 0px))
+      max(2rem, env(safe-area-inset-right, 0px));
+  }
 }
