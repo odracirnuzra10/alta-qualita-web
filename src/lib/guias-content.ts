@@ -12,7 +12,7 @@ export const guiaBodies: Record<string, string> = {
 <tr><td><a href="/equipos/criock">CrioCK</a></td><td>$8.500.000</td><td>$1.615.000</td><td>$10.115.000</td><td>Criolipólisis</td></tr>
 <tr><td><a href="/equipos/sculpt-dd">Sculpt-DD</a></td><td>$4.500.000</td><td>$855.000</td><td>$5.355.000</td><td>Corporal (no criolipólisis)</td></tr>
 <tr><td>Sculpt-DD Max</td><td>$6.500.000</td><td>$1.235.000</td><td>$7.735.000</td><td>Corporal ampliado</td></tr>
-<tr><td><a href="/equipos/ized">iZed</a></td><td>$7.500.000</td><td>$1.425.000</td><td>$8.925.000</td><td>Facial / corporal según protocolo</td></tr>
+<tr><td><a href="/equipos/ized">iZED</a></td><td>$7.500.000</td><td>$1.425.000</td><td>$8.925.000</td><td>Facial / corporal según protocolo</td></tr>
 </tbody>
 </table>
 
@@ -46,7 +46,7 @@ export const guiaBodies: Record<string, string> = {
 <p>En ambos escenarios modela el impacto en tu punto de equilibrio mensual. Una cuota alta con agenda vacía es más riesgosa que un desembolso inicial con reserva de capital para los primeros noventa días de operación clínica.</p>
 
 <h2>¿Cómo comparar el CrioCK con otras máquinas del catálogo?</h2>
-<p>El <a href="/comparador">comparador</a> de Alta Qualità permite contrastar tecnología, aplicación y precio neto entre modelos. El CrioCK es la opción específica para criolipólisis; Sculpt-DD e iZed cubren otras necesidades de contorno o facial. Elegir según la parrilla que quieras ofrecer evita duplicar tecnologías poco rentables en el mismo local.</p>
+<p>El <a href="/comparador">comparador</a> de Alta Qualità permite contrastar tecnología, aplicación y precio neto entre modelos. El CrioCK es la opción específica para criolipólisis; Sculpt-DD e iZED cubren otras necesidades de contorno o facial. Elegir según la parrilla que quieras ofrecer evita duplicar tecnologías poco rentables en el mismo local.</p>
 <p>Si tu clínica ya ofrece electroestimulación o radiofrecuencia, la criolipólisis puede complementar el ticket medio en zonas de grasa resistente. Si partes de cero, define primero el perfil de paciente objetivo y luego el equipo, no al revés.</p>
 
 <h2>¿Qué documentación debo pedir junto con el precio?</h2>
@@ -179,7 +179,7 @@ export const guiaBodies: Record<string, string> = {
 <tbody>
 <tr><td><a href="/equipos/sculpt-dd">Sculpt-DD</a> $4.500.000</td><td>$5.355.000</td><td>$1.600.000 ingreso bruto/mes</td><td>3,3 meses*</td></tr>
 <tr><td><a href="/equipos/criock">CrioCK</a> $8.500.000</td><td>$10.115.000</td><td>$1.600.000 ingreso bruto/mes</td><td>6,3 meses*</td></tr>
-<tr><td><a href="/equipos/ized">iZed Pro</a> $14.500.000</td><td>$17.255.000</td><td>$1.600.000 ingreso bruto/mes</td><td>10,8 meses*</td></tr>
+<tr><td><a href="/equipos/ized">iZED Pro</a> $14.500.000</td><td>$17.255.000</td><td>$1.600.000 ingreso bruto/mes</td><td>10,8 meses*</td></tr>
 </tbody>
 </table>
 <p><em>*Ejemplo ilustrativo sin restar costos variables, comisiones ni meses de rampa. Usa la calculadora con tus cifras reales.</em></p>
@@ -214,7 +214,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Leasing puede mejorar liquidez inicial a cambio de mayor costo acumulado. Contado puede liberar margen mensual si no vacías la reserva operativa. La mejor opción es la que deja colchón ante tres meses de ocupación baja.</p>
 
 <h2>¿Cómo comparar retorno entre dos equipos del catálogo?</h2>
-<p>Usa el <a href="/comparador">comparador</a> para ver precio neto y aplicación, luego proyecta sesiones diferenciadas por ticket. Un <a href="/equipos/criock">CrioCK</a> a $8.500.000 neto puede pagarse antes que un <a href="/equipos/ized">iZed Pro</a> a $14.500.000 si el ticket y la demanda de criolipólisis en tu comuna son altos, pero no es regla general.</p>
+<p>Usa el <a href="/comparador">comparador</a> para ver precio neto y aplicación, luego proyecta sesiones diferenciadas por ticket. Un <a href="/equipos/criock">CrioCK</a> a $8.500.000 neto puede pagarse antes que un <a href="/equipos/ized">iZED Pro</a> a $14.500.000 si el ticket y la demanda de criolipólisis en tu comuna son altos, pero no es regla general.</p>
 <p>Evalúa también canibalización: si el nuevo equipo roba tiempo a tratamientos ya rentables, el retorno incremental es menor que el bruto. Mide contribución marginal, no solo ingreso total de la clínica.</p>
 
 <h2>¿Qué hacer si el payback supera los veinticuatro meses?</h2>
@@ -271,7 +271,7 @@ export const guiaBodies: Record<string, string> = {
 
 <h2>¿Qué aporta el origen coreano en el catálogo Alta Qualità?</h2>
 <p>Alta Qualità se posiciona como importadora de equipos de estética profesional de origen coreano. Eso implica acceso a fabricantes sujetos a MFDS en su mercado de origen y a ecosistemas de I+D en aparatología estética. El origen se declara en cada ficha; no se comercializan líneas de fabricación italiana ni europea bajo esta marca.</p>
-<p>Modelos como <a href="/equipos/ized">iZed</a>, <a href="/equipos/endojiwoo">EndoJiwoo</a> y <a href="/equipos/carboxck">CarboxCk</a> comparten esa procedencia. Úsala como antecedente técnico, no como garantía automática de resultados clínicos o de rentabilidad.</p>
+<p>Modelos como <a href="/equipos/ized">iZED</a>, <a href="/equipos/endojiwoo">EndoJiwoo</a> y <a href="/equipos/carboxck">CarboxCk</a> comparten esa procedencia. Úsala como antecedente técnico, no como garantía automática de resultados clínicos o de rentabilidad.</p>
 
 <h2>¿Por qué algunos equipos chinos son más baratos?</h2>
 <p>Diferencias de precio pueden reflejar menores costos de producción, menos inversión en certificaciones, clones de diseño, o márgenes agresivos de distribuidores que externalizan soporte. Un precio bajo no es intrínsecamente malo, pero exige mayor diligencia en documentación y prueba de funcionamiento antes de pagar.</p>
@@ -298,7 +298,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Tu decisión debe sostenerse en números editables en la <a href="/retorno">calculadora de retorno</a> y en contratos claros. El origen es un input; el output es continuidad de atención al paciente sin interrupciones.</p>
 
 <h2>¿Cuándo elegir un equipo coreano del catálogo Alta Qualità?</h2>
-<p>Cuando valoras trazabilidad MFDS, un solo interlocutor en Chile, precios netos publicados y línea coherente de protocolos para criolipólisis, facial y corporal. Revisa fichas de <a href="/equipos/criock">CrioCK</a>, <a href="/equipos/sculpt-dd">Sculpt-DD</a> e <a href="/equipos/ized">iZed</a> según tu parrilla objetivo.</p>
+<p>Cuando valoras trazabilidad MFDS, un solo interlocutor en Chile, precios netos publicados y línea coherente de protocolos para criolipólisis, facial y corporal. Revisa fichas de <a href="/equipos/criock">CrioCK</a>, <a href="/equipos/sculpt-dd">Sculpt-DD</a> e <a href="/equipos/ized">iZED</a> según tu parrilla objetivo.</p>
 <p>Solicita demostración o referencia técnica del importador, no videos editados sin contexto. La compra B2B se cierra con documentos y proyección financiera conservadora, no con banderas en un stand de feria.</p>
 
 <h2>¿Qué checklist aplicar antes de decidir por origen?</h2>
@@ -383,7 +383,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Define si hay reemplazo temporal, devolución, reparación in situ o penalidades por demora. Los primeros tres meses revelan defectos de fabricación y calidad del soporte. Sin cláusula clara, asumes el costo de oportunidad.</p>
 
 <h2>¿Cómo uso esta lista en la práctica?</h2>
-<p>Envía las doce preguntas por correo y pide respuesta adjunta a la cotización. Compara proveedores en la misma tabla. Alta Qualità publica precios netos y fichas de <a href="/equipos/sculpt-dd">Sculpt-DD</a>, <a href="/equipos/criock">CrioCK</a> e <a href="/equipos/ized">iZed</a> como punto de partida documentado.</p>
+<p>Envía las doce preguntas por correo y pide respuesta adjunta a la cotización. Compara proveedores en la misma tabla. Alta Qualità publica precios netos y fichas de <a href="/equipos/sculpt-dd">Sculpt-DD</a>, <a href="/equipos/criock">CrioCK</a> e <a href="/equipos/ized">iZED</a> como punto de partida documentado.</p>
 <p>Si un vendedor evita responder por escrito, asume que la respuesta es desfavorable. La disciplina previa a la firma cuesta horas; la falta de ella cuesta meses de equipo detenido y reclamos ante el <a href="https://www.sernac.cl" rel="noopener noreferrer">SERNAC</a> si hubo publicidad engañosa hacia tu clínica como consumidora.</p>
 
 <h2>¿Debo negociar todas las preguntas a la vez o por etapas?</h2>
@@ -418,7 +418,7 @@ export const guiaBodies: Record<string, string> = {
 </table>
 
 <h2>¿Cuánto capital necesito según el equipo elegido?</h2>
-<p>Los precios netos confirmados en catálogo van desde $4.000.000 (Adipolite) hasta $14.500.000 (iZed Pro), más IVA 19% si no lo recuperas como crédito fiscal. El desembolso inicial con financiamiento suele incluir pie, gastos de escrituración y primeras cuotas según la entidad —montos por confirmar en cada cotización crediticia.</p>
+<p>Los precios netos confirmados en catálogo van desde $4.500.000 (Sculpt-DD) hasta $14.500.000 (iZED Pro), más IVA 19% si no lo recuperas como crédito fiscal. El desembolso inicial con financiamiento suele incluir pie, gastos de escrituración y primeras cuotas según la entidad —montos por confirmar en cada cotización crediticia.</p>
 <p>Modela tres equipos de referencia en la <a href="/retorno">calculadora de retorno</a> antes de elegir modalidad: a mayor capital, mayor cuota o mayor pie, según estructura del crédito.</p>
 
 <h2>¿Conviene pagar contado si tengo el capital?</h2>
@@ -448,7 +448,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Dependen del perfil: estados financieros, carpeta tributaria, contrato de arriendo del local, proyección de ingresos y cotización del equipo. Prepara la cotización formal de Alta Qualità con modelo y precio neto. Los plazos de aprobación son por confirmar con cada banco o leasing.</p>
 
 <h2>¿Financiar varios equipos en una sola operación?</h2>
-<p>Algunas entidades permiten paquetes para clínica nueva (por ejemplo CrioCK + EndoJiwoo + iZed). Evalúa si un solo contrato simplifica administración o si prefieres financiar por etapas según validación de demanda. Financiar tres equipos antes de tener agenda es riesgoso aunque la cuota conjunta parezca «cómoda».</p>
+<p>Algunas entidades permiten paquetes para clínica nueva (por ejemplo CrioCK + EndoJiwoo + iZED). Evalúa si un solo contrato simplifica administración o si prefieres financiar por etapas según validación de demanda. Financiar tres equipos antes de tener agenda es riesgoso aunque la cuota conjunta parezca «cómoda».</p>
 
 <h2>¿Qué errores evitar al firmar crédito o leasing?</h2>
 <p>Firmar financiamiento antes de aprobar local y permisos; no leer cláusulas de prepago; asumir que el importador garantiza aprobación bancaria; omitir seguros obligatorios en el flujo de caja. El <a href="https://www.sernac.cl" rel="noopener noreferrer">SERNAC</a> orienta sobre transparencia en productos financieros para consumidores; en B2B aplica diligencia similar.</p>
@@ -465,7 +465,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Algunos importadores trabajan con entidades que financian el precio de lista sin descuento por contado. Pregunta si el precio neto es el mismo en las tres modalidades. Financiar no debería ocultar un sobreprecio respecto al contado, pero verifica en la cotización firmada.</p>
 
 <h2>¿Qué hacer si el banco rechaza la solicitud?</h2>
-<p>Reevalúa monto a financiar: quizá conviene empezar con un solo equipo de menor capital como <a href="/equipos/sculpt-dd">Sculpt-DD</a> a $4.500.000 neto, validar demanda y solicitar crédito posterior para <a href="/equipos/criock">CrioCK</a> o <a href="/equipos/ized">iZed</a>. También puedes aumentar pie o presentar avales según política de la entidad —condiciones por confirmar.</p>
+<p>Reevalúa monto a financiar: quizá conviene empezar con un solo equipo de menor capital como <a href="/equipos/sculpt-dd">Sculpt-DD</a> a $4.500.000 neto, validar demanda y solicitar crédito posterior para <a href="/equipos/criock">CrioCK</a> o <a href="/equipos/ized">iZED</a>. También puedes aumentar pie o presentar avales según política de la entidad —condiciones por confirmar.</p>
 <p>No firmes arriendo de local grande antes de tener claridad crediticia si el negocio depende de financiar la mayor parte del equipamiento.</p>
 
 <h2>¿Cómo documentar la decisión de financiamiento para socios?</h2>
@@ -525,7 +525,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Inspección visual, prueba de encendido, registro de serie, capacitación inicial y archivo de garantía activa. Programa el primer mantenimiento preventivo según manual. Entrega copia de procedimientos de falla al operador y a administración.</p>
 
 <h2>¿Dónde profundizar antes de comprar?</h2>
-<p>Revisa <a href="/soporte-tecnico">soporte técnico</a>, las doce preguntas de compra en recursos y fichas de <a href="/equipos/ized">iZed</a> o <a href="/equipos/criock">CrioCK</a>. La mejor garantía es un importador con repuestos, SLA claro y documentación completa desde el día uno.</p>
+<p>Revisa <a href="/soporte-tecnico">soporte técnico</a>, las doce preguntas de compra en recursos y fichas de <a href="/equipos/ized">iZED</a> o <a href="/equipos/criock">CrioCK</a>. La mejor garantía es un importador con repuestos, SLA claro y documentación completa desde el día uno.</p>
 <p>Trata el plan de contingencia por falla con el mismo rigor que el plan de marketing de lanzamiento: ambos determinan si la inversión se sostiene cuando algo sale mal.</p>
 
 <h2>¿Qué registrar en un libro de mantenimiento?</h2>
@@ -557,7 +557,7 @@ export const guiaBodies: Record<string, string> = {
 <thead><tr><th>Rol sugerido</th><th>Ejemplo catálogo Alta Qualità</th><th>Precio neto</th><th>Total con IVA 19%</th></tr></thead>
 <tbody>
 <tr><td>Corporal alto ticket</td><td><a href="/equipos/criock">CrioCK</a> (criolipólisis)</td><td>$8.500.000</td><td>$10.115.000</td></tr>
-<tr><td>Facial / lifting</td><td><a href="/equipos/ized">iZed</a> o iZed Pro</td><td>$7.500.000 – $14.500.000</td><td>Por confirmar en ficha</td></tr>
+<tr><td>Facial / lifting</td><td><a href="/equipos/ized">iZED</a> o iZED Pro</td><td>$7.500.000 – $14.500.000</td><td>Por confirmar en ficha</td></tr>
 <tr><td>Corporal volumen</td><td><a href="/equipos/sculpt-dd">Sculpt-DD</a> (electroestimulación)</td><td>$4.500.000</td><td>$5.355.000</td></tr>
 <tr><td>Complemento vascular / CO₂</td><td><a href="/equipos/carboxck">CarboxCk</a> (carboxiterapia)</td><td>$7.500.000</td><td>$8.925.000</td></tr>
 <tr><td>Endoláser corporal</td><td><a href="/equipos/endojiwoo">EndoJiwoo</a></td><td>$7.200.000</td><td>$8.568.000</td></tr>
@@ -573,7 +573,7 @@ export const guiaBodies: Record<string, string> = {
 <p>No compres ambos el mismo mes sin agenda proyectada para llenar dos boxes corporales. Secuencia: valida demanda con uno y añade el segundo cuando la ocupación supere un umbral que definas internamente.</p>
 
 <h2>¿Qué equipo facial encaja en un trío inicial?</h2>
-<p><a href="/equipos/ized">iZed</a> a $7.500.000 neto cubre línea facial y corporal según protocolo del fabricante. iZed Pro a $14.500.000 neto es salto de capital mayor: justifícalo con ticket facial proyectado y diferenciación frente a competencia local. Usa el <a href="/comparador">comparador</a> antes de decidir.</p>
+<p><a href="/equipos/ized">iZED</a> a $7.500.000 neto cubre línea facial y corporal según protocolo del fabricante. iZED Pro a $14.500.000 neto es salto de capital mayor: justifícalo con ticket facial proyectado y diferenciación frente a competencia local. Usa el <a href="/comparador">comparador</a> antes de decidir.</p>
 <p>Para lifting no quirúrgico, evalúa si tu parrilla requiere <strong>HIFU</strong> (ultrasonido focalizado de alta intensidad); confirma indicaciones en ficha técnica sin inventar parámetros.</p>
 
 <h2>¿Dónde entra EndoJiwoo o CarboxCk en un esquema de tres?</h2>
@@ -589,10 +589,10 @@ export const guiaBodies: Record<string, string> = {
 <p>Integra agenda y métricas en <a href="/clinera">Clinera</a> si centralizas reservas y seguimiento comercial.</p>
 
 <h2>¿Cómo evitar canibalización entre los tres equipos?</h2>
-<p>Asigna indicaciones distintas en la parrilla: criolipólisis para adiposidad localizada, electroestimulación para tono muscular, facial en iZed para líneas de expresión u otras indicaciones según protocolo. Capacita al equipo para derivar entre tecnologías sin vender lo incorrecto por presión comercial.</p>
+<p>Asigna indicaciones distintas en la parrilla: criolipólisis para adiposidad localizada, electroestimulación para tono muscular, facial en iZED para líneas de expresión u otras indicaciones según protocolo. Capacita al equipo para derivar entre tecnologías sin vender lo incorrecto por presión comercial.</p>
 
 <h2>¿Cuánto capital total implica un trío ejemplo?</h2>
-<p>Una combinación CrioCK + Sculpt-DD + iZed suma $20.500.000 neto ($24.395.000 con IVA 19%) antes de financiamiento, instalación y marketing. Sustituir Sculpt-DD por EndoJiwoo cambia el mix, no necesariamente el total. Modela en <a href="/financiamiento">financiamiento</a> antes de comprometer local.</p>
+<p>Una combinación CrioCK + Sculpt-DD + iZED suma $20.500.000 neto ($24.395.000 con IVA 19%) antes de financiamiento, instalación y marketing. Sustituir Sculpt-DD por EndoJiwoo cambia el mix, no necesariamente el total. Modela en <a href="/financiamiento">financiamiento</a> antes de comprometer local.</p>
 
 <h2>¿Qué personal necesito para operar tres equipos?</h2>
 <p>Como mínimo un operador capacitado por tecnología y recepción que gestione tiempos de box. Tres equipos no implican tres operadores a tiempo completo si los protocolos no se solapan, pero sí planificación de agenda. La capacitación incluida por el importador es por confirmar en horas según cotización.</p>
@@ -601,7 +601,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Ranking de tratamientos por ingreso y por horas de box. Elimina o repricing servicios con menos del umbral que definas. Añade cuarto equipo solo si los tres primeros superan ocupación objetivo sostenida, no por impulso comercial del proveedor.</p>
 
 <h2>¿Cuál es el siguiente paso?</h2>
-<p>Define perfil de paciente, elige tres roles (corporal ticket, facial, volumen o complemento), contrasta modelos en <a href="/comparador">comparador</a> y proyecta retorno antes de firmar. Alta Qualità publica precios netos en fichas de <a href="/equipos/criock">CrioCK</a>, <a href="/equipos/endojiwoo">EndoJiwoo</a> e <a href="/equipos/ized">iZed</a> para anclar tu plan con cifras reales.</p>
+<p>Define perfil de paciente, elige tres roles (corporal ticket, facial, volumen o complemento), contrasta modelos en <a href="/comparador">comparador</a> y proyecta retorno antes de firmar. Alta Qualità publica precios netos en fichas de <a href="/equipos/criock">CrioCK</a>, <a href="/equipos/endojiwoo">EndoJiwoo</a> e <a href="/equipos/ized">iZED</a> para anclar tu plan con cifras reales.</p>
 <p>Una parrilla coherente vende mejor que un catálogo exhaustivo: el paciente compra claridad, no cantidad de máquinas en tu recepción.</p>
 
 <h2>¿Cómo nombrar tratamientos en la parrilla sin confundir?</h2>
@@ -617,10 +617,70 @@ export const guiaBodies: Record<string, string> = {
 
 <h2>¿Cómo capacitar al equipo en tres tecnologías sin saturarlos?</h2>
 <p>Secuencia la capacitación: primero el tratamiento estrella de apertura, luego el segundo a las cuatro semanas, el tercero a las ocho. Cada hito incluye evaluación interna con checklist de seguridad. No abras venta pública de un protocolo hasta que el operador firme competencia en ese ítem.</p>
-<p>Usa fichas de <a href="/equipos/sculpt-dd">Sculpt-DD</a>, <a href="/equipos/criock">CrioCK</a> y <a href="/equipos/ized">iZed</a> como material de referencia, complementado con protocolos del importador.</p>
+<p>Usa fichas de <a href="/equipos/sculpt-dd">Sculpt-DD</a>, <a href="/equipos/criock">CrioCK</a> y <a href="/equipos/ized">iZED</a> como material de referencia, complementado con protocolos del importador.</p>
 
 <h2>¿Qué permisos municipales o de edificio considerar con tres equipos?</h2>
 <p>Confirma carga eléctrica, ventilación y uso de suelo del local antes de instalar tres unidades. Los requisitos dependen de la comuna y del edificio —plazos por confirmar con arquitecto o administrador. Un retraso en permisos deja equipos pagados sin generar ingresos ni cubrir cuotas de <a href="/financiamiento">financiamiento</a>.</p>
 `.trim(),
-};
 
+  'que-es-ized-ultrasonido-focalizado-chile': `
+<p><strong>iZED</strong> es una de las palabras clave que más buscan clínicas y centros médico-estéticos cuando evalúan tecnología coreana de contorno corporal. Esta guía resume qué es el equipo, cómo lo describe el fabricante, cómo se usa en protocolos clínicos en Chile y qué debes verificar antes de comprarlo —sin inventar specs ni promesas de resultado.</p>
+
+<h2>Qué es iZED (y por qué importa el nombre)</h2>
+<p><strong>iZED</strong> (también escrito IZED / iZed) es la marca y el equipo de <strong>ultrasonido terapéutico focalizado</strong> desarrollado en Corea del Sur. En el sitio oficial del fabricante (<a href="https://ized.es/" rel="noopener noreferrer">ized.es</a>) se presenta como tecnología de estética médica para rejuvenecimiento y contorno corporal, con sede de referencia en Seúl (Gangnam).</p>
+<p>En la ficha de equipos del fabricante, <strong>iZED</strong> se describe como un sistema no quirúrgico que trabaja sobre adipocitos de la capa de grasa subcutánea mediante ultrasonido focalizado, con el objetivo de remodelar silueta sin dañar tejidos vecinos y sin tiempo de recuperación asociado a cirugía.</p>
+<p>En Chile, Alta Qualità publica el <a href="/equipos/ized">iZED</a> en catálogo con precio neto visible y origen coreano declarado. El objetivo de esta página es potenciar la búsqueda de la palabra <strong>ized</strong> / <strong>iZED</strong> con información verificable para compradores B2B.</p>
+
+<h2>Cómo funciona iZED según el fabricante</h2>
+<p>Según <a href="https://ized.es/latam/equipment/" rel="noopener noreferrer">ized.es (equipment)</a>, el equipo iZED:</p>
+<ul>
+<li>Emite energía focalizada de <strong>60 joules</strong> orientada a grasa localizada.</li>
+<li>Es un abordaje <strong>no invasivo</strong>, sin periodo de recuperación quirúrgico.</li>
+<li>Busca precisión sobre el panículo adiposo subcutáneo para cambios de contorno visibles en el marco de un protocolo clínico.</li>
+</ul>
+<p>La versión <strong>iZED Pro</strong> se presenta como ampliación del equipo base, con cabezales adicionales orientados a ampliar el menú de tratamientos (incluido facial en la descripción del fabricante). En Alta Qualità el <a href="/equipos/ized-pro">iZED Pro</a> aparece como la opción de mayor ticket de la línea.</p>
+
+<h2>iZED en la práctica clínica chilena (Método Hebe)</h2>
+<p>En clínicas chilenas que ya operan con tecnología coreana, <strong>iZED</strong> aparece como pieza de contorno corporal dentro de planes combinados. En <a href="https://metodohebe.cl/" rel="noopener noreferrer">metodohebe.cl</a> y su material clínico asociado, iZED se menciona en el contexto de remodelación corporal no quirúrgica y, en contenidos de profundidad, como <strong>ultrasonido focalizado de alta energía (60 joules)</strong> frente a HIFU corporal convencional de menor energía por disparo.</p>
+<p>Ese encuadre es útil para el dueño de clínica: iZED no se vende como “gimnasio en una máquina” ni como sustituto automático de liposucción. Se posiciona como herramienta de <strong>grasa localizada / silueta</strong>, evaluada por zona, pliegue y objetivo, y con frecuencia combinada con otras tecnologías (radiofrecuencia, HIEMT, drenaje, etc.) según el protocolo del centro.</p>
+<p>Si tu clínica ya atiende demanda de abdomen, flancos o muslos sin cirugía, la pregunta comercial no es solo “¿qué es iZED?”, sino “¿qué ticket y ocupación realista sostiene el <a href="/retorno">retorno</a> de $7.500.000 netos?”.</p>
+
+<h2>iZED vs otras tecnologías del mismo portafolio</h2>
+<p>El fabricante iZED agrupa varias familias tecnológicas. Confundirlas es el error más caro al cotizar:</p>
+<table>
+<thead><tr><th>Línea / ejemplo</th><th>Tecnología</th><th>Para qué se cotiza</th></tr></thead>
+<tbody>
+<tr><td><a href="/equipos/ized">iZED</a> / iZED Pro</td><td>Ultrasonido focalizado</td><td>Grasa localizada / contorno no invasivo</td></tr>
+<tr><td><a href="/equipos/sculpt-dd">Sculpt-DD</a> (HIEMT)</td><td>Electroestimulación electromagnética de alta intensidad</td><td>Tonificación muscular + apoyo a contorno</td></tr>
+<tr><td>Criolipólisis (p. ej. línea Cryo / <a href="/equipos/criock">CrioCK</a>)</td><td>Frío controlado sobre adipocitos</td><td>Reducción de volumen por apoptosis por frío</td></tr>
+<tr><td>HIFU / radiofrecuencia / láser</td><td>Otras plataformas del ecosistema</td><td>Firmeza, textura, rejuvenecimiento según ficha</td></tr>
+</tbody>
+</table>
+<p>En marketing interno, nombra cada equipo por su tecnología real. Si publicas “iZED = electroestimulación” o “iZED = criolipólisis” sin respaldo de ficha, generas incoherencia SEO y reclamos comerciales.</p>
+
+<h2>Precio iZED en Chile (catálogo Alta Qualità)</h2>
+<p>Precios netos publicados (IVA 19% adicional):</p>
+<ul>
+<li><strong>iZED</strong>: $7.500.000 neto · IVA $1.425.000 · total $8.925.000 — <a href="/equipos/ized">ver ficha</a></li>
+<li><strong>iZED Pro</strong>: $14.500.000 neto · IVA $2.755.000 · total $17.255.000 — <a href="/equipos/ized-pro">ver ficha</a></li>
+</ul>
+<p>El precio de lista del equipo no incluye automáticamente instalación, capacitación ni insumos: pídelos desglosados en la cotización. Usa el <a href="/comparador">comparador</a> para contrastar iZED con otras líneas corporales antes de firmar.</p>
+
+<h2>Qué revisar antes de comprar un iZED</h2>
+<ol>
+<li><strong>Indicación real de tu agenda</strong>: ¿tu paciente tipo pide grasa localizada, tonificación o firmeza? Eso define si iZED es el primer equipo o el segundo.</li>
+<li><strong>Ficha del fabricante + ficha local</strong>: energía, aplicadores, contraindicaciones y mantención. Lo que no esté escrito, no lo uses en Instagram.</li>
+<li><strong>Soporte en Chile</strong>: garantía (12 meses en Alta Qualità), repuestos y SLA de respuesta.</li>
+<li><strong>Retorno</strong>: modela precio de sesión × ocupación neta ÷ inversión. La calculadora está en <a href="/retorno">/retorno</a>.</li>
+<li><strong>Complementos</strong>: muchas clínicas combinan ultrasonido focalizado con HIEMT o radiofrecuencia; no dupliques ticket si la demanda no lo sostiene.</li>
+</ol>
+
+<h2>SEO local: por qué documentar “iZED” con claridad</h2>
+<p>Quien busca <strong>ized</strong>, <strong>máquina iZED Chile</strong> o <strong>iZED precio</strong> está en etapa de comparación. Una página que explique tecnología, precio neto + IVA, diferencias con HIEMT/criolipólisis y CTA a ficha/demo convierte mejor que un claim genérico de “última generación”.</p>
+<p>Alta Qualità mantiene esta guía alineada con el fabricante (<a href="https://ized.es/" rel="noopener noreferrer">ized.es</a>) y con el uso clínico público en Chile (<a href="https://metodohebe.cl/" rel="noopener noreferrer">Método Hebe</a>), y actualiza cifras solo cuando están confirmadas en catálogo.</p>
+
+<h2>Próximo paso</h2>
+<p>Revisa la <a href="/equipos/ized">ficha iZED</a>, compara con <a href="/equipos/ized-pro">iZED Pro</a> y <a href="/equipos/sculpt-dd">Sculpt-DD</a>, o <a href="/contacto">agenda una demo</a> con precio neto + IVA sobre la mesa.</p>
+`.trim(),
+
+};
