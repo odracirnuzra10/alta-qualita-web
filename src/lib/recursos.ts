@@ -1,3 +1,5 @@
+import { posts } from './blog';
+
 export type FAQItem = { q: string; a: string };
 
 export type GuiaImage = {
@@ -21,6 +23,9 @@ export type Guia = {
   relatedEquipos: string[];
   keywords: string[];
   faq: FAQItem[];
+  relatedGuias?: string[];
+  productList?: { name: string; href: string }[];
+  schemaType?: 'Article' | 'BlogPosting';
   /** Optional visual treatment for featured guides */
   brand?: string;
   lede?: string;
@@ -29,7 +34,7 @@ export type Guia = {
   highlights?: GuiaHighlight[];
 };
 
-export const guias: Guia[] = [
+const catalogGuias: Guia[] = [
   {
     slug: 'cuanto-cuesta-maquina-criolipolisis-chile-2026',
     title: '¿Cuánto cuesta una máquina de criolipólisis en Chile en 2026?',
@@ -367,6 +372,24 @@ export const guias: Guia[] = [
     ],
   },
 
+];
+
+export const guias: Guia[] = [
+  ...posts.map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    h1: p.h1,
+    description: p.description,
+    published: p.published,
+    updated: p.updated,
+    relatedEquipos: p.relatedEquipos,
+    relatedGuias: p.relatedPosts,
+    keywords: p.keywords,
+    faq: p.faq,
+    productList: p.productList,
+    schemaType: 'BlogPosting' as const,
+  })),
+  ...catalogGuias,
 ];
 
 export function getGuia(slug: string): Guia | undefined {

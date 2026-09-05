@@ -24,6 +24,46 @@
       "source": "/equipos/adipolite/",
       "destination": "/equipos/ized",
       "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/recursos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/recursos",
+      "permanent": true
+    },
+    {
+      "source": "/blog/que-maquinas-comprar-clinica-estetica",
+      "destination": "/recursos/que-maquinas-comprar-clinica-estetica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/que-maquinas-comprar-clinica-estetica/",
+      "destination": "/recursos/que-maquinas-comprar-clinica-estetica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/endolaser-vs-hifu-que-comprar",
+      "destination": "/recursos/endolaser-vs-hifu-que-comprar",
+      "permanent": true
+    },
+    {
+      "source": "/blog/endolaser-vs-hifu-que-comprar/",
+      "destination": "/recursos/endolaser-vs-hifu-que-comprar",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rentabilidad-criolipolisis-centro-estetica",
+      "destination": "/recursos/rentabilidad-criolipolisis-centro-estetica",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rentabilidad-criolipolisis-centro-estetica/",
+      "destination": "/recursos/rentabilidad-criolipolisis-centro-estetica",
+      "permanent": true
     }
   ],
   "headers": [

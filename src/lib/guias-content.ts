@@ -1,6 +1,9 @@
+import { blogBodies } from './blog-content';
+
 export const guiaBodies: Record<string, string> = {
+  ...blogBodies,
   'cuanto-cuesta-maquina-criolipolisis-chile-2026': `
-<p>Comprar una máquina de <strong>criolipólisis</strong> — técnica de reducción de grasa localizada mediante enfriamiento controlado del tejido adiposo — exige leer precios netos, IVA y condiciones de entrega con la misma rigurosidad que aplicas a un arriendo o a un crédito comercial. Esta guía resume cifras confirmadas del catálogo Alta Qualità 2026 y el marco para comparar cotizaciones sin mezclar conceptos. Para el cálculo de sesiones, membranas y meses de retorno ve <a href="/blog/rentabilidad-criolipolisis-centro-estetica">rentabilidad de una máquina de criolipólisis</a>.</p>
+<p>Comprar una máquina de <strong>criolipólisis</strong> — técnica de reducción de grasa localizada mediante enfriamiento controlado del tejido adiposo — exige leer precios netos, IVA y condiciones de entrega con la misma rigurosidad que aplicas a un arriendo o a un crédito comercial. Esta guía resume cifras confirmadas del catálogo Alta Qualità 2026 y el marco para comparar cotizaciones sin mezclar conceptos. Para el cálculo de sesiones, membranas y meses de retorno ve <a href="/recursos/rentabilidad-criolipolisis-centro-estetica">rentabilidad de una máquina de criolipólisis</a>.</p>
 
 <h2>¿Cuánto cuesta una máquina de criolipólisis en Chile en 2026?</h2>
 <p>En el catálogo Alta Qualità 2026, el equipo dedicado a criolipólisis es el <a href="/equipos/criock">CrioCK</a>, con precio neto de $8.500.000 más IVA 19%, equivalente a $10.115.000 de desembolso total si no recuperas el impuesto. No hay otro modelo de criolipólisis en esta línea; alternativas corporales usan otras tecnologías y rangos de precio distintos.</p>
@@ -168,7 +171,7 @@ export const guiaBodies: Record<string, string> = {
 <p>Si dos proveedores ofrecen precios similares, el que entrega carpeta completa en 48 horas suele ser más confiable que el que promete enviarla «después del pago».</p>
 `.trim(),
   'en-cuantos-meses-se-paga-maquina-estetica': `
-<p>Calcular en cuántos meses se paga una máquina de estética requiere separar el precio de lista del flujo de caja real: sesiones vendidas, costos variables, ocupación del equipo y forma de financiamiento. Esta guía usa precios netos confirmados de Alta Qualità y una metodología que puedes replicar en la <a href="/retorno">calculadora de retorno</a>. Ejemplos aplicados: <a href="/blog/que-maquinas-comprar-clinica-estetica">las 4 máquinas de una clínica</a> y <a href="/blog/rentabilidad-criolipolisis-centro-estetica">ROI de criolipólisis</a>.</p>
+<p>Calcular en cuántos meses se paga una máquina de estética requiere separar el precio de lista del flujo de caja real: sesiones vendidas, costos variables, ocupación del equipo y forma de financiamiento. Esta guía usa precios netos confirmados de Alta Qualità y una metodología que puedes replicar en la <a href="/retorno">calculadora de retorno</a>. Ejemplos aplicados: <a href="/recursos/que-maquinas-comprar-clinica-estetica">las 4 máquinas de una clínica</a> y <a href="/recursos/rentabilidad-criolipolisis-centro-estetica">ROI de criolipólisis</a>.</p>
 
 <h2>¿En cuántos meses se paga una máquina de estética?</h2>
 <p>No existe un plazo universal: depende del precio neto del equipo, del ticket por sesión, de cuántas sesiones netas vendes al mes y de los costos que restas (insumos, comisiones, tiempo de operador). Como referencia, divide la inversión total desembolsada entre el margen de contribución mensual del equipo, no entre ingresos brutos.</p>

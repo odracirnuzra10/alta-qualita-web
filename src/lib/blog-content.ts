@@ -2,7 +2,7 @@ export const blogBodies: Record<string, string> = {
   'que-maquinas-comprar-clinica-estetica': `
 <p>Una clínica estética rentable necesita cuatro máquinas: una de HIFU para flacidez, una de criolipólisis para grasa localizada, un endolaser para remodelación facial y corporal, y un analizador facial para diagnosticar y cerrar ventas. Con esas cuatro cubres el 80% de la demanda real de pacientes y evitas gastar en equipos que terminan guardados.</p>
 <p>Esto no es teoría. Llevo más de diez años operando tres clínicas estéticas en Chile (Los Ángeles, Vitacura y Concón), y las máquinas que recomiendo acá son las que hoy generan ingresos en mis propios boxes. En Alta Qualità las vendemos porque primero las compramos, las probamos y calculamos su retorno con pacientes reales.</p>
-<p>En esta guía vas a encontrar qué compra primero un centro nuevo, cuánto cuesta equiparse por nivel, cómo calcular la rentabilidad de cada equipo y qué errores evitar cuando cotizas. Si ya tienes HIFU y dudas entre sumar endolaser, lee también <a href="/blog/endolaser-vs-hifu-que-comprar">endolaser vs HIFU</a>. Si tu prioridad es corporal, ve <a href="/blog/rentabilidad-criolipolisis-centro-estetica">la rentabilidad de la criolipólisis</a>.</p>
+<p>En esta guía vas a encontrar qué compra primero un centro nuevo, cuánto cuesta equiparse por nivel, cómo calcular la rentabilidad de cada equipo y qué errores evitar cuando cotizas. Si ya tienes HIFU y dudas entre sumar endolaser, lee también <a href="/recursos/endolaser-vs-hifu-que-comprar">endolaser vs HIFU</a>. Si tu prioridad es corporal, ve <a href="/recursos/rentabilidad-criolipolisis-centro-estetica">la rentabilidad de la criolipólisis</a>.</p>
 
 <h2>Cómo elegir aparatología estética: los 5 criterios que importan</h2>
 <p>El criterio principal para elegir una máquina estética es la rentabilidad por sesión, no el precio de compra. Una máquina barata que no puedes cobrar bien es más cara que una profesional que se paga sola en meses.</p>
@@ -33,7 +33,7 @@ export const blogBodies: Record<string, string> = {
 
 <h3>2. Máquina de criolipólisis — grasa localizada</h3>
 <p>La criolipólisis es la máquina corporal más rentable por sesión. Congela la grasa localizada de abdomen, flancos, muslos y brazos de forma controlada, y el cuerpo la elimina en las semanas siguientes. Es el tratamiento corporal que más piden los pacientes que ya descartaron la cirugía.</p>
-<p><strong>Por qué es la segunda compra:</strong> “criolipólisis” acumula miles de búsquedas mensuales de pacientes en Chile. Es la máquina que sostiene la línea corporal de un centro. El detalle de números está en <a href="/blog/rentabilidad-criolipolisis-centro-estetica">rentabilidad de una máquina de criolipólisis</a>.</p>
+<p><strong>Por qué es la segunda compra:</strong> “criolipólisis” acumula miles de búsquedas mensuales de pacientes en Chile. Es la máquina que sostiene la línea corporal de un centro. El detalle de números está en <a href="/recursos/rentabilidad-criolipolisis-centro-estetica">rentabilidad de una máquina de criolipólisis</a>.</p>
 <p>Qué mirar al comprar:</p>
 <ul>
 <li>Cantidad de manípulos: con dos o más tratas dos zonas a la vez y duplicas el ticket por hora. Pide el número por escrito; no está publicado en ficha.</li>
@@ -46,7 +46,7 @@ export const blogBodies: Record<string, string> = {
 
 <h3>3. Endolaser — remodelación facial y corporal de alto ticket</h3>
 <p>El endolaser es la máquina que diferencia una clínica de un centro de estética básico. Es un láser de fibra que actúa bajo la piel para tensar, reducir grasa y remodelar zonas como papada, brazos, abdomen y rodillas, con resultados que se acercan a los quirúrgicos sin cirugía.</p>
-<p><strong>Por qué es la tercera compra:</strong> es el equipo de mayor ticket por sesión y el que atrae pacientes que ya probaron todo lo demás. Requiere profesional de la salud para operarlo, lo que también eleva tu posicionamiento. Comparativa directa: <a href="/blog/endolaser-vs-hifu-que-comprar">endolaser vs HIFU</a>.</p>
+<p><strong>Por qué es la tercera compra:</strong> es el equipo de mayor ticket por sesión y el que atrae pacientes que ya probaron todo lo demás. Requiere profesional de la salud para operarlo, lo que también eleva tu posicionamiento. Comparativa directa: <a href="/recursos/endolaser-vs-hifu-que-comprar">endolaser vs HIFU</a>.</p>
 <p>Qué mirar al comprar:</p>
 <ul>
 <li>Longitud de onda y potencia: definen para qué zonas y tejidos sirve.</li>
@@ -142,7 +142,7 @@ export const blogBodies: Record<string, string> = {
 
   'endolaser-vs-hifu-que-comprar': `
 <p>Si solo puedes comprar una, compra HIFU primero: cuesta menos ($4.500.000 neto), lo opera una esteticista capacitada y atiende la demanda más alta en Chile (flacidez facial). El endolaser (desde $7.200.000 neto) viene después: exige profesional de la salud, pero cobra el doble o el triple por sesión y trata zonas que el HIFU no alcanza.</p>
-<p>Esa es la respuesta corta. La larga depende de tu etapa, de quién opera en tu box y de cuánto pagan tus pacientes. En nuestra guía de <a href="/blog/que-maquinas-comprar-clinica-estetica">qué máquinas comprar para una clínica estética</a> explicamos el orden completo; acá comparamos solo estas dos, con los precios reales de Alta Qualità y lo que vemos en nuestras propias clínicas.</p>
+<p>Esa es la respuesta corta. La larga depende de tu etapa, de quién opera en tu box y de cuánto pagan tus pacientes. En nuestra guía de <a href="/recursos/que-maquinas-comprar-clinica-estetica">qué máquinas comprar para una clínica estética</a> explicamos el orden completo; acá comparamos solo estas dos, con los precios reales de Alta Qualità y lo que vemos en nuestras propias clínicas.</p>
 
 <h2>En qué se diferencian endolaser y HIFU</h2>
 <p>El HIFU actúa desde afuera con ultrasonido focalizado; el endolaser actúa desde adentro con una fibra láser bajo la piel. Esa diferencia define todo lo demás: quién lo opera, cuánto cuesta la sesión y qué resultados espera el paciente.</p>
@@ -173,7 +173,7 @@ export const blogBodies: Record<string, string> = {
 <li><strong>Lo opera tu equipo actual.</strong> Con la capacitación incluida, tu esteticista está tratando pacientes la misma semana.</li>
 <li><strong>Retorno en un trimestre.</strong> A $250.000 por sesión facial completa (referencial de mercado), ocho pacientes al mes cubren el equipo en tres meses; desde el cuarto es utilidad.</li>
 </ol>
-<p>Lo que el HIFU no hace: reducir grasa ni tratar cuerpo con resultados comparables al endolaser. Si tus pacientes piden brazos, abdomen o rodillas, el HIFU facial no es la respuesta. Para grasa localizada la compra siguiente suele ser <a href="/blog/rentabilidad-criolipolisis-centro-estetica">criolipólisis</a> o, si hay profesional de la salud, el propio endolaser.</p>
+<p>Lo que el HIFU no hace: reducir grasa ni tratar cuerpo con resultados comparables al endolaser. Si tus pacientes piden brazos, abdomen o rodillas, el HIFU facial no es la respuesta. Para grasa localizada la compra siguiente suele ser <a href="/recursos/rentabilidad-criolipolisis-centro-estetica">criolipólisis</a> o, si hay profesional de la salud, el propio endolaser.</p>
 
 <h2>Cuándo conviene comprar endolaser</h2>
 <p>Compra endolaser cuando ya tienes flujo de pacientes, un profesional de la salud en tu equipo y quieres subir el ticket promedio. Es la máquina que convierte un centro de estética en una clínica.</p>
@@ -223,7 +223,7 @@ export const blogBodies: Record<string, string> = {
 
   'rentabilidad-criolipolisis-centro-estetica': `
 <p>Una máquina de criolipólisis profesional de $8.500.000 neto se paga en 5 a 7 meses con 10 pacientes al mes a $120.000 por zona, y desde ahí deja entre $1.000.000 y $2.000.000 mensuales de utilidad según consumibles. Es la máquina corporal más rentable por hora de box porque cada sesión dura 45–60 minutos y el paciente vuelve por más zonas.</p>
-<p>En esta guía te muestro el cálculo completo con los números que usamos en Método Hebe, para que lo repitas con tus propios precios. Si todavía estás decidiendo qué equipos comprar, parte por nuestra guía de <a href="/blog/que-maquinas-comprar-clinica-estetica">qué máquinas comprar para una clínica estética</a>.</p>
+<p>En esta guía te muestro el cálculo completo con los números que usamos en Método Hebe, para que lo repitas con tus propios precios. Si todavía estás decidiendo qué equipos comprar, parte por nuestra guía de <a href="/recursos/que-maquinas-comprar-clinica-estetica">qué máquinas comprar para una clínica estética</a>.</p>
 
 <h2>La fórmula de rentabilidad de una máquina de criolipólisis</h2>
 <p>La rentabilidad mensual de una criolipólisis se calcula así: (zonas tratadas al mes × precio por zona) − membranas − costo de operadora = utilidad mensual. Divide el precio neto del equipo por esa utilidad y tienes los meses de retorno.</p>

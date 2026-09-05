@@ -74,7 +74,6 @@ export const NAV_LINKS = [
   { href: '/soporte-tecnico', label: 'Soporte' },
   { href: '/clinera', label: 'Clinera' },
   { href: '/recursos', label: 'Recursos' },
-  { href: '/blog', label: 'Blog' },
   { href: '/nosotros', label: 'Nosotros' },
 ] as const;
 
