@@ -47,7 +47,9 @@ Regla: **no inventar**. Editar `src/data/equipos.json` y/o `src/lib/site.ts`.
 ### Equipos (17 en catálogo)
 Specs técnicas, certificaciones con número, qué incluye la compra (salvo garantía ya en 12 meses), ROI defaults, PDFs de ficha reales.  
 Fotos Drive aplicadas a todo el catálogo visible.  
-**Precio pendiente (foto publicada, valor a cotizar):** CorpoHera, Cuky Body, Cuky HIFU, Hao Face, Laser Trimax, RejuveSkin.  
+**Precio pendiente (foto publicada, valor a cotizar):** Laser Trimax.
+
+**Precios confirmados (2026-09-05):** RejuveSkin $3.500.000 · Cuky HIFU $890.000 · Hao Face $5.500.000 · Cuky Body $5.500.000 · CorpoHera $11.000.000 (todos + IVA 19%).  
 
 ### Clinera (oferta)
 | Campo | Estado |

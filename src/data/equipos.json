@@ -865,7 +865,7 @@
     "slug": "corpohera",
     "name": "CorpoHera",
     "category": "Contorno corporal",
-    "priceNeto": null,
+    "priceNeto": 11000000,
     "origin": "Corea del Sur",
     "image": "/img/equipos/corpohera.webp",
     "intro": null,
@@ -928,7 +928,7 @@
     "faq": [
       {
         "q": "¿Cuánto cuesta el CorpoHera en Chile?",
-        "a": "El precio neto del CorpoHera se confirma en cotización. Agenda una demo o escribe por WhatsApp para recibir la oferta vigente, sin publicar un valor inventado en la ficha."
+        "a": "El CorpoHera tiene un precio neto de $11.000.000 + IVA 19% ($2.090.000). El total con IVA es $13.090.000."
       },
       {
         "q": "¿De dónde es el CorpoHera?",
@@ -948,7 +948,7 @@
     "slug": "cuky-body",
     "name": "Cuky Body",
     "category": "Diagnóstico corporal",
-    "priceNeto": null,
+    "priceNeto": 5500000,
     "origin": "Corea del Sur",
     "image": "/img/equipos/cuky-body.webp",
     "intro": null,
@@ -1011,7 +1011,7 @@
     "faq": [
       {
         "q": "¿Cuánto cuesta el Cuky Body en Chile?",
-        "a": "El precio neto del Cuky Body se confirma en cotización. Agenda una demo o escribe por WhatsApp para recibir la oferta vigente, sin publicar un valor inventado en la ficha."
+        "a": "El Cuky Body tiene un precio neto de $5.500.000 + IVA 19% ($1.045.000). El total con IVA es $6.545.000."
       },
       {
         "q": "¿De dónde es el Cuky Body?",
@@ -1031,7 +1031,7 @@
     "slug": "cuky-hifu",
     "name": "Cuky HIFU",
     "category": "Facial",
-    "priceNeto": null,
+    "priceNeto": 890000,
     "origin": "Corea del Sur",
     "image": "/img/equipos/cuky-hifu.webp",
     "intro": null,
@@ -1094,7 +1094,7 @@
     "faq": [
       {
         "q": "¿Cuánto cuesta el Cuky HIFU en Chile?",
-        "a": "El precio neto del Cuky HIFU se confirma en cotización. Agenda una demo o escribe por WhatsApp para recibir la oferta vigente, sin publicar un valor inventado en la ficha."
+        "a": "El Cuky HIFU tiene un precio neto de $890.000 + IVA 19% ($169.100). El total con IVA es $1.059.100."
       },
       {
         "q": "¿De dónde es el Cuky HIFU?",
@@ -1114,7 +1114,7 @@
     "slug": "hao-face",
     "name": "Hao Face",
     "category": "Facial",
-    "priceNeto": null,
+    "priceNeto": 5500000,
     "origin": "Corea del Sur",
     "image": "/img/equipos/hao-face.webp",
     "intro": null,
@@ -1177,7 +1177,7 @@
     "faq": [
       {
         "q": "¿Cuánto cuesta el Hao Face en Chile?",
-        "a": "El precio neto del Hao Face se confirma en cotización. Agenda una demo o escribe por WhatsApp para recibir la oferta vigente, sin publicar un valor inventado en la ficha."
+        "a": "El Hao Face tiene un precio neto de $5.500.000 + IVA 19% ($1.045.000). El total con IVA es $6.545.000."
       },
       {
         "q": "¿De dónde es el Hao Face?",
@@ -1279,7 +1279,7 @@
     "slug": "rejuveskin",
     "name": "RejuveSkin",
     "category": "Facial",
-    "priceNeto": null,
+    "priceNeto": 3500000,
     "origin": "Corea del Sur",
     "image": "/img/equipos/rejuveskin.webp",
     "intro": null,
@@ -1342,7 +1342,7 @@
     "faq": [
       {
         "q": "¿Cuánto cuesta el RejuveSkin en Chile?",
-        "a": "El precio neto del RejuveSkin se confirma en cotización. Agenda una demo o escribe por WhatsApp para recibir la oferta vigente, sin publicar un valor inventado en la ficha."
+        "a": "El RejuveSkin tiene un precio neto de $3.500.000 + IVA 19% ($665.000). El total con IVA es $4.165.000."
       },
       {
         "q": "¿De dónde es el RejuveSkin?",

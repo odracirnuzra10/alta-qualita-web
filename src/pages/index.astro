@@ -85,9 +85,51 @@ const heroSpecs = [
         <div class="flex flex-wrap gap-3">
           <a href="/contacto" class="btn-primary" data-track="agendar_demo">Agendar demo</a>
           <a href="/equipos" class="btn-secondary">Ver catálogo</a>
+          <a href="/recursos/que-es-ized-ultrasonido-focalizado-chile" class="btn-ghost" data-track="guia_ized_hero">Guía iZED</a>
         </div>
       </div>
       <ProductMedia name="iZED" image={heroImage} fig="FIG. 01" priority />
+    </div>
+  </section>
+
+  <!-- Guía iZED destacada -->
+  <section class="home-ized" aria-labelledby="home-ized-title">
+    <div class="container-aq home-ized__grid">
+      <div>
+        <p class="eyebrow mb-2">Guía destacada</p>
+        <p class="home-ized__brand">iZED</p>
+        <h2 id="home-ized-title" class="mb-4 text-2xl sm:text-3xl">
+          Ultrasonido focalizado para contorno corporal
+        </h2>
+        <p class="prose-aq mb-6 max-w-[46ch] text-sm">
+          Qué es iZED, cómo funciona a 60 joules según el fabricante, en qué se diferencia
+          de HIEMT y criolipólisis, y cuánto cuesta en Chile — con fotos del equipo.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/recursos/que-es-ized-ultrasonido-focalizado-chile"
+            class="btn-primary"
+            data-track="guia_ized_home"
+          >
+            Leer guía iZED
+          </a>
+          <a href="/equipos/ized" class="btn-secondary">Ver ficha y precio</a>
+        </div>
+      </div>
+      <a
+        href="/recursos/que-es-ized-ultrasonido-focalizado-chile"
+        class="home-ized__media no-underline"
+        aria-label="Abrir guía iZED"
+      >
+        <img
+          src="/img/equipos/ized.webp"
+          alt="Equipo iZED de ultrasonido focalizado"
+          width="840"
+          height="840"
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
     </div>
   </section>
 
