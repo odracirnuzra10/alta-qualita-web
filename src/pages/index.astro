@@ -13,18 +13,18 @@ const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0
 const maxPrice = priced.length ? Math.max(...priced.map((e) => e.priceNeto)) : 0;
 const minName = priced.find((e) => e.priceNeto === minPrice)?.name ?? '';
 const maxName = priced.find((e) => e.priceNeto === maxPrice)?.name ?? '';
-const heroImage = equipos.find((e) => e.slug === 'adipolite')?.image
+const heroImage = equipos.find((e) => e.slug === 'ized')?.image
   ?? equipos.find((e) => e.image)?.image
   ?? null;
 
 const comparadorHome = equipos.filter((e) =>
-  ['adipolite', 'corpolift', 'skinwave-max', 'sculpt-dd'].includes(e.slug)
+  ['ized', 'corpolift', 'skinwave-max', 'sculpt-dd'].includes(e.slug)
 );
 
 const homeFaq = [
   {
     q: '¿Cuánto cuestan los equipos de estética de Alta Qualità en Chile?',
-    a: `Los precios netos van desde $${formatCLP(minPrice)} (${minName}) hasta $${formatCLP(maxPrice)} (${maxName}). Cada ficha muestra neto + IVA 19% + total. Ejemplo: Adipolite = $4.000.000 neto + $760.000 IVA = $4.760.000 total.`,
+    a: `Los precios netos van desde $${formatCLP(minPrice)} (${minName}) hasta $${formatCLP(maxPrice)} (${maxName}). Cada ficha muestra neto + IVA 19% + total. Ejemplo: iZED = $7.500.000 neto + $1.425.000 IVA = $8.925.000 total.`,
   },
   {
     q: '¿Los equipos son italianos o coreanos?',
@@ -87,7 +87,7 @@ const heroSpecs = [
           <a href="/equipos" class="btn-secondary">Ver catálogo</a>
         </div>
       </div>
-      <ProductMedia name="Adipolite" image={heroImage} fig="FIG. 01" priority />
+      <ProductMedia name="iZED" image={heroImage} fig="FIG. 01" priority />
     </div>
   </section>
 

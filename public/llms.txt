@@ -14,31 +14,29 @@
 - Teléfono / WhatsApp: +56965031299
 
 ## Qué vende
-17 equipos de estética profesional de estética profesional. Precios **netos** en CLP (IVA 19% adicional):
+16 equipos de estética profesional de estética profesional. Precios **netos** en CLP (IVA 19% adicional):
 
 | Equipo | Precio neto | Ficha |
 |---|---|---|
-| Adipolite | $4.000.000 | https://alta-qualita.cl/equipos/adipolite |
 | Sculpt-DD | $4.500.000 | https://alta-qualita.cl/equipos/sculpt-dd |
 | SkinWave Max | $4.500.000 | https://alta-qualita.cl/equipos/skinwave-max |
 | Sculpt-DD Max | $6.500.000 | https://alta-qualita.cl/equipos/sculpt-dd-max |
 | KimiFace | $7.200.000 | https://alta-qualita.cl/equipos/kimiface |
 | EndoJiwoo | $7.200.000 | https://alta-qualita.cl/equipos/endojiwoo |
-| iZed | $7.500.000 | https://alta-qualita.cl/equipos/ized |
+| iZED | $7.500.000 | https://alta-qualita.cl/equipos/ized |
 | CarboxCk | $7.500.000 | https://alta-qualita.cl/equipos/carboxck |
 | CrioCK | $8.500.000 | https://alta-qualita.cl/equipos/criock |
 | CorpoLift | $11.000.000 | https://alta-qualita.cl/equipos/corpolift |
-| iZed Pro | $14.500.000 | https://alta-qualita.cl/equipos/ized-pro |
+| iZED Pro | $14.500.000 | https://alta-qualita.cl/equipos/ized-pro |
 
 Origen de todos los equipos: Corea del Sur. El nombre comercial es italiano; la fabricación no lo es.
 
-- Adipolite: $4.000.000 neto — https://alta-qualita.cl/equipos/adipolite
 - Sculpt-DD: $4.500.000 neto — https://alta-qualita.cl/equipos/sculpt-dd
 - Sculpt-DD Firm: $6.500.000 neto — https://alta-qualita.cl/equipos/sculpt-dd-max
 - SkinWave Max: $4.500.000 neto — https://alta-qualita.cl/equipos/skinwave-max
 - Cuorpo Lift: $11.000.000 neto — https://alta-qualita.cl/equipos/corpolift
-- iZed: $7.500.000 neto — https://alta-qualita.cl/equipos/ized
-- iZed Pro: $14.500.000 neto — https://alta-qualita.cl/equipos/ized-pro
+- iZED: $7.500.000 neto — https://alta-qualita.cl/equipos/ized
+- iZED Pro: $14.500.000 neto — https://alta-qualita.cl/equipos/ized-pro
 - CrioCK: $8.500.000 neto — https://alta-qualita.cl/equipos/criock
 - KimiFace: $7.200.000 neto — https://alta-qualita.cl/equipos/kimiface
 - EndoJiwoo: $7.200.000 neto — https://alta-qualita.cl/equipos/endojiwoo
@@ -87,3 +85,6 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 - No se inventan especificaciones técnicas: campos faltantes aparecen como «por confirmar».
 - No hay reseñas ni AggregateRating inventados.
 - Precios siempre como neto + IVA + total.
+
+## SEO / Recursos destacados
+- Qué es iZED: https://alta-qualita.cl/recursos/que-es-ized-ultrasonido-focalizado-chile

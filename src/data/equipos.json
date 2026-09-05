@@ -1,88 +1,5 @@
 [
   {
-    "slug": "adipolite",
-    "name": "Adipolite",
-    "category": "Contorno corporal",
-    "priceNeto": 4000000,
-    "origin": "Corea del Sur",
-    "image": "/img/equipos/adipolite.webp",
-    "intro": null,
-    "specsHighlight": [
-      {
-        "label": "Tecnología",
-        "value": null
-      },
-      {
-        "label": "Aplicadores",
-        "value": null
-      },
-      {
-        "label": "Sesión",
-        "value": null
-      },
-      {
-        "label": "Garantía",
-        "value": "12 meses"
-      }
-    ],
-    "specs": {
-      "tecnologia": null,
-      "aplicacion": null,
-      "potencia": null,
-      "frecuencia": null,
-      "temperatura": null,
-      "aplicadores": null,
-      "spot": null,
-      "duracionSesion": null,
-      "consumo": null,
-      "dimensiones": null,
-      "peso": null,
-      "certificaciones": null,
-      "origen": "Corea del Sur",
-      "garantia": "12 meses"
-    },
-    "certifications": {
-      "mfds": null,
-      "ce": null,
-      "iso13485": null,
-      "ispChile": null
-    },
-    "includes": {
-      "instalacion": null,
-      "capacitacionHoras": null,
-      "protocolos": null,
-      "garantia": "12 meses",
-      "repuestos": null
-    },
-    "roiDefaults": {
-      "precioSesion": null,
-      "sesionesMes": null
-    },
-    "related": [
-      "sculpt-dd",
-      "criock",
-      "corpolift"
-    ],
-    "faq": [
-      {
-        "q": "¿Cuánto cuesta el Adipolite en Chile?",
-        "a": "El Adipolite tiene un precio neto de $4.000.000 + IVA 19% ($760.000). El total con IVA es $4.760.000. El precio no incluye instalación ni capacitación hasta que Alta Qualità confirme el paquete de compra."
-      },
-      {
-        "q": "¿De dónde es el Adipolite?",
-        "a": "El Adipolite es un equipo de estética profesional de origen coreano, importado a Chile por Alta Qualità. El origen coreano se declara en la ficha y en la documentación comercial."
-      },
-      {
-        "q": "¿Puedo descargar la ficha técnica del Adipolite sin dejar mis datos?",
-        "a": "Sí. La ficha técnica en PDF se descarga sin formulario. Alta Qualità captura el lead en agendar demo y cotizar, no bloqueando el dato técnico."
-      },
-      {
-        "q": "¿El Adipolite incluye la oferta Clinera.io?",
-        "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
-      }
-    ]
-  },
-  {
     "slug": "sculpt-dd",
     "name": "Sculpt-DD",
     "category": "Contorno corporal",
@@ -399,7 +316,7 @@
       "sesionesMes": null
     },
     "related": [
-      "adipolite",
+      "criock",
       "sculpt-dd-max",
       "ized"
     ],
@@ -424,32 +341,32 @@
   },
   {
     "slug": "ized",
-    "name": "iZed",
-    "category": "Electroestimulación / corporal",
+    "name": "iZED",
+    "category": "Ultrasonido focalizado / contorno corporal",
     "priceNeto": 7500000,
     "origin": "Corea del Sur",
-    "intro": "El iZed es un equipo de electroestimulación muscular usado en clínicas estéticas para inducir contracciones profundas equivalentes a horas de entrenamiento. Se comercializa en Chile para centros médico-estéticos y profesionales independientes. Las especificaciones técnicas definitivas (incluyendo cualquier protocolo de frío) se confirman con la ficha del fabricante antes de publicar cifras.",
+    "intro": "El iZED es un equipo de ultrasonido focalizado de origen coreano indicado para contorno corporal no invasivo: actúa sobre adipocitos de la grasa subcutánea localizada. Según el fabricante (iZED / ized.es), entrega energía focalizada de alto impacto (60 joules) para remodelar silueta sin cirugía ni tiempo de recuperación. Alta Qualità lo importa y comercializa en Chile para clínicas estéticas y centros médico-estéticos. Precio neto publicado: $7.500.000 + IVA 19%.",
     "specsHighlight": [
       {
         "label": "Tecnología",
-        "value": "Electroestimulación muscular"
+        "value": "Ultrasonido focalizado"
       },
       {
-        "label": "Aplicadores",
-        "value": null
+        "label": "Energía",
+        "value": "60 joules (fabricante)"
       },
       {
-        "label": "Sesión",
-        "value": null
+        "label": "Aplicación",
+        "value": "Grasa localizada / contorno"
       },
       {
         "label": "Garantía",
-        "value": null
+        "value": "12 meses"
       }
     ],
     "specs": {
-      "tecnologia": "Electroestimulación muscular",
-      "aplicacion": null,
+      "tecnologia": "Ultrasonido focalizado",
+      "aplicacion": "Contorno corporal / grasa subcutánea localizada",
       "potencia": null,
       "frecuencia": null,
       "temperatura": null,
@@ -487,39 +404,39 @@
     ],
     "faq": [
       {
-        "q": "¿Cuánto cuesta el iZed en Chile?",
-        "a": "El iZed tiene un precio neto de $7.500.000 + IVA 19% ($1.425.000). El total con IVA es $8.925.000."
+        "q": "¿Qué es el iZED?",
+        "a": "El iZED es un dispositivo de ultrasonido terapéutico focalizado diseñado en Corea del Sur para contorno corporal no invasivo. Según iZED (ized.es), trabaja sobre adipocitos de la capa de grasa subcutánea con energía focalizada de 60 joules, sin dañar tejidos vecinos."
       },
       {
-        "q": "¿Qué es la electroestimulación muscular en estética?",
-        "a": "La electroestimulación muscular es una tecnología que induce contracciones musculares profundas mediante impulsos eléctricos controlados, usada en clínicas estéticas para tonificación y contorno corporal sin cirugía."
+        "q": "¿Cuánto cuesta el iZED en Chile?",
+        "a": "En Alta Qualità el iZED tiene precio neto de $7.500.000 + IVA 19% ($1.425.000). El total con IVA es $8.925.000."
       },
       {
-        "q": "¿El iZed también hace criolipólisis?",
-        "a": "Existe una mención en fuentes clínicas asociadas a frío controlado, pero esa ambigüedad no está resuelta con la ficha oficial del fabricante. Hasta confirmarlo, Alta Qualità no publica temperaturas ni protocolos de frío para el iZed."
+        "q": "¿iZED es lo mismo que criolipólisis o HIEMT?",
+        "a": "No. En el portafolio del fabricante, iZED es ultrasonido focalizado para grasa localizada; la criolipólisis y el HIEMT (p. ej. Sculpt DD) son líneas distintas. En clínica se pueden combinar según protocolo, pero no son la misma tecnología."
       },
       {
-        "q": "¿De dónde es el iZed?",
-        "a": "Origen: Corea del Sur. Importado y comercializado en Chile por Alta Qualità."
+        "q": "¿De dónde es el iZED?",
+        "a": "Origen: Corea del Sur (Seúl). Importado y comercializado en Chile por Alta Qualità."
       },
       {
-        "q": "¿Cómo calculo el retorno del iZed?",
-        "a": "Usa la calculadora de retorno en alta-qualita.cl/retorno: precio de sesión × sesiones al mes ÷ inversión neta. Los supuestos quedan visibles y editables."
+        "q": "¿Existe iZED Pro?",
+        "a": "Sí. iZED Pro es la versión ampliada de la línea; en catálogo Alta Qualità figura con precio neto $14.500.000. El detalle de cabezales y protocolos se confirma en cotización y ficha del fabricante."
       }
     ],
     "image": "/img/equipos/ized.webp"
   },
   {
     "slug": "ized-pro",
-    "name": "iZed Pro",
-    "category": "Electroestimulación / corporal",
+    "name": "iZED Pro",
+    "category": "Ultrasonido focalizado / contorno corporal",
     "priceNeto": 14500000,
     "origin": "Corea del Sur",
-    "intro": "El iZed Pro es la versión de mayor ticket de la línea iZed de electroestimulación muscular de origen coreano. Está orientado a clínicas estéticas y centros médico-estéticos en Chile que buscan capacidad de alto volumen. Las especificaciones técnicas completas se publican cuando el fabricante las confirma.",
+    "intro": "El iZED Pro es la versión avanzada de la línea iZED de ultrasonido focalizado de origen coreano. Según el fabricante, amplía el equipo base con cabezales adicionales orientados a tratamientos de alto impacto en contorno y rejuvenecimiento. En Chile se comercializa vía Alta Qualità para clínicas que buscan mayor capacidad de oferta. Precio neto publicado: $14.500.000 + IVA 19%.",
     "specsHighlight": [
       {
         "label": "Tecnología",
-        "value": "Electroestimulación muscular"
+        "value": "Ultrasonido focalizado"
       },
       {
         "label": "Aplicadores",
@@ -535,7 +452,7 @@
       }
     ],
     "specs": {
-      "tecnologia": "Electroestimulación muscular",
+      "tecnologia": "Ultrasonido focalizado",
       "aplicacion": null,
       "potencia": null,
       "frecuencia": null,
@@ -574,23 +491,23 @@
     ],
     "faq": [
       {
-        "q": "¿Cuánto cuesta el iZed Pro en Chile?",
-        "a": "El iZed Pro tiene un precio neto de $14.500.000 + IVA 19% ($2.755.000). El total con IVA es $17.255.000."
+        "q": "¿Cuánto cuesta el iZED Pro en Chile?",
+        "a": "El iZED Pro tiene un precio neto de $14.500.000 + IVA 19% ($2.755.000). El total con IVA es $17.255.000."
       },
       {
-        "q": "¿En qué se diferencia el iZed Pro del iZed?",
+        "q": "¿En qué se diferencia el iZED Pro del iZED?",
         "a": "Las diferencias de potencia, aplicadores y protocolos se publicarán con la ficha técnica confirmada. Mientras tanto, esos campos aparecen como «por confirmar»."
       },
       {
-        "q": "¿El iZed Pro incluye Clinera.io?",
+        "q": "¿El iZED Pro incluye Clinera.io?",
         "a": "Sí. Por cada equipo comprado en Alta Qualità: implementación Clinera.io gratis (USD 450 → $0) y 3 meses con 50% de descuento, implementado por el mismo equipo de ingenieros. Detalles en alta-qualita.cl/clinera."
       },
       {
-        "q": "¿Puedo financiar el iZed Pro?",
+        "q": "¿Puedo financiar el iZED Pro?",
         "a": "Alta Qualità publica opciones de leasing, cuotas y pago contado en la página de financiamiento. Condiciones específicas se confirman al cotizar."
       },
       {
-        "q": "¿Dónde veo la garantía del iZed Pro?",
+        "q": "¿Dónde veo la garantía del iZED Pro?",
         "a": "Los equipos Alta Qualità tienen 12 meses de garantía. El detalle de coberturas y exclusiones se confirma por escrito en la orden de compra."
       }
     ],
@@ -1089,7 +1006,7 @@
     "related": [
       "ized",
       "sculpt-dd",
-      "adipolite"
+      "criock"
     ],
     "faq": [
       {
@@ -1336,9 +1253,8 @@
       "sesionesMes": null
     },
     "related": [
-      "adipolite",
-      "ized",
-      "criock"
+      "criock",
+      "ized"
     ],
     "faq": [
       {

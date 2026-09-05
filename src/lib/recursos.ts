@@ -173,6 +173,42 @@ export const guias: Guia[] = [
       },
     ],
   },
+  {
+    slug: 'que-es-ized-ultrasonido-focalizado-chile',
+    title: 'Qué es iZED: ultrasonido focalizado para contorno corporal en Chile',
+    h1: 'Qué es iZED: ultrasonido focalizado para contorno corporal en Chile',
+    description:
+      'Guía B2B sobre iZED: qué es, cómo funciona el ultrasonido focalizado de 60 joules, diferencia con HIEMT y criolipólisis, precio en Chile y criterio de compra para clínicas.',
+    published: '2026-09-05',
+    updated: '2026-09-05',
+    relatedEquipos: ['ized', 'ized-pro', 'sculpt-dd'],
+    keywords: [
+      'iZED',
+      'ized',
+      'máquina iZED Chile',
+      'ultrasonido focalizado estética',
+      'iZED precio Chile',
+      'equipo iZED clínica',
+    ],
+    faq: [
+      {
+        q: '¿Qué es iZED?',
+        a: 'iZED es un equipo de ultrasonido terapéutico focalizado de origen coreano para contorno corporal no invasivo. Según el fabricante (ized.es), actúa sobre adipocitos de la grasa subcutánea localizada con energía focalizada de 60 joules.',
+      },
+      {
+        q: '¿Cuánto cuesta el iZED en Chile?',
+        a: 'En Alta Qualità el iZED tiene precio neto de $7.500.000 + IVA 19% ($1.425.000). Total con IVA: $8.925.000. El iZED Pro figura en $14.500.000 neto.',
+      },
+      {
+        q: '¿iZED es criolipólisis o electroestimulación?',
+        a: 'No. En el portafolio del fabricante, iZED es ultrasonido focalizado. La criolipólisis y el HIEMT (p. ej. Sculpt-DD) son tecnologías distintas que una clínica puede combinar, pero no son el mismo equipo.',
+      },
+      {
+        q: '¿Dónde comprar iZED en Chile?',
+        a: 'Alta Qualità importa y comercializa iZED e iZED Pro en Chile para clínicas estéticas y centros médico-estéticos, con ficha, precio neto + IVA y soporte local.',
+      },
+    ],
+  },
 ];
 
 export function getGuia(slug: string): Guia | undefined {
