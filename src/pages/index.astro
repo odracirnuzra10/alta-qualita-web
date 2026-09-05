@@ -4,14 +4,15 @@ import SpecRow from '../components/SpecRow.astro';
 import ProductMedia from '../components/ProductMedia.astro';
 import FAQ from '../components/FAQ.astro';
 import ClineraBanner from '../components/ClineraBanner.astro';
-import { getEquipos, formatCLP, priceParts } from '../lib/equipos';
+import { getEquipos, formatCLP, priceParts, hasPrice, pricedEquipos } from '../lib/equipos';
 
 const equipos = getEquipos();
 const catalogCount = String(equipos.length);
-const minPrice = Math.min(...equipos.map((e) => e.priceNeto));
-const maxPrice = Math.max(...equipos.map((e) => e.priceNeto));
-const minName = equipos.find((e) => e.priceNeto === minPrice)?.name ?? '';
-const maxName = equipos.find((e) => e.priceNeto === maxPrice)?.name ?? '';
+const priced = pricedEquipos();
+const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0;
+const maxPrice = priced.length ? Math.max(...priced.map((e) => e.priceNeto)) : 0;
+const minName = priced.find((e) => e.priceNeto === minPrice)?.name ?? '';
+const maxName = priced.find((e) => e.priceNeto === maxPrice)?.name ?? '';
 const heroImage = equipos.find((e) => e.slug === 'adipolite')?.image
   ?? equipos.find((e) => e.image)?.image
   ?? null;
@@ -102,7 +103,8 @@ const heroSpecs = [
       <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {
           equipos.map((e) => {
-            const p = priceParts(e.priceNeto);
+            const pricedRow = hasPrice(e.priceNeto);
+            const p = pricedRow ? priceParts(e.priceNeto) : null;
             return (
               <a href={`/equipos/${e.slug}`} class="card-line group block overflow-hidden no-underline transition-colors hover:border-grafito">
                 {e.image ? (
@@ -120,10 +122,10 @@ const heroSpecs = [
                   <p class="label-mono mb-2">{e.category}</p>
                   <h3 class="mb-3 text-xl group-hover:text-cobalto">{e.name}</h3>
                   <p class="font-mono text-sm font-medium text-grafito" style="font-variant-numeric: tabular-nums;">
-                    ${formatCLP(e.priceNeto)} neto
+                    {pricedRow ? `$${formatCLP(e.priceNeto)} neto` : 'Consultar precio'}
                   </p>
                   <p class="mt-1 font-mono text-[10px] tracking-[0.04em] text-acero">
-                    {p.ivaLabel} · {p.totalLabel}
+                    {p ? `${p.ivaLabel} · ${p.totalLabel}` : 'Precio a cotizar'}
                   </p>
                   <p class="mt-4 text-sm text-cobalto">Ver ficha →</p>
                 </div>
@@ -159,7 +161,8 @@ const heroSpecs = [
           <tbody>
             {
               comparadorHome.map((e) => {
-                const p = priceParts(e.priceNeto);
+                const pricedRow = hasPrice(e.priceNeto);
+                const p = pricedRow ? priceParts(e.priceNeto) : null;
                 return (
                   <tr>
                     <td>
@@ -168,9 +171,9 @@ const heroSpecs = [
                       </a>
                     </td>
                     <td>{e.category}</td>
-                    <td class="font-mono text-cobalto font-medium">${formatCLP(e.priceNeto)}</td>
-                    <td class="font-mono">${formatCLP(p.iva)}</td>
-                    <td class="font-mono">${formatCLP(p.total)}</td>
+                    <td class="font-mono text-cobalto font-medium">{hasPrice(e.priceNeto) ? `$${formatCLP(e.priceNeto)}` : 'Consultar'}</td>
+                    <td class="font-mono">{p ? `$${formatCLP(p.iva)}` : '—'}</td>
+                    <td class="font-mono">{p ? `$${formatCLP(p.total)}` : '—'}</td>
                     <td>{e.origin}</td>
                   </tr>
                 );

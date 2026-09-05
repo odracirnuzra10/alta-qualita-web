@@ -24,6 +24,10 @@ export function calcIva(neto: number, rate = SITE.ivaRate) {
   return { neto, iva, total };
 }
 
+export function hasPrice(neto: number | null | undefined): neto is number {
+  return typeof neto === 'number' && Number.isFinite(neto) && neto > 0;
+}
+
 export function priceParts(neto: number) {
   const { iva, total } = calcIva(neto);
   return {
@@ -34,6 +38,10 @@ export function priceParts(neto: number) {
     iva,
     total,
   };
+}
+
+export function pricedEquipos(): Equipo[] {
+  return getEquipos().filter((e) => hasPrice(e.priceNeto));
 }
 
 export function displayValue(value: string | number | null | undefined): string | null {

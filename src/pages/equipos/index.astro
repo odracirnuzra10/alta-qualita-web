@@ -2,16 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import PriceDisplay from '../../components/PriceDisplay.astro';
-import { getEquipos, formatCLP, priceParts } from '../../lib/equipos';
+import { getEquipos, formatCLP, priceParts, hasPrice, pricedEquipos } from '../../lib/equipos';
 
 const equipos = getEquipos();
 const count = equipos.length;
-const minPrice = Math.min(...equipos.map((e) => e.priceNeto));
+const priced = pricedEquipos();
+const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0;
 ---
 
 <Layout
   title="Catálogo de equipos de estética coreanos en Chile"
-  description={`Catálogo completo Alta Qualità: ${count} equipos de estética profesional de origen coreano. Precios netos desde $${minPrice.toLocaleString('es-CL')} + IVA. Fichas técnicas descargables.`}
+  description={`Catálogo completo Alta Qualità: ${count} equipos de estética profesional de origen coreano.${minPrice ? ` Precios netos desde $${minPrice.toLocaleString('es-CL')} + IVA.` : ''} Fichas técnicas descargables.`}
 >
   <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Equipos' }]} />
 
@@ -20,7 +21,7 @@ const minPrice = Math.min(...equipos.map((e) => e.priceNeto));
     <h1 class="mb-4">Equipos de estética profesional</h1>
     <p class="prose-aq mb-10 text-sm">
       {count} equipos importados desde Corea del Sur. Precio neto, IVA 19% y total visibles
-      en cada ficha. Specs vacías = «por confirmar», nunca inventadas.
+      en cada ficha publicada. Specs o precios vacíos = «por confirmar», nunca inventados.
     </p>
 
     <div class="overflow-x-auto mb-12">
@@ -39,16 +40,17 @@ const minPrice = Math.min(...equipos.map((e) => e.priceNeto));
         <tbody>
           {
             equipos.map((e) => {
-              const p = priceParts(e.priceNeto);
+              const pricedRow = hasPrice(e.priceNeto);
+              const p = pricedRow ? priceParts(e.priceNeto) : null;
               return (
                 <tr>
                   <th scope="row" class="!bg-blanco !normal-case !tracking-normal !text-sm !font-sans font-semibold text-grafito">
                     {e.name}
                   </th>
                   <td>{e.category}</td>
-                  <td class="font-mono text-cobalto font-medium">${formatCLP(e.priceNeto)}</td>
-                  <td class="font-mono">${formatCLP(p.iva)}</td>
-                  <td class="font-mono">${formatCLP(p.total)}</td>
+                  <td class="font-mono text-cobalto font-medium">{pricedRow ? `$${formatCLP(e.priceNeto)}` : 'Consultar'}</td>
+                  <td class="font-mono">{p ? `$${formatCLP(p.iva)}` : '—'}</td>
+                  <td class="font-mono">{p ? `$${formatCLP(p.total)}` : '—'}</td>
                   <td>{e.origin}</td>
                   <td><a href={`/equipos/${e.slug}`} class="link-text">Ver</a></td>
                 </tr>

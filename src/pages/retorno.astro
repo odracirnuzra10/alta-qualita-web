@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import FAQ from '../components/FAQ.astro';
-import { getEquipos, formatCLP } from '../lib/equipos';
+import { getEquipos, pricedEquipos, formatCLP } from '../lib/equipos';
 
 const equipos = getEquipos();
 const faq = [
@@ -48,7 +48,7 @@ const faq = [
         <label class="text-sm">
           <span class="label-mono mb-1 block">Equipo</span>
           <select id="roi-equipo" class="w-full border border-linea px-3 py-2 text-sm">
-            {equipos.map((e) => (
+            {pricedEquipos().map((e) => (
               <option value={e.priceNeto} data-slug={e.slug}>
                 {e.name} — ${formatCLP(e.priceNeto)} neto
               </option>
