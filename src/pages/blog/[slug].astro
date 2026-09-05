@@ -48,16 +48,6 @@ const blogPostingLd = {
   keywords: post.keywords.join(', '),
 };
 
-const faqLd = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: post.faq.map((item) => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: { '@type': 'Answer', text: item.a },
-  })),
-};
-
 const itemListLd = post.productList
   ? {
       '@context': 'https://schema.org',
@@ -72,7 +62,7 @@ const itemListLd = post.productList
     }
   : null;
 
-const jsonLd = itemListLd ? [blogPostingLd, faqLd, itemListLd] : [blogPostingLd, faqLd];
+const jsonLd = itemListLd ? [blogPostingLd, itemListLd] : [blogPostingLd];
 ---
 
 <Layout
