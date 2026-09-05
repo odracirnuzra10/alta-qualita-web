@@ -1,0 +1,333 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQ from '../components/FAQ.astro';
+import JsonLd from '../components/JsonLd.astro';
+import Showrooms from '../components/Showrooms.astro';
+import { formatCLP, priceParts, getEquipo } from '../lib/equipos';
+import { SITE } from '../lib/site';
+
+const equipo = getEquipo('endojiwoo');
+if (!equipo) throw new Error('EndoJiwoo no encontrado en catálogo');
+
+const image = equipo.image || '/img/equipos/endojiwoo.webp';
+const STEP = 2_000_000;
+const BASE = 7_200_000;
+
+const waves = [
+  {
+    nm: '635 nm',
+    power: 'Apoyo fotónico',
+    role: 'Antiinflamatorio / reparación',
+    use: 'Adyuvante, recuperación y confort post-protocolo',
+    neto: BASE,
+    tier: 'Entrada',
+  },
+  {
+    nm: '1470 nm',
+    power: 'Hasta 9 W',
+    role: 'Precisión en agua / lipólisis',
+    use: 'Grasa superficial, mandíbula, cuello, zonas finas',
+    neto: BASE + STEP,
+    tier: 'Media',
+  },
+  {
+    nm: '980 nm',
+    power: 'Hasta 30 W',
+    role: 'Alta potencia / coagulación',
+    use: 'Lipólisis profunda, hemostasia y protocolos de mayor energía',
+    neto: BASE + STEP * 2,
+    tier: 'Alta',
+  },
+];
+
+const basePrice = priceParts(waves[0].neto);
+
+const highlights = [
+  { label: 'Tecnología', value: 'ENDOLASER' },
+  { label: 'Origen', value: 'Corea del Sur' },
+  { label: 'Ondas', value: '635 · 1470 · 980 nm' },
+  { label: 'Desde', value: `$${formatCLP(BASE)} neto + IVA` },
+];
+
+const faq = [
+  {
+    q: '¿Qué es EndoJiwoo?',
+    a: 'EndoJiwoo es el ENDOLASER coreano que Alta Qualità importa a Chile: un láser diodo de tres longitudes de onda (635 nm, 1470 nm y 980 nm) para lipólisis, lifting facial y apoyo antiinflamatorio, fabricado en Corea del Sur.',
+  },
+  {
+    q: '¿EndoJiwoo es un ENDOLASER?',
+    a: 'Sí. EndoJiwoo es el ENDOLASER coreano traído por Alta Qualità. Misma familia tecnológica de endoláser / endolaser con fibra bajo la piel, con marca y soporte local en Chile.',
+  },
+  {
+    q: '¿Cuáles son los precios de las tres ondas?',
+    a: `La onda de entrada (635 nm) vale $${formatCLP(waves[0].neto)} neto. Cada escalón de potencia suma $2.000.000 neto: 1470 nm = $${formatCLP(waves[1].neto)} y 980 nm = $${formatCLP(waves[2].neto)}. Todos + IVA 19%.`,
+  },
+  {
+    q: '¿El precio incluye IVA?',
+    a: `No. Todos los precios Alta Qualità se publican en neto + IVA. Ejemplo entrada: $${formatCLP(waves[0].neto)} neto + $${formatCLP(basePrice.iva)} IVA = $${formatCLP(basePrice.total)} total.`,
+  },
+  {
+    q: '¿Puedo ver el ENDOLASER EndoJiwoo en showroom?',
+    a: 'Sí. Showrooms en Vitacura, Concón y Los Ángeles. Agenda una demo y revisa las tres ondas con el equipo técnico antes de comprar.',
+  },
+  {
+    q: '¿Hay repuestos en Chile?',
+    a: 'Sí. Alta Qualità mantiene repuestos en stock en Chile, garantía de 12 meses y soporte con primera respuesta en 48 horas.',
+  },
+];
+
+const productLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'EndoJiwoo ENDOLASER',
+  description:
+    'ENDOLASER coreano EndoJiwoo: láser diodo 635 / 1470 / 980 nm importado por Alta Qualità. Tres potencias desde $7.200.000 neto + IVA. Fabricado en Corea del Sur. Repuestos en Chile. Demo en showroom.',
+  brand: { '@type': 'Brand', name: 'EndoJiwoo' },
+  category: 'ENDOLASER',
+  countryOfOrigin: 'KR',
+  image: `${SITE.domain}${image}`,
+  offers: waves.map((w) => ({
+    '@type': 'Offer',
+    name: `EndoJiwoo ENDOLASER ${w.nm}`,
+    priceCurrency: 'CLP',
+    price: w.neto,
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: w.neto,
+      priceCurrency: 'CLP',
+      valueAddedTaxIncluded: false,
+    },
+    availability: 'https://schema.org/InStock',
+    url: `${SITE.domain}/endojiwoo`,
+    seller: { '@type': 'Organization', name: SITE.name },
+  })),
+};
+---
+
+<Layout
+  title="EndoJiwoo ENDOLASER — endoláser coreano en Chile | Alta Qualità"
+  description={`EndoJiwoo es el ENDOLASER coreano de Alta Qualità: 635 / 1470 / 980 nm. Desde $${formatCLP(BASE)} neto + IVA (+$2.000.000 por potencia). Fabricado en Corea del Sur. Repuestos en Chile. Ver en showroom.`}
+  ogImage={image}
+  canonical="/endojiwoo"
+>
+  <JsonLd data={productLd} slot="head" />
+
+  <article class="ejw">
+    <header class="ejw-hero">
+      <div class="container-aq ejw-hero__grid">
+        <div class="ejw-hero__copy">
+          <p class="eyebrow ejw-hero__eyebrow">ENDOLASER · Fabricado en Corea del Sur</p>
+          <p class="ejw-hero__brand">EndoJiwoo</p>
+          <h1 class="ejw-hero__title">El ENDOLASER coreano para tu clínica</h1>
+          <p class="ejw-hero__lede">
+            EndoJiwoo es el <strong>ENDOLASER</strong> que Alta Qualità trae desde Corea del Sur:
+            tres ondas (635 · 1470 · 980&nbsp;nm), tres potencias, precio neto + IVA.
+            Repuestos en Chile. Puedes verlo en showroom.
+          </p>
+          <div class="ejw-hero__cta">
+            <a href="/contacto" class="btn-primary" data-track="ejw_demo">Agendar demo ENDOLASER</a>
+            <a href="#precios" class="btn-secondary">Ver precios neto + IVA</a>
+          </div>
+          <p class="ejw-hero__note">
+            Vitacura · Concón · Los Ángeles — prueba el ENDOLASER antes de comprar.
+          </p>
+        </div>
+
+        <figure class="ejw-hero__figure">
+          <img
+            src={image}
+            alt="EndoJiwoo ENDOLASER — láser diodo coreano de tres ondas"
+            width="1200"
+            height="1200"
+            class="ejw-hero__img"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          <figcaption class="ejw-hero__caption">FIG. 01 · EndoJiwoo ENDOLASER · Corea del Sur</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <section class="ejw-strip" aria-label="Datos clave">
+      <div class="container-aq ejw-strip__grid">
+        {
+          highlights.map((h) => (
+            <div class="ejw-strip__item">
+              <p class="label-mono">{h.label}</p>
+              <p class="ejw-strip__value">{h.value}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="ejw-endolaser container-aq" aria-labelledby="ejw-endolaser-title">
+      <p class="eyebrow mb-2">ENDOLASER</p>
+      <h2 id="ejw-endolaser-title" class="mb-3">EndoJiwoo = ENDOLASER coreano</h2>
+      <p class="prose-aq mb-6 max-w-[56ch] text-sm">
+        Cuando el mercado habla de <strong>ENDOLASER</strong> (o endoláser / endolaser), se refiere a
+        láser diodo con fibra bajo la piel para lipólisis y lifting estructural.
+        <strong> EndoJiwoo es ese ENDOLASER</strong>, fabricado en Corea del Sur e importado por
+        Alta Qualità: ficha clara, precio neto + IVA, repuestos locales y demo presencial.
+      </p>
+      <ul class="ejw-bullets">
+        <li>Marca clínica: <strong>EndoJiwoo</strong></li>
+        <li>Categoría tecnológica: <strong>ENDOLASER</strong></li>
+        <li>Origen: <strong>Corea del Sur</strong></li>
+        <li>Importador en Chile: <strong>Alta Qualità</strong></li>
+      </ul>
+    </section>
+
+    <section class="ejw-showrooms container-aq" aria-labelledby="ejw-show-title">
+      <p class="eyebrow mb-2">Showrooms</p>
+      <h2 id="ejw-show-title" class="mb-3">Ven a ver el ENDOLASER EndoJiwoo</h2>
+      <p class="prose-aq mb-8 max-w-[54ch] text-sm">
+        No compres a ciegas. En showroom revisas las tres ondas, la pieza de mano, protocolos
+        y soporte técnico antes de firmar.
+      </p>
+      <Showrooms />
+      <div class="mt-6">
+        <a href="/contacto" class="btn-primary" data-track="ejw_showroom">Reservar visita</a>
+      </div>
+    </section>
+
+    <section class="ejw-parts" aria-labelledby="ejw-parts-title">
+      <div class="container-aq ejw-parts__grid">
+        <div>
+          <p class="eyebrow mb-2">Postventa</p>
+          <h2 id="ejw-parts-title" class="mb-4">Repuestos en Chile, no en tránsito</h2>
+          <p class="prose-aq mb-5 max-w-[48ch] text-sm">
+            Alta Qualità mantiene <strong>repuestos en stock</strong> para EndoJiwoo ENDOLASER.
+            Garantía 12 meses. Primera respuesta de soporte en 48 horas.
+          </p>
+          <ul class="ejw-parts__list">
+            <li>Repuestos y fibras con stock local</li>
+            <li>Garantía 12 meses por escrito</li>
+            <li>SLA de primera respuesta: 48 horas</li>
+            <li>Capacitación incluida al comprar</li>
+          </ul>
+        </div>
+        <div class="ejw-parts__panel">
+          <p class="label-mono mb-3">Soporte Alta Qualità</p>
+          <p class="ejw-parts__stat">{SITE.trustBar.repuestos}</p>
+          <p class="mt-2 text-sm text-acero">
+            Garantía {SITE.trustBar.garantiaMeses} meses · Soporte {SITE.trustBar.soporteHoras} h
+          </p>
+          <a href="/soporte-tecnico" class="btn-secondary mt-6 inline-flex">Ver soporte técnico</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="ejw-waves container-aq" aria-labelledby="ejw-waves-title">
+      <p class="eyebrow mb-2">Tres ondas</p>
+      <h2 id="ejw-waves-title" class="mb-3">635 · 1470 · 980 nm — más potencia, +$2.000.000 neto</h2>
+      <p class="prose-aq mb-10 max-w-[54ch] text-sm">
+        La configuración de entrada parte en el precio de referencia. Cada salto de potencia
+        suma <strong>$2.000.000 neto</strong>. El IVA 19% se calcula aparte en todos los casos.
+      </p>
+      <div class="ejw-wave-grid">
+        {
+          waves.map((w, i) => {
+            const p = priceParts(w.neto);
+            return (
+              <div class:list={['ejw-wave', i === 2 && 'ejw-wave--hi']} style={`--i: ${i}`}>
+                <p class="label-mono mb-2">{w.tier}</p>
+                <p class="ejw-wave__nm">{w.nm}</p>
+                <p class="ejw-wave__power">{w.power}</p>
+                <p class="ejw-wave__role">{w.role}</p>
+                <p class="ejw-wave__use">{w.use}</p>
+                <p class="ejw-wave__price">{`$${formatCLP(w.neto)}`}</p>
+                <p class="ejw-wave__iva">
+                  {`neto · IVA $${formatCLP(p.iva)} · total $${formatCLP(p.total)}`}
+                </p>
+              </div>
+            );
+          })
+        }
+      </div>
+    </section>
+
+    <section class="ejw-specs container-aq" aria-labelledby="ejw-specs-title">
+      <p class="eyebrow mb-2">Ficha técnica</p>
+      <h2 id="ejw-specs-title" class="mb-8">Especificaciones ENDOLASER EndoJiwoo</h2>
+      <div class="overflow-x-auto">
+        <table class="ejw-table">
+          <tbody>
+            <tr><th scope="row">Categoría</th><td>ENDOLASER (endláser / endolaser)</td></tr>
+            <tr><th scope="row">Marca / modelo</th><td>EndoJiwoo</td></tr>
+            <tr><th scope="row">Origen</th><td>Corea del Sur</td></tr>
+            <tr><th scope="row">Importador</th><td>Alta Qualità</td></tr>
+            <tr><th scope="row">Longitudes de onda</th><td>635 nm · 1470 nm · 980 nm</td></tr>
+            <tr><th scope="row">Potencia 1470 nm</th><td>Hasta 9 W</td></tr>
+            <tr><th scope="row">Potencia 980 nm</th><td>Hasta 30 W</td></tr>
+            <tr><th scope="row">Modo combinado</th><td>980 + 1470 hasta 39 W (según protocolo)</td></tr>
+            <tr><th scope="row">Entrega</th><td>Acoplamiento por fibra óptica</td></tr>
+            <tr><th scope="row">Indicaciones típicas</th><td>Lipólisis, lifting facial, papada, apoyo antiinflamatorio</td></tr>
+            <tr><th scope="row">Repuestos</th><td>Stock en Chile · soporte local</td></tr>
+            <tr><th scope="row">Garantía</th><td>12 meses</td></tr>
+            <tr><th scope="row">Precio</th><td>{`Desde $${formatCLP(BASE)} neto + IVA (tres potencias)`}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="precios" class="ejw-price" aria-labelledby="ejw-price-title">
+      <div class="container-aq ejw-price__inner">
+        <div>
+          <p class="eyebrow mb-2">Inversión</p>
+          <h2 id="ejw-price-title" class="mb-2">Todos los precios son neto + IVA</h2>
+          <p class="mb-5 max-w-[46ch] text-sm text-acero">
+            Publicamos neto. El IVA 19% va aparte. Así comparas cotizaciones sin mezclar brutos y netos.
+          </p>
+          <p class="font-display text-4xl font-semibold tracking-[-0.03em] text-grafito sm:text-5xl">
+            {`Desde $${formatCLP(BASE)}`}
+            <span class="mt-1 block font-sans text-base font-normal text-acero sm:text-lg">
+              neto · + IVA 19% · +$2.000.000 por potencia
+            </span>
+          </p>
+          <p class="mt-4 font-mono text-sm text-acero" style="font-variant-numeric: tabular-nums;">
+            {`635 nm $${formatCLP(waves[0].neto)} · 1470 nm $${formatCLP(waves[1].neto)} · 980 nm $${formatCLP(waves[2].neto)}`}
+          </p>
+          <p class="prose-aq mt-5 max-w-[46ch] text-sm">
+            Misma lógica de precios que en la <a href="/equipos/endojiwoo">ficha de catálogo</a>.
+            Instalación y capacitación se confirman al cotizar.
+          </p>
+        </div>
+        <div class="ejw-price__actions">
+          <a href="/contacto" class="btn-primary w-full sm:w-auto" data-track="ejw_cotizar">
+            Cotizar ENDOLASER EndoJiwoo
+          </a>
+          <a href="/equipos/endojiwoo" class="btn-secondary w-full sm:w-auto">
+            Ver ficha completa
+          </a>
+          <a
+            href="/recursos/que-es-endojiwoo-endolaser-coreano-chile"
+            class="btn-ghost w-full sm:w-auto"
+          >
+            Leer guía ENDOLASER
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <FAQ items={faq} title="Preguntas sobre EndoJiwoo ENDOLASER" />
+
+    <section class="ejw-final" aria-label="Agendar demo EndoJiwoo">
+      <div class="container-aq text-center">
+        <p class="ejw-final__brand">ENDOLASER</p>
+        <h2 class="ejw-final__title mb-4">EndoJiwoo en showroom. Tres ondas. Precio neto + IVA.</h2>
+        <p class="mx-auto mb-8 max-w-[48ch] text-sm text-white/75">
+          Vitacura · Concón · Los Ángeles. Repuestos en Chile. Fabricado en Corea del Sur.
+          Traído por Alta Qualità.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href="/contacto" class="btn-cobalto" data-track="ejw_final_demo">Agendar demo</a>
+          <a href="/equipos" class="btn-ghost !border-white/35 !text-blanco hover:!bg-white/10">
+            Ver catálogo
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</Layout>

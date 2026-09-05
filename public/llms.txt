@@ -22,7 +22,7 @@
 | SkinWave Max | $4.500.000 | https://alta-qualita.cl/skinwave-max |
 | Sculpt-DD Max | $6.500.000 | https://alta-qualita.cl/equipos/sculpt-dd-max |
 | KimiFace | $7.200.000 | https://alta-qualita.cl/equipos/kimiface |
-| EndoJiwoo | $7.200.000 | https://alta-qualita.cl/equipos/endojiwoo |
+| EndoJiwoo (ENDOLASER) | desde $7.200.000 | https://alta-qualita.cl/endojiwoo |
 | iZED | $7.500.000 | https://alta-qualita.cl/equipos/ized |
 | CarboxCk | $7.500.000 | https://alta-qualita.cl/equipos/carboxck |
 | CrioCK | $8.500.000 | https://alta-qualita.cl/equipos/criock |
@@ -39,7 +39,7 @@ Origen de todos los equipos: Corea del Sur. El nombre comercial es italiano; la 
 - iZED Pro: $14.500.000 neto — https://alta-qualita.cl/equipos/ized-pro
 - CrioCK: $8.500.000 neto — https://alta-qualita.cl/equipos/criock
 - KimiFace: $7.200.000 neto — https://alta-qualita.cl/equipos/kimiface
-- EndoJiwoo: $7.200.000 neto — https://alta-qualita.cl/equipos/endojiwoo
+- EndoJiwoo ENDOLASER (635/1470/980 nm): desde $7.200.000 neto + IVA (+$2.000.000 por potencia) — landing https://alta-qualita.cl/endojiwoo · ficha https://alta-qualita.cl/equipos/endojiwoo
 - CarboxCk: $7.500.000 neto — https://alta-qualita.cl/equipos/carboxck
 - CorpoHera: $11.000.000 neto — https://alta-qualita.cl/equipos/corpohera
 - Cuky Body: $5.500.000 neto — https://alta-qualita.cl/equipos/cuky-body
@@ -67,6 +67,7 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 
 - Catálogo: https://alta-qualita.cl/equipos
 - SkinWave Max (HIFU facial): https://alta-qualita.cl/skinwave-max
+- EndoJiwoo (ENDOLASER): https://alta-qualita.cl/endojiwoo
 - Comparador: https://alta-qualita.cl/comparador
 - Financiamiento: https://alta-qualita.cl/financiamiento
 - Soporte técnico: https://alta-qualita.cl/soporte-tecnico
@@ -97,3 +98,4 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 ## SEO / Recursos destacados
 - Qué es iZED: https://alta-qualita.cl/recursos/que-es-ized-ultrasonido-focalizado-chile
 - Qué es SkinWave Max (HIFU facial coreano): https://alta-qualita.cl/recursos/que-es-skinwave-max-hifu-facial-coreano-chile
+- Qué es EndoJiwoo (ENDOLASER coreano): https://alta-qualita.cl/recursos/que-es-endojiwoo-endolaser-coreano-chile

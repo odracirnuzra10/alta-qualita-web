@@ -957,3 +957,304 @@ figure.guia-inline figcaption {
     animation: none;
   }
 }
+
+
+/* —— EndoJiwoo ENDOLASER landing —— */
+.ejw-hero {
+  padding: 1.75rem 0 2.75rem;
+  background:
+    radial-gradient(ellipse 60% 45% at 85% 15%, color-mix(in oklab, var(--color-cobalto) 10%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--color-papel) 0%, var(--color-blanco) 100%);
+}
+.ejw-hero__grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .ejw-hero__grid { grid-template-columns: 1.05fr 0.95fr; gap: 3rem; }
+}
+.ejw-hero__brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4.75rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  color: var(--color-grafito);
+  margin: 0.35rem 0 0.75rem;
+  animation: guia-rise 700ms ease-out both;
+}
+.ejw-hero__title {
+  font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin-bottom: 1rem;
+  animation: guia-rise 700ms ease-out 80ms both;
+}
+.ejw-hero__lede {
+  max-width: 42ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  margin-bottom: 1.35rem;
+  animation: guia-rise 700ms ease-out 140ms both;
+}
+.ejw-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  animation: guia-rise 700ms ease-out 200ms both;
+}
+.ejw-hero__note {
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-acero);
+}
+.ejw-hero__figure {
+  position: relative;
+  margin: 0;
+  border: 1px solid var(--color-linea);
+  background: var(--color-blanco);
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  animation: guia-fade 900ms ease-out 120ms both;
+}
+.ejw-hero__img {
+  width: min(100%, 480px);
+  height: auto;
+  object-fit: contain;
+  padding: 1.25rem;
+}
+.ejw-hero__caption {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-acero);
+  background: color-mix(in oklab, var(--color-blanco) 88%, transparent);
+  padding: 0.25rem 0.5rem;
+}
+.ejw-strip {
+  border-block: 1px solid var(--color-linea);
+  background: var(--color-papel);
+  padding: 1.25rem 0;
+}
+.ejw-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .ejw-strip__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.ejw-strip__value {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-grafito);
+  letter-spacing: -0.02em;
+  margin-top: 0.2rem;
+}
+.ejw-endolaser { padding: 3rem 0 1.5rem; }
+.ejw-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+  max-width: 40rem;
+}
+.ejw-bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+}
+.ejw-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--color-cobalto);
+}
+.ejw-showrooms { padding: 2rem 0 2.5rem; }
+.ejw-parts {
+  padding: 2.5rem 0 3rem;
+  background: linear-gradient(180deg, var(--color-blanco), var(--color-papel));
+  border-block: 1px solid var(--color-linea);
+}
+.ejw-parts__grid {
+  display: grid;
+  gap: 1.75rem;
+}
+@media (min-width: 800px) {
+  .ejw-parts__grid { grid-template-columns: 1.2fr 0.8fr; align-items: start; }
+}
+.ejw-parts__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.ejw-parts__list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.95rem;
+}
+.ejw-parts__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--color-cobalto);
+}
+.ejw-parts__panel {
+  border: 1px solid var(--color-linea);
+  background: var(--color-blanco);
+  padding: 1.5rem;
+}
+.ejw-parts__stat {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  color: var(--color-grafito);
+}
+.ejw-waves { padding: 3rem 0 2rem; }
+.ejw-wave-grid {
+  display: grid;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .ejw-wave-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+}
+.ejw-wave {
+  border: 1px solid var(--color-linea);
+  background: var(--color-blanco);
+  padding: 1.25rem 1.15rem;
+  animation: guia-rise 600ms ease-out both;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+.ejw-wave--hi {
+  border-color: var(--color-cobalto);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--color-cobalto) 30%, transparent);
+}
+.ejw-wave__nm {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  color: var(--color-cobalto);
+  margin-bottom: 0.35rem;
+}
+.ejw-wave__power {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-acero);
+  margin-bottom: 0.5rem;
+}
+.ejw-wave__role {
+  font-weight: 600;
+  color: var(--color-grafito);
+  margin-bottom: 0.35rem;
+}
+.ejw-wave__use {
+  font-size: 0.9rem;
+  color: var(--color-texto);
+  margin-bottom: 1rem;
+}
+.ejw-wave__price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  color: var(--color-grafito);
+}
+.ejw-wave__iva {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.03em;
+  color: var(--color-acero);
+  margin-top: 0.25rem;
+}
+.ejw-specs { padding: 3rem 0; }
+.ejw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.ejw-table th,
+.ejw-table td {
+  border: 1px solid var(--color-linea);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+}
+.ejw-table th {
+  width: 38%;
+  background: var(--color-papel);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-acero);
+  font-weight: 500;
+}
+.ejw-price {
+  padding: 3rem 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 0% 50%, color-mix(in oklab, var(--color-cobalto) 8%, transparent), transparent 70%),
+    var(--color-papel);
+  border-block: 1px solid var(--color-linea);
+}
+.ejw-price__inner {
+  display: grid;
+  gap: 1.75rem;
+}
+@media (min-width: 800px) {
+  .ejw-price__inner { grid-template-columns: 1.3fr auto; align-items: end; }
+}
+.ejw-price__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.ejw-final {
+  background: var(--color-grafito);
+  color: var(--color-blanco);
+  padding: 3.5rem 0;
+}
+.ejw-final__brand {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 650;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-bottom: 0.75rem;
+  color: var(--color-blanco);
+}
+.ejw-final__title {
+  color: var(--color-blanco) !important;
+  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ejw-hero__brand,
+  .ejw-hero__title,
+  .ejw-hero__lede,
+  .ejw-hero__cta,
+  .ejw-hero__figure,
+  .ejw-wave { animation: none; }
+}

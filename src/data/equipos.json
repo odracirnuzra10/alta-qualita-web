@@ -698,41 +698,41 @@
   {
     "slug": "endojiwoo",
     "name": "EndoJiwoo",
-    "category": "Endoláser facial",
+    "category": "ENDOLASER",
     "priceNeto": 7200000,
     "origin": "Corea del Sur",
-    "intro": "El EndoJiwoo es un equipo de microfibra láser bajo la piel, orientado a óvalo facial y papada. Pertenece a la familia de lifting estructural profundo usada en clínicas de estética facial. Se importa desde Corea del Sur y se comercializa en Chile para centros médico-estéticos y profesionales independientes.",
+    "intro": "EndoJiwoo es el ENDOLASER coreano que Alta Qualità importa a Chile: láser diodo de tres ondas (635 nm · 1470 nm · 980 nm) para lipólisis, lifting facial y apoyo antiinflamatorio. Fabricado en Corea del Sur. Tres potencias comerciales: desde $7.200.000 neto (+$2.000.000 por escalón de potencia), siempre + IVA. Repuestos en Chile y demo en showroom.",
     "specsHighlight": [
       {
         "label": "Tecnología",
-        "value": "Microfibra láser (endoláser)"
+        "value": "ENDOLASER (láser diodo)"
       },
       {
-        "label": "Aplicación",
-        "value": "Óvalo facial y papada"
+        "label": "Ondas",
+        "value": "635 · 1470 · 980 nm"
       },
       {
-        "label": "Sesión",
-        "value": null
+        "label": "Potencia",
+        "value": "hasta 30W + 9W"
       },
       {
         "label": "Garantía",
-        "value": null
+        "value": "12 meses"
       }
     ],
     "specs": {
-      "tecnologia": "Microfibra láser (endoláser)",
-      "aplicacion": "Óvalo facial y papada",
-      "potencia": null,
-      "frecuencia": null,
+      "tecnologia": "ENDOLASER — láser diodo 635 / 1470 / 980 nm",
+      "aplicacion": "Lipólisis · lifting facial · papada · antiinflamatorio (635 nm)",
+      "potencia": "635 nm · 1470 nm hasta 9 W · 980 nm hasta 30 W (simultáneo hasta 39 W)",
+      "frecuencia": "635 nm + 1470 nm + 980 nm",
       "temperatura": null,
-      "aplicadores": null,
+      "aplicadores": "Fibra óptica / pieza de mano quirúrgica",
       "spot": null,
-      "duracionSesion": null,
+      "duracionSesion": "Según protocolo y zona (por confirmar en capacitación)",
       "consumo": null,
       "dimensiones": null,
       "peso": null,
-      "certificaciones": null,
+      "certificaciones": "Importado y comercializado por Alta Qualità · Origen Corea del Sur",
       "origen": "Corea del Sur",
       "garantia": "12 meses"
     },
@@ -747,37 +747,41 @@
       "capacitacionHoras": null,
       "protocolos": null,
       "garantia": "12 meses",
-      "repuestos": null
+      "repuestos": "Stock en Chile"
     },
     "roiDefaults": {
       "precioSesion": null,
       "sesionesMes": null
     },
     "related": [
+      "skinwave-max",
       "kimiface",
-      "carboxck",
       "ized"
     ],
     "faq": [
       {
-        "q": "¿Cuánto cuesta el EndoJiwoo en Chile?",
-        "a": "El EndoJiwoo tiene un precio neto de $7.200.000 + IVA 19% ($1.368.000). El total con IVA es $8.568.000."
+        "q": "¿Qué es EndoJiwoo?",
+        "a": "EndoJiwoo es el ENDOLASER coreano importado por Alta Qualità: un láser diodo de tres longitudes de onda (635 nm, 1470 nm y 980 nm) para lipólisis, lifting facial y apoyo antiinflamatorio, fabricado en Corea del Sur."
       },
       {
-        "q": "¿Qué es el endoláser facial?",
-        "a": "El endoláser (o endolaser) es una técnica de microfibra láser que se introduce bajo la piel para tratar flacidez, óvalo facial y papada sin cirugía abierta. EndoJiwoo pertenece a esa familia tecnológica."
+        "q": "¿Cuánto cuesta EndoJiwoo / ENDOLASER en Chile?",
+        "a": "Hay tres potencias. La más baja (635 nm) parte en $7.200.000 neto. Cada escalón de potencia suma $2.000.000 neto: 1470 nm = $9.200.000 y 980 nm = $11.200.000. Todos + IVA 19%."
       },
       {
-        "q": "¿El EndoJiwoo reemplaza un lifting quirúrgico?",
-        "a": "No es un reemplazo quirúrgico. Es un equipo de lifting estructural profundo no quirúrgico; la indicación clínica la define el profesional tratante según evaluación."
+        "q": "¿EndoJiwoo es un ENDOLASER?",
+        "a": "Sí. EndoJiwoo es el ENDOLASER coreano que Alta Qualità trae a Chile: misma familia tecnológica de endoláser / endolaser con microfibra bajo la piel, fabricado en Corea del Sur."
       },
       {
-        "q": "¿De dónde es el EndoJiwoo?",
-        "a": "Origen: Corea del Sur. Importado y comercializado en Chile por Alta Qualità."
+        "q": "¿Puedo ver EndoJiwoo en showroom?",
+        "a": "Sí. Showrooms en Vitacura, Concón y Los Ángeles. Agenda demo en /contacto o en la landing /endojiwoo."
       },
       {
-        "q": "¿Incluye capacitación el EndoJiwoo?",
-        "a": "La capacitación en horas se confirma en la cotización. El campo aparece como «por confirmar» hasta que el cliente entregue el dato definitivo."
+        "q": "¿Hay repuestos de EndoJiwoo en Chile?",
+        "a": "Sí. Alta Qualità mantiene repuestos en stock en Chile, garantía 12 meses y soporte con primera respuesta en 48 horas."
+      },
+      {
+        "q": "¿El precio incluye IVA?",
+        "a": "No. En Alta Qualità todos los precios se publican en neto + IVA 19%. Ejemplo entrada: $7.200.000 neto + $1.368.000 IVA = $8.568.000 total."
       }
     ],
     "image": "/img/equipos/endojiwoo.webp"
