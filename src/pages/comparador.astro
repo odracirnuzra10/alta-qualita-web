@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Pending from '../components/Pending.astro';
-import { getEquipos, formatCLP, priceParts } from '../lib/equipos';
+import { getEquipos, formatCLP, priceParts, hasPrice } from '../lib/equipos';
 
 const equipos = getEquipos();
 ---
@@ -54,20 +54,20 @@ const equipos = getEquipos();
             <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Neto</th>
             {equipos.map((e) => (
               <td data-col={e.slug} class="compare-col font-mono font-medium text-cobalto">
-                ${formatCLP(e.priceNeto)}
+                {hasPrice(e.priceNeto) ? `$${formatCLP(e.priceNeto)}` : 'Consultar'}
               </td>
             ))}
           </tr>
           <tr>
             <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">IVA 19%</th>
             {equipos.map((e) => (
-              <td data-col={e.slug} class="compare-col font-mono">${formatCLP(priceParts(e.priceNeto).iva)}</td>
+              <td data-col={e.slug} class="compare-col font-mono">{hasPrice(e.priceNeto) ? `$${formatCLP(priceParts(e.priceNeto).iva)}` : '—'}</td>
             ))}
           </tr>
           <tr>
             <th scope="row" class="!normal-case !tracking-normal !font-sans !text-sm !bg-blanco">Total</th>
             {equipos.map((e) => (
-              <td data-col={e.slug} class="compare-col font-mono">${formatCLP(priceParts(e.priceNeto).total)}</td>
+              <td data-col={e.slug} class="compare-col font-mono">{hasPrice(e.priceNeto) ? `$${formatCLP(priceParts(e.priceNeto).total)}` : '—'}</td>
             ))}
           </tr>
           <tr>

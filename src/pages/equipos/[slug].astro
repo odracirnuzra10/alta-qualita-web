@@ -8,7 +8,7 @@ import Pending from '../../components/Pending.astro';
 import FAQ from '../../components/FAQ.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import ClineraBanner from '../../components/ClineraBanner.astro';
-import { getEquipos, getEquipo, formatCLP, priceParts } from '../../lib/equipos';
+import { getEquipos, getEquipo, formatCLP, priceParts, hasPrice } from '../../lib/equipos';
 import { SPEC_LABELS, SITE } from '../../lib/site';
 
 export function getStaticPaths() {
@@ -19,7 +19,8 @@ const { slug } = Astro.params;
 const equipo = getEquipo(slug!);
 if (!equipo) throw new Error(`Equipo no encontrado: ${slug}`);
 
-const p = priceParts(equipo.priceNeto);
+const priced = hasPrice(equipo.priceNeto);
+const p = priced ? priceParts(equipo.priceNeto) : null;
 const related = equipo.related
   .map((s) => getEquipo(s))
   .filter(Boolean);
@@ -35,33 +36,39 @@ const productLd = {
   name: equipo.name,
   description:
     equipo.intro ||
-    `${equipo.name}: equipo de estética profesional de origen coreano. Precio neto $${formatCLP(equipo.priceNeto)} + IVA.`,
+    (priced
+      ? `${equipo.name}: equipo de estética profesional de origen coreano. Precio neto $${formatCLP(equipo.priceNeto)} + IVA.`
+      : `${equipo.name}: equipo de estética profesional de origen coreano. Precio a cotizar.`),
   brand: { '@type': 'Brand', name: 'Alta Qualità' },
   category: equipo.category,
   countryOfOrigin: 'KR',
   ...(equipo.image
     ? { image: `https://alta-qualita.cl${equipo.image}` }
     : {}),
-  offers: {
-    '@type': 'Offer',
-    price: equipo.priceNeto,
-    priceCurrency: 'CLP',
-    availability: 'https://schema.org/InStock',
-    url: `https://alta-qualita.cl/equipos/${equipo.slug}`,
-    seller: { '@type': 'Organization', name: 'Alta Qualità' },
-    priceSpecification: {
-      '@type': 'UnitPriceSpecification',
-      price: equipo.priceNeto,
-      priceCurrency: 'CLP',
-      valueAddedTaxIncluded: false,
-    },
-  },
+  ...(priced
+    ? {
+        offers: {
+          '@type': 'Offer',
+          price: equipo.priceNeto,
+          priceCurrency: 'CLP',
+          availability: 'https://schema.org/InStock',
+          url: `https://alta-qualita.cl/equipos/${equipo.slug}`,
+          seller: { '@type': 'Organization', name: 'Alta Qualità' },
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: equipo.priceNeto,
+            priceCurrency: 'CLP',
+            valueAddedTaxIncluded: false,
+          },
+        },
+      }
+    : {}),
 };
 ---
 
 <Layout
   title={`${equipo.name} — Precio, ficha técnica y garantía en Chile`}
-  description={`Precio $${formatCLP(equipo.priceNeto)} neto + IVA. Origen Corea del Sur. Ficha técnica descargable. ${equipo.name} en Alta Qualità Chile.`}
+  description={priced ? `Precio $${formatCLP(equipo.priceNeto)} neto + IVA. Origen Corea del Sur. Ficha técnica descargable. ${equipo.name} en Alta Qualità Chile.` : `${equipo.name}: equipo de estética profesional de origen coreano. Precio a cotizar. Ficha técnica en Alta Qualità Chile.`}
 >
   <JsonLd data={productLd} slot="head" />
 
@@ -220,10 +227,10 @@ const productLd = {
     <section class="mt-16" aria-labelledby="roi-eq-title">
       <h2 id="roi-eq-title" class="mb-4">¿En cuántos meses se recupera la inversión del {equipo.name}?</h2>
       <p class="prose-aq mb-6 text-sm">
-        Fórmula: meses ≈ ${formatCLP(equipo.priceNeto)} neto ÷ (precio sesión × sesiones/mes).
+        Fórmula: meses ≈ {priced ? `$${formatCLP(equipo.priceNeto)} neto` : 'precio neto'} ÷ (precio sesión × sesiones/mes).
         Supuestos editables en la calculadora.
       </p>
-      <div class="card-line grid gap-4 p-5 sm:grid-cols-3" data-roi-inline data-neto={equipo.priceNeto}>
+      <div class="card-line grid gap-4 p-5 sm:grid-cols-3" data-roi-inline data-neto={priced ? equipo.priceNeto : 0}>
         <label class="text-sm">
           <span class="label-mono mb-1 block">Precio sesión (CLP)</span>
           <input type="number" name="sesion" class="w-full border border-linea px-3 py-2 font-mono text-sm" placeholder="Por confirmar" min="0" />
@@ -257,7 +264,7 @@ const productLd = {
               <a href={`/equipos/${r.slug}`} class="card-line block p-4 no-underline hover:border-grafito">
                 <p class="label-mono mb-1">{r.category}</p>
                 <h3 class="!text-xl mb-2">{r.name}</h3>
-                <p class="font-mono text-sm text-cobalto">${formatCLP(r.priceNeto)} neto</p>
+                <p class="font-mono text-sm text-cobalto">{hasPrice(r.priceNeto) ? `$${formatCLP(r.priceNeto)} neto` : "Consultar"}</p>
               </a>
             )
           )

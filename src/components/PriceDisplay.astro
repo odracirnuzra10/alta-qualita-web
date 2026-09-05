@@ -1,24 +1,36 @@
 ---
-import { priceParts } from '../lib/equipos';
+import { priceParts, formatCLP } from '../lib/equipos';
 
 interface Props {
-  neto: number;
+  neto: number | null;
   class?: string;
 }
 
 const { neto, class: className = '' } = Astro.props;
-const p = priceParts(neto);
+const hasPrice = typeof neto === 'number' && neto > 0;
+const p = hasPrice ? priceParts(neto) : null;
 ---
 
-<div class:list={['price-block', className]} itemscope itemtype="https://schema.org/Offer">
-  <meta itemprop="priceCurrency" content="CLP" />
-  <meta itemprop="price" content={String(neto)} />
-  <p class="font-display text-3xl font-semibold tracking-[-0.02em] text-grafito sm:text-4xl">
-    {p.netoLabel}
-  </p>
-  <p class="mt-1 font-mono text-xs tracking-[0.04em] text-acero" style="font-variant-numeric: tabular-nums;">
-    {p.ivaLabel}
-    <span class="mx-1.5 text-linea">·</span>
-    {p.totalLabel}
-  </p>
-</div>
+{hasPrice && p ? (
+  <div class:list={['price-block', className]} itemscope itemtype="https://schema.org/Offer">
+    <meta itemprop="priceCurrency" content="CLP" />
+    <meta itemprop="price" content={String(neto)} />
+    <p class="font-display text-3xl font-semibold tracking-[-0.02em] text-grafito sm:text-4xl">
+      {p.netoLabel}
+    </p>
+    <p class="mt-1 font-mono text-xs tracking-[0.04em] text-acero" style="font-variant-numeric: tabular-nums;">
+      {p.ivaLabel}
+      <span class="mx-1.5 text-linea">·</span>
+      {p.totalLabel}
+    </p>
+  </div>
+) : (
+  <div class:list={['price-block', className]}>
+    <p class="font-display text-2xl font-semibold tracking-[-0.02em] text-grafito sm:text-3xl">
+      Consultar precio
+    </p>
+    <p class="mt-1 font-mono text-xs tracking-[0.04em] text-acero">
+      Valor neto por confirmar en cotización
+    </p>
+  </div>
+)}

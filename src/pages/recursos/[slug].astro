@@ -5,7 +5,7 @@ import FAQ from '../../components/FAQ.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import { guias, getGuia } from '../../lib/recursos';
 import { guiaBodies } from '../../lib/guias-content';
-import { getEquipo, formatCLP } from '../../lib/equipos';
+import { getEquipo, formatCLP, hasPrice } from '../../lib/equipos';
 import { SITE } from '../../lib/site';
 
 export function getStaticPaths() {
@@ -91,7 +91,7 @@ const articleLd = {
                   <a href={`/equipos/${e.slug}`} class="card-line block p-4 no-underline hover:border-grafito">
                     <p class="label-mono mb-1">{e.category}</p>
                     <h3 class="!text-xl mb-2">{e.name}</h3>
-                    <p class="font-mono text-sm text-cobalto">${formatCLP(e.priceNeto)} neto</p>
+                    <p class="font-mono text-sm text-cobalto">{hasPrice(e.priceNeto) ? `$${formatCLP(e.priceNeto)} neto` : 'Consultar precio'}</p>
                   </a>
                 )
             )}

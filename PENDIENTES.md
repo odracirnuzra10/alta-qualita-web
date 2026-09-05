@@ -44,11 +44,11 @@ Regla: **no inventar**. Editar `src/data/equipos.json` y/o `src/lib/site.ts`.
 | Canales y horario de soporte | Vacío |
 | Financiamiento (tasa, pie, plazo, partner) | Vacío |
 
-### Equipos (11 en catálogo)
+### Equipos (17 en catálogo)
 Specs técnicas, certificaciones con número, qué incluye la compra (salvo garantía ya en 12 meses), ROI defaults, PDFs de ficha reales.  
-Fotos pendientes: Sculpt-DD, Sculpt-DD Max, iZed Pro, CrioCK, KimiFace, EndoJiwoo.  
-**CorpoHera:** foto lista en `/img/equipos/corpohera.webp` — falta precio neto para publicar.  
-**Ambigüedad iZed (frío −5/−11 °C):** sin publicar hasta ficha oficial.
+Fotos Drive aplicadas a todo el catálogo visible.  
+**Precio pendiente (foto publicada, valor a cotizar):** CorpoHera, Cuky Body, Cuky HIFU, Hao Face, Laser Trimax, RejuveSkin.  
+**Ambigüedad iZed (frío −5/−11 °C):** sin claim térmico hasta ficha oficial.
 
 ### Clinera (oferta)
 | Campo | Estado |
