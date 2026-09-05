@@ -44,8 +44,8 @@ export const SITE = {
   ga4Id: null as string | null, // Por confirmar — G-XXXXXXXX
   author: {
     name: 'Ricardo Oyarzún',
-    role: 'Equipo técnico Alta Qualità',
-    credentials: null as string | null,
+    role: 'Fundador Método Hebe, Protocolo Lumina y Alta Qualità',
+    credentials: '3 clínicas estéticas en Chile (Los Ángeles, Vitacura y Concón)',
   },
   trustBar: {
     garantiaMeses: '12',
@@ -74,6 +74,7 @@ export const NAV_LINKS = [
   { href: '/soporte-tecnico', label: 'Soporte' },
   { href: '/clinera', label: 'Clinera' },
   { href: '/recursos', label: 'Recursos' },
+  { href: '/blog', label: 'Blog' },
   { href: '/nosotros', label: 'Nosotros' },
 ] as const;
 

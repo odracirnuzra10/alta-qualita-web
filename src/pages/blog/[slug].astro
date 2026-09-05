@@ -1,0 +1,186 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FAQ from '../../components/FAQ.astro';
+import JsonLd from '../../components/JsonLd.astro';
+import { posts, getPost, BLOG_AUTHOR } from '../../lib/blog';
+import { blogBodies } from '../../lib/blog-content';
+import { getEquipo, formatCLP, hasPrice } from '../../lib/equipos';
+import { SITE } from '../../lib/site';
+
+export function getStaticPaths() {
+  return posts.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const post = getPost(slug!);
+if (!post) throw new Error(`Artículo no encontrado: ${slug}`);
+
+const body = blogBodies[post.slug] || '<p>Contenido en preparación.</p>';
+const relatedEquipos = post.relatedEquipos.map((s) => getEquipo(s)).filter(Boolean);
+const relatedPosts = post.relatedPosts.map((s) => getPost(s)).filter(Boolean);
+
+function formatDate(iso: string) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+const pageUrl = `${SITE.domain}/blog/${post.slug}`;
+
+const blogPostingLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.title,
+  description: post.description,
+  datePublished: post.published,
+  dateModified: post.updated,
+  inLanguage: 'es-CL',
+  mainEntityOfPage: pageUrl,
+  author: {
+    '@type': 'Person',
+    name: BLOG_AUTHOR.name,
+    jobTitle: BLOG_AUTHOR.jobTitle,
+  },
+  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.domain },
+  keywords: post.keywords.join(', '),
+};
+
+const itemListLd = post.productList
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Máquinas base para una clínica estética',
+      itemListElement: post.productList.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: p.name,
+        url: `${SITE.domain}${p.href}`,
+      })),
+    }
+  : null;
+
+const jsonLd = itemListLd ? [blogPostingLd, itemListLd] : [blogPostingLd];
+---
+
+<Layout
+  title={post.title}
+  description={post.description}
+  dateModified={post.updated}
+  canonical={`/blog/${post.slug}`}
+>
+  <JsonLd data={jsonLd} slot="head" />
+
+  <Breadcrumbs
+    items={[
+      { name: 'Inicio', href: '/' },
+      { name: 'Blog', href: '/blog' },
+      { name: post.title },
+    ]}
+  />
+
+  <article class="blog-article">
+    <div class="container-aq pb-10 pt-4">
+      <p class="eyebrow mb-2">Blog · Alta Qualità</p>
+      <h1 class="mb-4 text-3xl leading-tight sm:text-4xl">{post.h1}</h1>
+
+      <div class="mb-8 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[10px] uppercase tracking-[0.04em] text-acero">
+        <span>Publicado: {formatDate(post.published)}</span>
+        <span>Actualizado: {formatDate(post.updated)}</span>
+        <span>
+          Autor: {BLOG_AUTHOR.name} · {BLOG_AUTHOR.jobTitle}
+        </span>
+      </div>
+
+      <div
+        class="prose-aq blog-body max-w-none text-sm [&_h2]:mt-10 [&_h2]:mb-4 [&_h3]:mt-6 [&_h3]:mb-3 [&_table]:my-6 [&_ul]:my-4 [&_ol]:my-4"
+        set:html={body}
+      />
+    </div>
+
+    {
+      relatedPosts.length > 0 && (
+        <section class="container-aq border-t border-linea py-10" aria-labelledby="rel-posts">
+          <p class="eyebrow mb-2">Sigue leyendo</p>
+          <h2 id="rel-posts" class="mb-6">
+            Artículos relacionados
+          </h2>
+          <ul class="grid gap-4 sm:grid-cols-2">
+            {relatedPosts.map(
+              (p) =>
+                p && (
+                  <li>
+                    <a href={`/blog/${p.slug}`} class="card-line block p-4 no-underline hover:border-grafito">
+                      <h3 class="!text-xl mb-2">{p.title}</h3>
+                      <p class="text-sm text-texto">{p.description}</p>
+                    </a>
+                  </li>
+                )
+            )}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      relatedEquipos.length > 0 && (
+        <section class="container-aq pb-6" aria-labelledby="rel-eq">
+          <p class="eyebrow mb-2">Catálogo</p>
+          <h2 id="rel-eq" class="mb-6">
+            Equipos de este artículo
+          </h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {relatedEquipos.map((e) => {
+              if (!e) return null;
+              const href =
+                e.slug === 'skinwave-max'
+                  ? '/skinwave-max'
+                  : e.slug === 'endojiwoo'
+                    ? '/endojiwoo'
+                    : `/equipos/${e.slug}`;
+              return (
+                <a href={href} class="card-line block overflow-hidden p-0 no-underline hover:border-grafito">
+                  {e.image ? (
+                    <img
+                      src={e.image}
+                      alt=""
+                      width="600"
+                      height="600"
+                      class="aspect-square w-full bg-papel object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : null}
+                  <div class="p-4">
+                    <p class="label-mono mb-1">{e.category}</p>
+                    <h3 class="!text-xl mb-2">{e.name}</h3>
+                    <p class="font-mono text-sm text-cobalto">
+                      {hasPrice(e.priceNeto) ? `$${formatCLP(e.priceNeto)} neto + IVA` : 'Consultar precio'}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      )
+    }
+  </article>
+
+  <FAQ items={post.faq} title="Preguntas frecuentes" />
+
+  <section class="container-aq pb-16">
+    <a href="/contacto" class="btn-primary">Agendar demo</a>
+    <a href="/blog" class="btn-ghost ml-3">Volver al blog</a>
+  </section>
+</Layout>
+
+<style>
+  .blog-body :global(table) {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+</style>

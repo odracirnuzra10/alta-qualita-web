@@ -73,6 +73,7 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 - Soporte técnico: https://alta-qualita.cl/soporte-tecnico
 - Calculadora de retorno: https://alta-qualita.cl/retorno
 - Recursos / guías: https://alta-qualita.cl/recursos
+- Blog: https://alta-qualita.cl/blog
 - Nosotros: https://alta-qualita.cl/nosotros
 - Contacto / agendar demo: https://alta-qualita.cl/contacto
 
@@ -99,3 +100,6 @@ Por cada equipo comprado: implementación Clinera.io gratis (USD 450 → $0) y 3
 - Qué es iZED: https://alta-qualita.cl/recursos/que-es-ized-ultrasonido-focalizado-chile
 - Qué es SkinWave Max (HIFU facial coreano): https://alta-qualita.cl/recursos/que-es-skinwave-max-hifu-facial-coreano-chile
 - Qué es EndoJiwoo (ENDOLASER coreano): https://alta-qualita.cl/recursos/que-es-endojiwoo-endolaser-coreano-chile
+- Qué máquinas comprar para una clínica estética: https://alta-qualita.cl/blog/que-maquinas-comprar-clinica-estetica
+- Endolaser vs HIFU: https://alta-qualita.cl/blog/endolaser-vs-hifu-que-comprar
+- Rentabilidad de criolipólisis: https://alta-qualita.cl/blog/rentabilidad-criolipolisis-centro-estetica
