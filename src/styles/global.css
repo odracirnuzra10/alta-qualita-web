@@ -1308,3 +1308,9 @@ figure.guia-inline figcaption {
       max(2rem, env(safe-area-inset-right, 0px));
   }
 }
+
+.blog-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}

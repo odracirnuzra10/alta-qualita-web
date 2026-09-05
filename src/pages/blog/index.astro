@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { posts } from '../../lib/blog';
+
+function formatDate(iso: string) {
+  return new Date(iso + 'T12:00:00').toLocaleDateString('es-CL', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<Layout
+  title="Blog: máquinas para clínicas estéticas en Chile"
+  description="Guías para dueños de clínicas: qué máquinas comprar, endolaser vs HIFU y rentabilidad de criolipólisis. Precios neto + IVA. Autor: Ricardo Oyarzún."
+  canonical="/blog"
+>
+  <Breadcrumbs items={[{ name: 'Inicio', href: '/' }, { name: 'Blog' }]} />
+
+  <section class="container-aq pb-16 pt-6">
+    <p class="eyebrow mb-2">Blog</p>
+    <h1 class="mb-4">Máquinas que sí se pagan</h1>
+    <p class="prose-aq mb-10 max-w-[62ch] text-sm">
+      Artículos de Ricardo Oyarzún — fundador de Método Hebe, Protocolo Lumina y Alta Qualità —
+      con precios netos + IVA y el orden de compra que usamos en nuestras clínicas.
+      Las fichas técnicas siguen en <a href="/recursos">Recursos</a>.
+    </p>
+
+    <ul class="divide-y divide-linea border-y border-linea">
+      {
+        posts.map((p) => (
+          <li class="py-5">
+            <a href={`/blog/${p.slug}`} class="group block no-underline">
+              <h2 class="text-2xl font-semibold group-hover:text-cobalto">{p.title}</h2>
+              <p class="mt-2 text-sm text-texto">{p.description}</p>
+              <p class="mt-2 font-mono text-[10px] uppercase tracking-[0.04em] text-acero">
+                Actualizado: {formatDate(p.updated)}
+              </p>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
