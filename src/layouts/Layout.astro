@@ -60,6 +60,13 @@ const orgLd = {
       addressCountry: 'CL',
     },
   })),
+  founder: { '@type': 'Person', name: SITE.author.name, jobTitle: SITE.author.role },
+  brand: [
+    { '@type': 'Brand', name: SITE.marcas.clinera.name, url: SITE.marcas.clinera.url, description: SITE.marcas.clinera.desc },
+    { '@type': 'Brand', name: SITE.marcas.hebe.name, description: SITE.marcas.hebe.desc },
+    { '@type': 'Brand', name: SITE.marcas.lumina.name, description: SITE.marcas.lumina.desc },
+  ],
+  knowsAbout: ['Equipos de estética profesional', 'HIFU', 'ENDOLASER', 'Criolipólisis', 'Software para clínicas estéticas'],
   sameAs: [SITE.social.instagram, SITE.social.linkedin, SITE.social.facebook].filter(Boolean),
 };
 

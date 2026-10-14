@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import FAQ from '../components/FAQ.astro';
 import JsonLd from '../components/JsonLd.astro';
 import Showrooms from '../components/Showrooms.astro';
-import { formatCLP, priceParts, getEquipo } from '../lib/equipos';
+import AvailabilityBadge from '../components/AvailabilityBadge.astro';
+import { formatCLP, priceParts, getEquipo, FAQ_ENTREGA, FAQ_CERTIFICADO } from '../lib/equipos';
 import { SITE } from '../lib/site';
 
 const equipo = getEquipo('skinwave-max');
@@ -287,6 +288,7 @@ const productLd = {
             En Alta Qualità el precio de lista es siempre neto. El IVA 19% se muestra aparte.
             Así comparas cotizaciones sin mezclar brutos y netos.
           </p>
+          <AvailabilityBadge disponibilidad={getEquipo("skinwave-max")!.disponibilidad} class="mb-3" />
           <p class="font-display text-4xl font-semibold tracking-[-0.03em] text-grafito sm:text-5xl">
             ${formatCLP(neto)}
             <span class="mt-1 block font-sans text-base font-normal text-acero sm:text-lg">
@@ -321,7 +323,7 @@ const productLd = {
       </div>
     </section>
 
-    <FAQ items={faq} title="Preguntas sobre SkinWave Max" />
+    <FAQ items={[...faq, FAQ_ENTREGA, FAQ_CERTIFICADO]} title="Preguntas sobre SkinWave Max" />
 
     <section class="swm-final" aria-label="Agendar demo SkinWave Max">
       <div class="container-aq text-center">

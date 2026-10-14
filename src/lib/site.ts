@@ -61,7 +61,17 @@ export const SITE = {
     summary:
       'Implementación gratis (USD 450 → $0) y 3 meses con 50% de descuento',
   },
-  lastUpdated: '2026-09',
+  marcas: {
+    clinera: { name: 'Clinera.io', url: 'https://clinera.io', desc: 'Software con IA para clínicas estéticas y médicas: agendamiento por WhatsApp (AURA), voz (CAMILA) y reportes (LIA).' },
+    hebe: { name: 'Método Hebe', desc: 'Clínica de estética corporal con sucursales en Los Ángeles, Vitacura y Concón.' },
+    lumina: { name: 'Protocolo Lumina', desc: 'Clínica de estética facial.' },
+  },
+  certificadoUso: {
+    titulo: 'Certificado de uso Método Hebe y Protocolo Lumina',
+    resumen:
+      'Cada compra incluye un certificado de uso emitido por Método Hebe y Protocolo Lumina, en dependencias de la propia clínica.',
+  },
+  lastUpdated: '2026-10',
   ivaRate: 0.19,
 } as const;
 

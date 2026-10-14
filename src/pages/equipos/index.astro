@@ -1,11 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import PriceDisplay from '../../components/PriceDisplay.astro';
-import { getEquipos, formatCLP, priceParts, hasPrice, pricedEquipos } from '../../lib/equipos';
+import EquipoCard from '../../components/EquipoCard.astro';
+import AvailabilityBadge from '../../components/AvailabilityBadge.astro';
+import { getEquipos, getEquiposPorDisponibilidad, formatCLP, priceParts, hasPrice, pricedEquipos } from '../../lib/equipos';
 
-const equipos = getEquipos();
-const count = equipos.length;
+const { stock: equiposStock, pedido: equiposPedido } = getEquiposPorDisponibilidad();
+const equipos = [...equiposStock, ...equiposPedido];
+const count = getEquipos().length;
 const priced = pricedEquipos();
 const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0;
 ---
@@ -20,7 +22,7 @@ const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0
     <p class="eyebrow mb-2">Catálogo completo</p>
     <h1 class="mb-4">Equipos de estética profesional</h1>
     <p class="prose-aq mb-10 text-sm">
-      {count} equipos importados desde Corea del Sur. Precio neto, IVA 19% y total visibles
+      {count} equipos importados desde Corea del Sur: {equiposStock.length} en stock en Chile y {equiposPedido.length} a pedido (30 días). Precio neto, IVA 19% y total visibles
       en cada ficha publicada. Specs o precios vacíos = «por confirmar», nunca inventados.
     </p>
 
@@ -29,6 +31,7 @@ const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0
         <thead>
           <tr>
             <th scope="col">Equipo</th>
+            <th scope="col">Disponibilidad</th>
             <th scope="col">Categoría</th>
             <th scope="col">Neto</th>
             <th scope="col">IVA</th>
@@ -47,6 +50,7 @@ const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0
                   <th scope="row" class="!bg-blanco !normal-case !tracking-normal !text-sm !font-sans font-semibold text-grafito">
                     {e.name}
                   </th>
+                  <td><AvailabilityBadge disponibilidad={e.disponibilidad} size="sm" /></td>
                   <td>{e.category}</td>
                   <td class="font-mono text-cobalto font-medium">{pricedRow ? `$${formatCLP(e.priceNeto)}` : 'Consultar'}</td>
                   <td class="font-mono">{p ? `$${formatCLP(p.iva)}` : '—'}</td>
@@ -61,30 +65,20 @@ const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0
       </table>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {
-        equipos.map((e) => (
-          <a href={`/equipos/${e.slug}`} class="card-line block overflow-hidden no-underline hover:border-grafito">
-            {e.image ? (
-              <img
-                src={e.image}
-                alt=""
-                width="600"
-                height="600"
-                class="aspect-square w-full object-cover bg-papel"
-                loading="lazy"
-                decoding="async"
-              />
-            ) : null}
-            <div class="p-5">
-              <p class="label-mono mb-2">{e.category}</p>
-              <h2 class="!text-2xl mb-3">{e.name}</h2>
-              <PriceDisplay neto={e.priceNeto} />
-              <p class="mt-4 text-sm text-cobalto">Abrir ficha técnica →</p>
-            </div>
-          </a>
-        ))
-      }
+    <div id="entrega-inmediata" class="mb-14" aria-labelledby="stock-title">
+      <h2 id="stock-title" class="mb-2">Entrega inmediata</h2>
+      <p class="prose-aq mb-6 text-sm">En stock en Chile. Instalación y capacitación en nuestros showrooms.</p>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {equiposStock.map((e) => <EquipoCard equipo={e} variant="stock" />)}
+      </div>
+    </div>
+
+    <div id="a-pedido" class="border-t border-linea pt-10" aria-labelledby="pedido-title">
+      <h2 id="pedido-title" class="!text-xl mb-1 !font-semibold">A pedido</h2>
+      <p class="mb-5 text-sm text-acero">Importación directa. Entrega en 30 días.</p>
+      <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+        {equiposPedido.map((e) => <EquipoCard equipo={e} variant="pedido" />)}
+      </div>
     </div>
   </section>
 </Layout>
