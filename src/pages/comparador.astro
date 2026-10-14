@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Pending from '../components/Pending.astro';
+import AvailabilityBadge from '../components/AvailabilityBadge.astro';
 import { getEquipos, formatCLP, priceParts, hasPrice } from '../lib/equipos';
 
 const equipos = getEquipos();
@@ -41,7 +42,10 @@ const equipos = getEquipos();
           <tr>
             <th scope="col">Campo</th>
             {equipos.map((e) => (
-              <th scope="col" data-col={e.slug} class="compare-col">{e.name}</th>
+              <th scope="col" data-col={e.slug} class="compare-col">
+                {e.name}
+                <div class="mt-1.5 normal-case tracking-normal"><AvailabilityBadge disponibilidad={e.disponibilidad} size="sm" /></div>
+              </th>
             ))}
           </tr>
         </thead>

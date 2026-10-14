@@ -4,10 +4,14 @@ import SpecRow from '../components/SpecRow.astro';
 import ProductMedia from '../components/ProductMedia.astro';
 import FAQ from '../components/FAQ.astro';
 import ClineraBanner from '../components/ClineraBanner.astro';
-import { getEquipos, formatCLP, priceParts, hasPrice, pricedEquipos } from '../lib/equipos';
+import EquipoCard from '../components/EquipoCard.astro';
+import AvailabilityBadge from '../components/AvailabilityBadge.astro';
+import { SITE } from '../lib/site';
+import { getEquipos, getEquiposPorDisponibilidad, equipoHref, FAQ_ENTREGA, FAQ_CERTIFICADO, formatCLP, priceParts, hasPrice, pricedEquipos } from '../lib/equipos';
 
 const equipos = getEquipos();
-const catalogCount = String(equipos.length);
+const { stock: equiposStock, pedido: equiposPedido } = getEquiposPorDisponibilidad();
+const stockLabel = `${equiposStock.length} en stock · ${equiposPedido.length} a pedido`;
 const priced = pricedEquipos();
 const minPrice = priced.length ? Math.min(...priced.map((e) => e.priceNeto)) : 0;
 const maxPrice = priced.length ? Math.max(...priced.map((e) => e.priceNeto)) : 0;
@@ -17,8 +21,9 @@ const heroImage = equipos.find((e) => e.slug === 'ized')?.image
   ?? equipos.find((e) => e.image)?.image
   ?? null;
 
-const comparadorHome = equipos.filter((e) =>
-  ['ized', 'corpolift', 'skinwave-max', 'sculpt-dd'].includes(e.slug)
+// Destacados: solo equipos de entrega inmediata.
+const comparadorHome = equiposStock.filter((e) =>
+  ['ized', 'skinwave-max', 'endojiwoo', 'kimiface'].includes(e.slug)
 );
 
 const homeFaq = [
@@ -26,6 +31,8 @@ const homeFaq = [
     q: '¿Cuánto cuestan los equipos de estética de Alta Qualità en Chile?',
     a: `Todos los precios son neto + IVA 19%. Van desde $${formatCLP(minPrice)} (${minName}) hasta $${formatCLP(maxPrice)} (${maxName}). Cada ficha muestra neto, IVA y total. Ejemplo: SkinWave Max = $4.500.000 neto + $855.000 IVA = $5.355.000 total.`,
   },
+  FAQ_ENTREGA,
+  FAQ_CERTIFICADO,
   {
     q: '¿Los equipos son italianos o coreanos?',
     a: 'Son de origen coreano. El nombre Alta Qualità es italiano, pero los equipos se fabrican en Corea del Sur. El origen se declara abiertamente en cada ficha.',
@@ -57,7 +64,7 @@ const homeFaq = [
 ];
 
 const heroSpecs = [
-  { label: 'Equipos en catálogo', value: catalogCount },
+  { label: 'Equipos en catálogo', value: stockLabel },
   { label: 'Origen', value: 'Corea del Sur' },
   { label: 'Garantía (meses)', value: '12' },
   { label: 'Soporte (horas)', value: '48' },
@@ -66,7 +73,7 @@ const heroSpecs = [
 
 <Layout
   title="Equipos de estética profesional coreanos en Chile"
-  description="Alta Qualità importa equipos de estética profesional de origen coreano a Chile. Precios netos + IVA visibles, fichas técnicas descargables y oferta Clinera.io (implementación gratis + 3 meses al 50%)."
+  description="Equipos de estética profesional coreanos en Chile: 7 en stock con entrega inmediata y 9 a pedido en 30 días. Precios netos + IVA, Clinera.io (implementación gratis + 3 meses al 50%) y certificado de uso Método Hebe y Protocolo Lumina con cada compra."
 >
   <!-- 1. Hero -->
   <section class="border-b border-linea">
@@ -217,50 +224,58 @@ const heroSpecs = [
   <section class="py-16" aria-labelledby="catalogo-title">
     <div class="container-aq">
       <p class="eyebrow mb-2">Catálogo</p>
-      <h2 id="catalogo-title" class="mb-3">{catalogCount} equipos. Precio neto + IVA a la vista.</h2>
+      <h2 id="catalogo-title" class="mb-3">{stockLabel}. Precio neto + IVA a la vista.</h2>
       <p class="prose-aq mb-10 text-sm">
         Cada ficha muestra origen coreano, precio en formato chileno y campos técnicos.
         Lo que falta aparece como «por confirmar» — nunca inventado.
       </p>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {
-          equipos.map((e) => {
-            const pricedRow = hasPrice(e.priceNeto);
-            const p = pricedRow ? priceParts(e.priceNeto) : null;
-            return (
-              <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : e.slug === 'endojiwoo' ? '/endojiwoo' : `/equipos/${e.slug}`} class="card-line group block overflow-hidden no-underline transition-colors hover:border-grafito">
-                {e.image ? (
-                  <img
-                    src={e.image}
-                    alt=""
-                    width="600"
-                    height="600"
-                    class="aspect-square w-full object-cover bg-papel"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : null}
-                <div class="p-4">
-                  <p class="label-mono mb-2">{e.category}</p>
-                  <h3 class="mb-3 text-xl group-hover:text-cobalto">{e.name}</h3>
-                  <p class="font-mono text-sm font-medium text-grafito" style="font-variant-numeric: tabular-nums;">
-                    {pricedRow ? `$${formatCLP(e.priceNeto)} neto` : 'Consultar precio'}
-                  </p>
-                  <p class="mt-1 font-mono text-[10px] tracking-[0.04em] text-acero">
-                    {p ? `${p.ivaLabel} · ${p.totalLabel}` : 'Precio a cotizar'}
-                  </p>
-                  <p class="mt-4 text-sm text-cobalto">Ver ficha →</p>
-                </div>
-              </a>
-            );
-          })
-        }
+
+      <div id="entrega-inmediata" class="mb-14" aria-labelledby="stock-title">
+        <h3 id="stock-title" class="!text-3xl mb-2">Entrega inmediata</h3>
+        <p class="prose-aq mb-6 text-sm">En stock en Chile. Instalación y capacitación en nuestros showrooms.</p>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {equiposStock.map((e) => <EquipoCard equipo={e} variant="stock" />)}
+        </div>
+      </div>
+
+      <div id="a-pedido" aria-labelledby="pedido-title" class="border-t border-linea pt-10">
+        <h3 id="pedido-title" class="!text-xl mb-1">A pedido</h3>
+        <p class="mb-5 text-sm text-acero">Importación directa. Entrega en 30 días.</p>
+        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {equiposPedido.map((e) => <EquipoCard equipo={e} variant="pedido" />)}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- 4. Clinera — banner de marca Clinera (rompe visualmente con AQ) -->
   <ClineraBanner />
+
+  <!-- Qué incluye cada compra: marcas del grupo -->
+  <section class="border-y border-linea bg-papel py-16" aria-labelledby="incluye-compra-title">
+    <div class="container-aq">
+      <p class="eyebrow mb-2">Cada compra incluye</p>
+      <h2 id="incluye-compra-title" class="mb-3">Software, certificado de uso y respaldo de clínicas reales</h2>
+      <p class="prose-aq mb-8 text-sm">{SITE.certificadoUso.resumen}</p>
+      <ul class="grid gap-4 md:grid-cols-3">
+        <li class="card-line">
+          <p class="label-mono mb-2">Software con IA</p>
+          <h3 class="!text-xl mb-2"><a href="/clinera" class="no-underline hover:text-cobalto">{SITE.marcas.clinera.name}</a></h3>
+          <p class="text-sm text-texto">{SITE.marcas.clinera.desc} Implementación gratis y 3 meses con 50% de descuento.</p>
+        </li>
+        <li class="card-line">
+          <p class="label-mono mb-2">Certificado de uso · corporal</p>
+          <h3 class="!text-xl mb-2"><a href="/nosotros" class="no-underline hover:text-cobalto">{SITE.marcas.hebe.name}</a></h3>
+          <p class="text-sm text-texto">{SITE.marcas.hebe.desc} Emite el certificado de uso en dependencias de la clínica.</p>
+        </li>
+        <li class="card-line">
+          <p class="label-mono mb-2">Certificado de uso · facial</p>
+          <h3 class="!text-xl mb-2"><a href="/nosotros" class="no-underline hover:text-cobalto">{SITE.marcas.lumina.name}</a></h3>
+          <p class="text-sm text-texto">{SITE.marcas.lumina.desc} Emite el certificado de uso en dependencias de la clínica.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
   <!-- 5. Comparador resumido -->
   <section class="py-16" aria-labelledby="comp-title">
@@ -288,9 +303,10 @@ const heroSpecs = [
                 return (
                   <tr>
                     <td>
-                      <a href={e.slug === 'skinwave-max' ? '/skinwave-max' : e.slug === 'endojiwoo' ? '/endojiwoo' : `/equipos/${e.slug}`} class="link-text font-medium">
+                      <a href={equipoHref(e.slug)} class="link-text font-medium">
                         {e.name}
                       </a>
+                      <div class="mt-1.5"><AvailabilityBadge disponibilidad={e.disponibilidad} size="sm" /></div>
                     </td>
                     <td>{e.category}</td>
                     <td class="font-mono text-cobalto font-medium">{hasPrice(e.priceNeto) ? `$${formatCLP(e.priceNeto)}` : 'Consultar'}</td>

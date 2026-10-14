@@ -1,0 +1,67 @@
+---
+/**
+ * Badge de disponibilidad. Siempre ícono + texto (nunca solo ícono).
+ * inmediata: sólido verde, texto blanco (6.6:1). pedido: borde fino, fondo neutro, texto grafito (16:1).
+ */
+import type { Disponibilidad } from '../lib/equipos';
+
+interface Props {
+  disponibilidad: Disponibilidad;
+  size?: 'md' | 'sm';
+  class?: string;
+}
+
+const { disponibilidad, size = 'md', class: className = '' } = Astro.props;
+const inmediata = disponibilidad === 'inmediata';
+---
+
+<span class:list={['avail-badge', inmediata ? 'avail-badge--inmediata' : 'avail-badge--pedido', size === 'sm' && 'avail-badge--sm', className]}>
+  {
+    inmediata ? (
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M13.5 2 4 13.5h6.5L9.5 22 20 9.5h-6.8L13.5 2z" />
+      </svg>
+    ) : (
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M21 15.5v-2l-8-5V3.75a1.75 1.75 0 0 0-3.5 0V8.5l-8 5v2l8-2.25v4.5L8 19.5V21l3.75-.9L15.5 21v-1.5l-2-1.75v-4.5l7.5 2.25z" />
+      </svg>
+    )
+  }
+  <span>{inmediata ? 'Entrega inmediata' : '30 días'}</span>
+</span>
+
+<style>
+  .avail-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    border-radius: 2px;
+  }
+  .avail-badge--inmediata {
+    background: #0a6b3f;
+    color: #ffffff;
+    border: 1px solid #0a6b3f;
+  }
+  .avail-badge--pedido {
+    background: var(--color-papel);
+    color: var(--color-grafito);
+    border: 1px solid var(--color-linea);
+    font-weight: 600;
+  }
+  .avail-badge--sm {
+    gap: 0.3rem;
+    padding: 0.2rem 0.45rem;
+    font-size: 0.7rem;
+  }
+  .avail-badge--sm svg {
+    width: 12px;
+    height: 12px;
+  }
+</style>

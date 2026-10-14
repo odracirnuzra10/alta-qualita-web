@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import FAQ from '../components/FAQ.astro';
 import JsonLd from '../components/JsonLd.astro';
 import Showrooms from '../components/Showrooms.astro';
-import { formatCLP, priceParts, getEquipo } from '../lib/equipos';
+import AvailabilityBadge from '../components/AvailabilityBadge.astro';
+import { formatCLP, priceParts, getEquipo, FAQ_ENTREGA, FAQ_CERTIFICADO } from '../lib/equipos';
 import { SITE } from '../lib/site';
 
 const equipo = getEquipo('endojiwoo');
@@ -280,6 +281,7 @@ const productLd = {
           <p class="mb-5 max-w-[46ch] text-sm text-acero">
             Publicamos neto. El IVA 19% va aparte. Así comparas cotizaciones sin mezclar brutos y netos.
           </p>
+          <AvailabilityBadge disponibilidad={getEquipo("endojiwoo")!.disponibilidad} class="mb-3" />
           <p class="font-display text-4xl font-semibold tracking-[-0.03em] text-grafito sm:text-5xl">
             {`Desde $${formatCLP(BASE)}`}
             <span class="mt-1 block font-sans text-base font-normal text-acero sm:text-lg">
@@ -314,7 +316,7 @@ const productLd = {
       </div>
     </section>
 
-    <FAQ items={faq} title="Preguntas sobre EndoJiwoo ENDOLASER" />
+    <FAQ items={[...faq, FAQ_ENTREGA, FAQ_CERTIFICADO]} title="Preguntas sobre EndoJiwoo ENDOLASER" />
 
     <section class="ejw-final" aria-label="Agendar demo EndoJiwoo">
       <div class="container-aq text-center">

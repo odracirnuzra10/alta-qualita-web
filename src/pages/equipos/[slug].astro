@@ -8,7 +8,8 @@ import Pending from '../../components/Pending.astro';
 import FAQ from '../../components/FAQ.astro';
 import JsonLd from '../../components/JsonLd.astro';
 import ClineraBanner from '../../components/ClineraBanner.astro';
-import { getEquipos, getEquipo, formatCLP, priceParts, hasPrice } from '../../lib/equipos';
+import AvailabilityBadge from '../../components/AvailabilityBadge.astro';
+import { getEquipos, getEquipo, formatCLP, priceParts, hasPrice, isStock, FAQ_ENTREGA, FAQ_CERTIFICADO, PLAZO_PEDIDO_DIAS } from '../../lib/equipos';
 import { SPEC_LABELS, SITE } from '../../lib/site';
 
 export function getStaticPaths() {
@@ -19,6 +20,7 @@ const { slug } = Astro.params;
 const equipo = getEquipo(slug!);
 if (!equipo) throw new Error(`Equipo no encontrado: ${slug}`);
 
+const enStock = isStock(equipo);
 const priced = hasPrice(equipo.priceNeto);
 const p = priced ? priceParts(equipo.priceNeto) : null;
 const related = equipo.related
@@ -41,6 +43,10 @@ const productLd = {
       : `${equipo.name}: equipo de estética profesional de origen coreano. Precio a cotizar.`),
   brand: { '@type': 'Brand', name: 'Alta Qualità' },
   category: equipo.category,
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Certificado de uso', value: SITE.certificadoUso.resumen },
+    { '@type': 'PropertyValue', name: 'Software incluido en la oferta', value: `Clinera.io: ${SITE.clineraOffer.summary}` },
+  ],
   countryOfOrigin: 'KR',
   ...(equipo.image
     ? { image: `https://alta-qualita.cl${equipo.image}` }
@@ -51,7 +57,7 @@ const productLd = {
           '@type': 'Offer',
           price: equipo.priceNeto,
           priceCurrency: 'CLP',
-          availability: 'https://schema.org/InStock',
+          availability: enStock ? 'https://schema.org/InStock' : 'https://schema.org/PreOrder',
           url: `https://alta-qualita.cl/equipos/${equipo.slug}`,
           seller: { '@type': 'Organization', name: 'Alta Qualità' },
           priceSpecification: {
@@ -68,7 +74,7 @@ const productLd = {
 
 <Layout
   title={`${equipo.name} — Precio, ficha técnica y garantía en Chile`}
-  description={priced ? `Precio $${formatCLP(equipo.priceNeto)} neto + IVA. Origen Corea del Sur. Ficha técnica descargable. ${equipo.name} en Alta Qualità Chile.` : `${equipo.name}: equipo de estética profesional de origen coreano. Precio a cotizar. Ficha técnica en Alta Qualità Chile.`}
+  description={priced ? `Precio $${formatCLP(equipo.priceNeto)} neto + IVA. ${enStock ? 'Entrega inmediata, en stock en Chile.' : `Importación a pedido, ${PLAZO_PEDIDO_DIAS} días.`} Incluye Clinera.io y certificado de uso Método Hebe y Protocolo Lumina. Ficha técnica descargable. ${equipo.name} en Alta Qualità Chile.` : `${equipo.name}: equipo de estética profesional de origen coreano. Precio a cotizar. Ficha técnica en Alta Qualità Chile.`}
 >
   <JsonLd data={productLd} slot="head" />
 
@@ -102,7 +108,17 @@ const productLd = {
 
         <SpecRow specs={equipo.specsHighlight} class="mb-8" />
 
-        <PriceDisplay neto={equipo.priceNeto} class="mb-6" />
+        <div class="mb-6">
+          <AvailabilityBadge disponibilidad={equipo.disponibilidad} class="mb-3" />
+          <PriceDisplay neto={equipo.priceNeto} />
+          {
+            !enStock && (
+              <p class="mt-3 text-sm text-texto" data-pedido-note>
+                Importación a pedido. Plazo estimado: {PLAZO_PEDIDO_DIAS} días desde la confirmación.
+              </p>
+            )
+          }
+        </div>
 
         <div class="flex flex-wrap gap-3">
           <a href={`/contacto?equipo=${equipo.slug}`} class="btn-primary">Agendar demo en showroom</a>
@@ -221,6 +237,8 @@ const productLd = {
               ['Protocolos de tratamiento', equipo.includes.protocolos],
               ['Garantía', equipo.includes.garantia],
               ['Repuestos', equipo.includes.repuestos],
+              ['Certificado de uso', SITE.certificadoUso.resumen],
+              ['Clinera.io', SITE.clineraOffer.summary + '.'],
             ].map(([label, value]) => (
               <tr>
                 <th scope="row" class="!normal-case !tracking-normal !text-sm !font-sans font-medium !bg-blanco text-grafito">
@@ -263,7 +281,7 @@ const productLd = {
       <ClineraBanner equipoName={equipo.name} compact />
     </div>
 
-    <FAQ items={equipo.faq} title={`Preguntas frecuentes sobre ${equipo.name}`} />
+    <FAQ items={[...equipo.faq, FAQ_ENTREGA, FAQ_CERTIFICADO]} title={`Preguntas frecuentes sobre ${equipo.name}`} />
 
     <!-- Relacionados -->
     <section class="mt-8" aria-labelledby="rel-title">

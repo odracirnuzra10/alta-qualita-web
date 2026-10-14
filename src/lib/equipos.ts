@@ -7,6 +7,38 @@ export function getEquipos(): Equipo[] {
   return equipos as Equipo[];
 }
 
+export type Disponibilidad = 'inmediata' | 'pedido';
+
+export function isStock(e: Pick<Equipo, 'disponibilidad'>): boolean {
+  return e.disponibilidad === 'inmediata';
+}
+
+/** Stock en Chile primero, a pedido después. Respeta el orden del JSON dentro de cada grupo. */
+export function getEquiposPorDisponibilidad() {
+  const todos = getEquipos();
+  const stock = todos.filter(isStock);
+  const pedido = todos.filter((e) => !isStock(e));
+  return { stock, pedido };
+}
+
+export const PLAZO_PEDIDO_DIAS = 30;
+
+export const FAQ_ENTREGA = {
+  q: '¿Cuánto demora la entrega?',
+  a: `Los equipos marcados con Entrega inmediata están en stock en Chile. El resto se importa a pedido, con un plazo estimado de ${PLAZO_PEDIDO_DIAS} días.`,
+};
+
+export const FAQ_CERTIFICADO = {
+  q: '¿La compra incluye certificado de uso?',
+  a: SITE.certificadoUso.resumen + ' Lo emiten las clínicas Método Hebe (estética corporal) y Protocolo Lumina (estética facial), operadas por el mismo grupo que fundó Alta Qualità.',
+};
+
+export function equipoHref(slug: string): string {
+  if (slug === 'skinwave-max') return '/skinwave-max';
+  if (slug === 'endojiwoo') return '/endojiwoo';
+  return `/equipos/${slug}`;
+}
+
 export function getEquipo(slug: string): Equipo | undefined {
   return getEquipos().find((e) => e.slug === slug);
 }
